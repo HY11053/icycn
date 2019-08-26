@@ -116,16 +116,6 @@
     <!-- iCheck -->
     <script src="/adminlte/plugins/iCheck/icheck.min.js"></script>
     <script>
-        $(document).ready(function() {
-            $.ajaxSetup({
-                headers: {
-                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-                }
-            });
-        })
-
-    </script>
-    <script>
         $(function () {
             //iCheck for checkbox and radio inputs
             $('.basic_info input[type="checkbox"].minimal, input[type="radio"].minimal').iCheck({

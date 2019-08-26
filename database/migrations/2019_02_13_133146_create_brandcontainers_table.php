@@ -25,6 +25,7 @@ class CreateBrandcontainersTable extends Migration
             $table->index('type');
             $table->index('status');
             $table->index('num');
+            $table->index('referer');
             $table->timestamps();
         });
     }

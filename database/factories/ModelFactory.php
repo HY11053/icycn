@@ -25,10 +25,10 @@ $factory->define(App\User::class, function (Faker\Generator $faker) {
 
 $factory->define(App\AdminModel\Admin::class, function (Faker\Generator $faker) {
     static $password;
-
     return [
         'name' => '梁李良',
         'email' => 'liang569874@163.com',
+        'type' => 1,
         'password' => $password ?: $password = bcrypt('secret'),
         'remember_token' => str_random(10),
     ];
@@ -51,9 +51,6 @@ $factory->define(App\AdminModel\Arctype::class, function (Faker\Generator $faker
         'litpic'=>$faker->imageUrl(640,480),
         'typeimages'=>$faker->imageUrl(640,480),
         'contents'=>$faker->text,
-        //'email' => $faker->unique()->safeEmail,
-        //'password' => $password ?: $password = bcrypt('secret'),
-        //'remember_token' => str_random(10),
     ];
 });
 

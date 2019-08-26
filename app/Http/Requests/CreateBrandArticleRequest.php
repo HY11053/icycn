@@ -25,7 +25,6 @@ class CreateBrandArticleRequest extends FormRequest
     {
         return [
             'title'=>'required|max:100|min:5',
-            'shorttitle'=>'max:20',
             'typeid'=>'required',
             //'tags'=>'required|max:20',
             'ismake'=>'required|numeric',

@@ -36,8 +36,6 @@ class RedirectUrlMiddleware
                     $redirecturl=config('app.url').$matches[0].'/';
                 }elseif (str_contains($request->url(),'m.')){
                     $redirecturl=str_replace('www.','m.',config('app.url')).$matches[0].'/';
-                }elseif (str_contains($request->url(),'mip.')){
-                    $redirecturl=str_replace('www.','mip.',config('app.url')).$matches[0].'/';
                 }
                 return redirect($redirecturl,301);
             }

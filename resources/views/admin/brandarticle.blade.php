@@ -89,13 +89,6 @@
 
 @section('libs')
     <script>
-        $(document).ready(function() {
-            $.ajaxSetup({
-                headers: {
-                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-                }
-            })
-        });
         function startRequest() {
             window.location.reload()
         }
@@ -112,10 +105,9 @@
                 //返回数据的格式
                 datatype: "html",    //"xml", "html", "script", "json", "jsonp", "text".
                 success:function (response, stutas, xhr) {
-                    $(".modal-s-m"+id+" .modal-body").html(response);
+                    $(".modal-s-m"+id+" .modal-body").html(response+'跳转装 请稍后');
                     $("#btn-"+id).attr("disabled","disabled");
-                    setInterval("startRequest()", 10000);
-
+                    setInterval("startRequest()", 60000);
                 }
             });
         }

@@ -27,6 +27,7 @@ class CreatePhonemanagesTable extends Migration
             $table->text('cid')->nullable();
             $table->text('brandname')->nullable();
             $table->index('phoneno');
+            $table->index('host');
             $table->timestamps();
         });
     }

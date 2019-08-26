@@ -19,7 +19,6 @@ class CreateBrandarticlesTable extends Migration
             $table->integer('ismake');
             $table->integer('click');
             $table->string('title');
-            $table->string('shorttitle')->nullable();
             $table->string('flags')->nullable();
             $table->string('tags')->nullable();
             $table->string('country')->nullable();
@@ -58,7 +57,6 @@ class CreateBrandarticlesTable extends Migration
             $table->integer('dailyvolume')->default(0);
             $table->integer('unitprice')->default(0);
             $table->integer('watercoal')->default(0);
-            $table->string('ppjstitle')->nullable();//品牌介绍标题
             $table->string('brandphone')->nullable();//联系电话
             $table->string('brandpsp')->nullable();//品牌特色
             $table->index('brandname');

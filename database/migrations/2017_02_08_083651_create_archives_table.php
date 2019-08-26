@@ -29,9 +29,9 @@ class CreateArchivesTable extends Migration
             $table->string('description')->nullable();
             $table->string('write');
             $table->string('editor')->nullable();
+            $table->smallInteger('editorid')->nullable();
             $table->string('litpic')->nullable();
             $table->smallInteger('dutyadmin');
-            $table->smallInteger('editorid')->nullable();
             $table->mediumText('imagepics')->nullable();//品牌图集
             $table->text('body')->nullable();
             $table->timestamp('published_at')->nullable();//预选发布时间

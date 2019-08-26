@@ -69,13 +69,6 @@
 @stop
 @section('libs')
     <script>
-        $(document).ready(function() {
-            $.ajaxSetup({
-                headers: {
-                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-                }
-            })
-        });
         function updateReceive (id,node) {
             $.ajax({
                 type:"POST",

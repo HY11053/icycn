@@ -20,6 +20,5 @@
             <button type="submit" class="btn btn-primary">提交数据</button>
         </div>
         {!! Form::close() !!}
-
     </div>
 @stop

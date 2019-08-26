@@ -8,15 +8,12 @@
         "php": ">=7.0.0",
         "fideloper/proxy": "~3.3",
         "intervention/image": "^2.5",
-        "jaeger/querylist": "^4.0",
         "jenssegers/agent": "^2.6",
-        "kartik-v/bootstrap-fileinput": "@dev",
         "laravel/framework": "5.5.*",
         "laravel/tinker": "~1.0",
         "laravelcollective/html": "~5.0",
         "mews/captcha": "^2.1",
         "overtrue/laravel-ueditor": "~1.0",
-        "twbs/bootstrap": "3.1.1",
         "zhuzhichao/ip-location-zh": "^2.2"
     },
     "require-dev": {
@@ -68,9 +65,5 @@
         "optimize-autoloader": true
     },
     "repositories": {
-        "packagist": {
-            "type": "composer",
-            "url": "https://packagist.laravel-china.org"
-        }
     }
 }

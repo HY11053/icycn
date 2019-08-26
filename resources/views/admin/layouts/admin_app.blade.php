@@ -59,7 +59,6 @@
             hideAfter: 15000,
         })
     })
-
 </script>
 @yield('libs')
 </body>

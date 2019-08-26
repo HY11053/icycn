@@ -79,13 +79,6 @@
     <script src="/adminlte/plugins/iCheck/icheck.min.js"></script>
     <script src="/adminlte/plugins/select2/select2.full.min.js"></script>
     <script>
-        $(document).ready(function() {
-            $.ajaxSetup({
-                headers: {
-                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-                }
-            })
-        });
         $(function () {
             //Flat red color scheme for iCheck
             $('input[type="checkbox"].flat-red, input[type="radio"].flat-red').iCheck({

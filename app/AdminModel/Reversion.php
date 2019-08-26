@@ -4,7 +4,7 @@ namespace App\AdminModel;
 
 use Illuminate\Database\Eloquent\Model;
 
-class reversion extends Model
+class Reversion extends Model
 {
     //
 }

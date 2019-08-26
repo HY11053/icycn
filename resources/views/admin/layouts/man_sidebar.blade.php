@@ -154,29 +154,19 @@
                     <li @if(Request::getRequestUri()=='/admin/sysinfo')class="active"@endif><a href="/admin/sysinfo"><i class="fa fa-circle-o"></i> 系统运行信息</a></li>
                 </ul>
             </li>
-            <li>
-                <a href="/admin/Atlas">
-                    <i class="fa fa-photo"></i> <span>图集内容管理</span>
-                    <span class="pull-right-container">
-              <small class="label pull-right bg-red">3</small>
-              <small class="label pull-right bg-blue">17</small>
-            </span>
-                </a>
-            </li>
-
             <li class="treeview">
                 <a href="#">
-                    <i class="fa fa-angellist"></i> <span>SEO工具</span>
+                    <i class="fa fa-angellist"></i> <span>抓取日志分析</span>
                     <small class="label pull-right bg-yellow">12</small>
                     <small class="label pull-right bg-green">16</small>
                     <small class="label pull-right bg-red">5</small>
-              <i class="fa fa-angle-left pull-right"></i>
+                    <i class="fa fa-angle-left pull-right"></i>
                 </a>
                 <ul class="treeview-menu">
-                    <li @if(Request::getRequestUri()=='/admin/searchkey')class="active"@endif><a href="/admin/searchkey"><i class="fa fa-circle-o"></i> 相关关键词采集</a></li>
-                    <li @if(Request::getRequestUri()=='/admin/webinfo')class="active"@endif><a href="/admin/webinfo"><i class="fa fa-circle-o"></i> 站点信息查询</a></li>
+                    <li @if(Request::getRequestUri()=='/admin/log/pclog')class="active"@endif><a href="/admin/log/pclog"><i class="fa fa-circle-o"></i>抓取日志汇总</a></li>
                 </ul>
             </li>
+
             <li class="treeview">
                 <a href="#">
                     <i class="fa fa-user-plus"></i> <span>前台会员中心</span>
@@ -189,7 +179,6 @@
                     <li @if(Request::getRequestUri()=='/admin/useradd')class="active"@endif><a href="/admin/useradd"><i class="fa fa-circle-o"></i> 添加前台用户</a></li>
                     <li @if(Request::getRequestUri()=='/admin/user/charge')class="active"@endif><a href="/admin/user/charge"><i class="fa fa-circle-o"></i> 前台会员充值</a></li>
                     <li @if(Request::getRequestUri()=='/admin/user/charge-history')class="active"@endif><a href="/admin/user/charge-history"><i class="fa fa-circle-o"></i> 会员充值记录</a></li>
-
                 </ul>
             </li>
             <li class="treeview">

@@ -4,7 +4,7 @@
     <link href="/adminlte/plugins/iCheck/all.css" rel="stylesheet">
     <link href="/adminlte/plugins/summernote/summernote.css" rel="stylesheet">
     <link href="/adminlte/plugins/iCheck/all.css" rel="stylesheet">
-    <link href="/adminlte/dist/css/fileinput.min.css" rel="stylesheet">
+    <link href="/adminlte/plugins/bootstrap-fileinput/css/fileinput.min.css" rel="stylesheet">
 @stop
 @section('content')
     <div class="row">
@@ -174,9 +174,9 @@
                     </div>
                     <!-- /.tab-pane -->
                     <div class=" tab-pane" id="activity">
-                        @include('admin.layouts.summernote')
-                        <div style="display: none">{{Form::textarea('contents', null, array('id'=>'lawsContent'))}}</div>
-
+                    @include('admin.layouts.ueditor')
+                    <!-- 编辑器容器 -->
+                        <script id="container" name="contents" type="text/plain" > {!! $typeinfos->contents!!}</script>
                     </div>
                     <!-- /.tab-pane -->
                 </div>
@@ -204,50 +204,10 @@
 @stop
 
 @section('libs')
-    <script src="/adminlte/plugins/summernote/summernote.min.js"></script>
-    <script src="/adminlte/plugins/summernote/lang/summernote-zh-CN.js"></script>
     <!-- iCheck -->
     <script src="/adminlte/plugins/iCheck/icheck.min.js"></script>
-    <script src="/js/fileinput.min.js"></script>
-    <script>
-        $(document).ready(function() {
-            $.ajaxSetup({
-                headers: {
-                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-                }
-            });
-            $('#summernote').summernote({
-                height: 500,
-                lang : 'zh-CN',
-                callbacks: {
-                    onImageUpload: function(files) {
-                        //上传图片到服务器，使用了formData对象，至于兼容性...据说对低版本IE不太友好
-                        var formData = new FormData();
-                        formData.append('file',files[0]);
-                        $.ajax({
-                            type: 'POST',
-                            url : '/admin/upload/articleimages',//后台文件上传接口
-                            data : formData,
-                            enctype: 'multipart/form-data',
-                            processData : false,
-                            contentType : false,
-                            success: function(filename) {
-                                var file_path ='/images/thread/'+ filename;
-                                console.log(file_path);
-                                $('#summernote').summernote("insertImage", file_path);
-                            }
-                        });
-                    },
-                    onChange: function(contents, $editable) {
-                        // console.log('onChange:', contents, $editable);
-                        $("#lawsContent").val(contents)
-                        console.log($("#lawsContent").val())
-                    },
-                }
-            });
-        })
-
-    </script>
+    <script src="/adminlte/plugins/bootstrap-fileinput/js/fileinput.min.js"></script>
+    <script src="/adminlte/plugins/bootstrap-fileinput/js/locales/zh.js"></script>
     <script>
         $(function () {
             //iCheck for checkbox and radio inputs
@@ -268,8 +228,6 @@
 
         });
     </script>
-
-    <script src="/js/fileinput.min.js"></script>
     <script>
         $("#input-image-1").fileinput({
             uploadUrl: "/admin/upload/images",

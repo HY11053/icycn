@@ -2,8 +2,7 @@
 @section('title') 网站栏目管理_添加栏目 @stop
     @section('head')
     <link href="/adminlte/plugins/iCheck/all.css" rel="stylesheet">
-    <link href="/adminlte/plugins/summernote/summernote.css" rel="stylesheet">
-    <link href="/adminlte/dist/css/fileinput.min.css" rel="stylesheet">
+    <link href="/adminlte/plugins/fileinput.min.css" rel="stylesheet">
 @stop
 
 @section('content')
@@ -160,7 +159,9 @@
                     </div>
                     <!-- /.tab-pane -->
                     <div class=" tab-pane" id="activity">
-                        @include('admin.layouts.summernote')
+                    @include('admin.layouts.ueditor')
+                    <!-- 编辑器容器 -->
+                        <script id="container" name="contents" type="text/plain" ></script>
                     </div>
                     <!-- /.tab-pane -->
                 </div>
@@ -171,7 +172,6 @@
                 </div>
                 {!! Form::close() !!}
                         <!-- /.tab-content -->
-
             </div>
             <!-- /.nav-tabs-custom -->
             @if(count($errors) > 0)
@@ -188,11 +188,10 @@
     @stop
 
     @section('libs')
-    <script src="/adminlte/plugins/summernote/summernote.min.js"></script>
-    <script src="/adminlte/plugins/summernote/lang/summernote-zh-CN.js"></script>
     <!-- iCheck -->
     <script src="/adminlte/plugins/iCheck/icheck.min.js"></script>
-    <script src="/js/fileinput.min.js"></script>
+    <script src="/adminlte/plugins/bootstrap-fileinput/js/fileinput.min.js"></script>
+    <script src="/adminlte/plugins/bootstrap-fileinput/js/locales/zh.js"></script>
     <script>
         $(function () {
             //iCheck for checkbox and radio inputs

@@ -27,19 +27,6 @@ Route::group(['domain' => 'm.jjedu.com.cn'], function () {
     Route::get('{path}','Mobile\ListNewsController@listNews')->where('path','[a-zA-Z0-9/_]+')->name('newslist');
 });
 
-Route::group(['domain' => 'mip.jjedu.com.cn'], function () {
-    Route::get('/','Mip\IndexController@Index');
-    Route::get('news/{id}.shtml','Mip\ArticleController@NewsArticle')->where('id', '[0-9]+')->name('news');
-    Route::get('xm/{id}.shtml','Mip\ArticleController@BrandArticle')->where('id', '[0-9]+');
-    Route::get('paihangbang/{path?}','Mip\PaihangbangController@Paihangbang')->where('path', '[a-zA-Z_\/0-9]+');
-    Route::post('sprodlist/all/','Mip\SeacrhController@SeacrhBrand');
-    Route::get('sprodlist/all/','Mip\SeacrhController@SeacrhBrand');
-    Route::post('phone/complate/list/','Mip\PhoneController@ComplateBrands');
-    Route::get('{path}_{tid}_{cid}_{zid}','Mip\ListNewsController@projectBrandLists')->where(['path'=>'[a-zA-Z0-9_\/]+','tid'=>'[0-9]+','cid'=>'[0-9]+','zid'=>'[0-9]+'])->name('projectlists');
-    Route::get('{path}_{tid}_{cid}_{zid}/page/{page}','Mip\ListNewsController@projectBrandLists')->where(['path'=>'[a-zA-Z0-9_\/]+','tid'=>'[0-9]+','cid'=>'[0-9]+','zid'=>'[0-9]+','page'=>'[0-9]+'])->name('projectlistspage');
-    Route::get('{path}/page/{page}','Mip\ListNewsController@listNews')->where('path', '[a-zA-Z0-9/_]+')->name('newspagelist');
-    Route::get('{path}','Mip\ListNewsController@listNews')->where('path','[a-zA-Z0-9/_]+')->name('newslist');
-});
 Route::get('/','Frontend\IndexController@Index');
 Route::get('deletenews','Frontend\StatementController@DeleteNews');
 Route::get('news/{id}.shtml','Frontend\ArticleController@NewsArticle')->where('id', '[0-9]+')->name('news');
@@ -53,3 +40,7 @@ Route::get('{path}_{tid}_{cid}_{zid}/page/{page}','Frontend\ListNewsController@p
 Route::get('{path}/page/{page}','Frontend\ListNewsController@listNews')->where('path', '[a-zA-Z0-9/_]+')->name('newspagelist');
 Route::get('{path}','Frontend\ListNewsController@listNews')->where('path','[a-zA-Z0-9/_]+')->name('newslist');
 Route::post('/phonecomplate/','Frontend\PhoneController@phoneComplate');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

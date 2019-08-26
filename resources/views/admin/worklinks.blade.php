@@ -7,7 +7,7 @@
 @section('content')
     <h3>工作链接生成</h3>
     @foreach($links as $link)
-        <li>http://www.jjedu.com.cn/xm/{{$link->id}}.shtml http://m.jjedu.com.cn/xm/{{$link->id}}.shtml</li>
+        <li>{{config('app.url')}}/xm/{{$link->id}}.shtml {{str_replace('www.','m.',config('app.url'))}}/xm/{{$link->id}}.shtml</li>
     @endforeach
 @stop
 

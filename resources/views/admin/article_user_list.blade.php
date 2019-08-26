@@ -114,14 +114,6 @@
     <script src="/adminlte/plugins/datepicker/locales/bootstrap-datepicker.zh-CN.js"></script>
     <script src="/adminlte/plugins/select2/select2.full.min.js"></script>
     <script>
-        $(document).ready(function() {
-            $.ajaxSetup({
-                headers: {
-                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-                }
-            });
-
-        });
         $('.select2').select2();
         $(function () {
             $('#datepicker,#datepicker1').datepicker({

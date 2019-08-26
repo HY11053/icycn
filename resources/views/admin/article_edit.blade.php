@@ -86,13 +86,6 @@
                                 </div>
                             </div>
                             <div class="form-group col-md-12">
-                                {{Form::label('shorttitle', '简略标题', array('class' => 'control-label col-md-2 col-sm-3 col-xs-12'))}}
-                                <div class="col-md-4 col-sm-9 col-xs-12">
-                                    {{Form::text('shorttitle',null, array('class' => 'form-control','id'=>'shorttitle','placeholder'=>'短标题'))}}
-                                </div>
-                            </div>
-
-                            <div class="form-group col-md-12">
                                 {{Form::label('tags', 'tag标签', array('class' => 'control-label col-md-2 col-sm-3 col-xs-12'))}}
                                 <div class="col-md-4 col-sm-9 col-xs-12">
                                     {{Form::text('tags', null, array('class' => 'form-control','id'=>'tags','placeholder'=>'文档tag标签'))}}
@@ -332,7 +325,7 @@
                         <span class="time"><i class="fa fa-clock-o"></i> {{date('H:m:s')}}</span>
                         <h3 class="timeline-header"><a href="#">文档处理</a>文章内容编辑</h3>
                         <div class="timeline-body">
-                        @include('admin.layouts.ueditor')
+                            @include('admin.layouts.ueditor')
                             <!-- 编辑器容器 -->
                             <script id="container" name="body" type="text/plain" > {!! $articleinfos->body!!}</script>
                         </div>

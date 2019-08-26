@@ -79,13 +79,6 @@
 
                             </div>
                             <div class="form-group col-md-12">
-                                {{Form::label('shorttitle', '简略标题', array('class' => 'control-label col-md-2 col-sm-3 col-xs-12'))}}
-                                <div class="col-md-4 col-sm-9 col-xs-12">
-                                    {{Form::text('shorttitle',null, array('class' => 'form-control','id'=>'shorttitle','placeholder'=>'短标题'))}}
-                                </div>
-                            </div>
-
-                            <div class="form-group col-md-12">
                                 {{Form::label('tags', 'tag标签', array('class' => 'control-label col-md-2 col-sm-3 col-xs-12'))}}
                                 <div class="col-md-4 col-sm-9 col-xs-12">
                                     {{Form::text('tags', null, array('class' => 'form-control','id'=>'tags','placeholder'=>'文档tag标签'))}}
@@ -435,7 +428,7 @@
                         </div>
                     </div>
                 </li>
-                @include('admin.layouts.brand_summernote')
+                @include('admin.layouts.brand_ueditor')
                 <li>
                     <i class="fa fa-clock-o bg-gray"></i>
                 </li>
