@@ -22,7 +22,7 @@ body, html { min-height:101%; }
 .common_bt .more a{ display:block; height:31px; color:#999;}
 .common_bt .more a:hover{ color:#D71318;}
 .common_list{ padding:10px 0 0 0;}
-.common_list li{ background:url(../images/dot.gif) no-repeat 0 14px; padding-left:10px; height:30px; line-height:30px;     overflow: hidden;    text-overflow: ellipsis;    white-space: nowrap;vertical-align: bottom;}
+.common_list li{ background:url(../images/dot.gif) no-repeat 0 14px; padding-left:10px; height:30px; line-height:30px;     overflow: hidden;    text-overflow: ellipsis;  white-space: nowrap;vertical-align: bottom;}
 .common_list li .type { float:left; color:#999; text-align:right; margin-right:15px; display:block; width:62px;  font-size:12px; /*text-overflow: ellipsis;*/ white-space: nowrap; }
 .common_list li .type a { color:#999; margin-right:10px; }
 .common_list li .type a:hover { color:#ff6600; }

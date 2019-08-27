@@ -13,7 +13,7 @@
 Auth::routes();
 Route::get('/home', 'HomeController@index');
 //前台界面
-Route::group(['domain' => 'm.jjedu.com.cn'], function () {
+Route::group(['domain' => 'm.icycn.com'], function () {
     Route::get('/','Mobile\IndexController@Index');
     Route::get('news/{id}.shtml','Mobile\ArticleController@NewsArticle')->where('id', '[0-9]+')->name('news');
     Route::get('xm/{id}.shtml','Mobile\ArticleController@BrandArticle')->where('id', '[0-9]+');
