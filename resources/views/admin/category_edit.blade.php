@@ -74,9 +74,15 @@
                                 @if($typeinfos->mid==1)
                                     {{Form::radio('mid', '1', true,array('class'=>"flat-red",'checked'=>'checked'))}} 品牌类型
                                     {{Form::radio('mid', '0',false,array('class'=>"flat-red"))}} 普通文章
-                                @else
+                                    {{Form::radio('mid', '2',false,array('class'=>"flat-red"))}} 封面频道
+                                @elseif($typeinfos->mid==0)
                                     {{Form::radio('mid', '1', true,array('class'=>"flat-red"))}} 品牌类型
                                     {{Form::radio('mid', '0',false,array('class'=>"flat-red",'checked'=>'checked'))}} 普通文章
+                                    {{Form::radio('mid', '2',false,array('class'=>"flat-red"))}} 封面频道
+                                @else
+                                    {{Form::radio('mid', '1', true,array('class'=>"flat-red"))}} 品牌类型
+                                    {{Form::radio('mid', '0',false,array('class'=>"flat-red"))}} 普通文章
+                                    {{Form::radio('mid', '2',false,array('class'=>"flat-red",'checked'=>'checked'))}} 封面频道
                                 @endif
                             </div>
                         </div>

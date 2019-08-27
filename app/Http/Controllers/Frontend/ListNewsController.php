@@ -60,7 +60,7 @@ class ListNewsController extends Controller
             $latestnews=Cache::remember('platestnews'.$thistypeinfo->id, config('app.cachetime')+rand(60,60*24), function() use($thistypeinfo){
                 return Archive::where('typeid','<>',$thistypeinfo->id)->take(7)->latest()->get();
             });
-            return view('frontend.index_lists',compact('thistypeinfo','pagelists','hotnew','cnewtop','cnew','cnewtops','paihangbangs','latestbrands','latestnews','abrandlists'));
+            return view('frontend.list_article',compact('thistypeinfo','pagelists','hotnew','cnewtop','cnew','cnewtops','paihangbangs','latestbrands','latestnews','abrandlists'));
         }elseif ($thistypeinfo->mid==1)
         {
             $cid=preg_replace('/\/page\/[0-9]+/','',$path);
