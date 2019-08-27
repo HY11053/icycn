@@ -810,3 +810,29 @@ a.w260_btn:hover{ background:#B01F24; color:#fff;}
 .bg-ff {
     background-color: #fff;
 }
+/*用户留言*/
+.gbook{ overflow:hidden; zoom:1;}
+.gbook .hd{border-bottom: 2px solid #EDEDED; height: 40px; line-height: 40px; position: relative; }
+.gbook .hd .tit{border-bottom: 2px solid #d71318; display:inline-block; font-size:18px; padding:0 3px 0 0; position:relative; height:42px;}
+.gbook .hd em { color:#d71318; font-weight:normal; font-size:12px; padding:0 0 0 12px; }
+.gbook .hd .tips{float:right; font-size:12px; color:#666666;}
+.gbook .hd .tips i{color:#d71318;}
+
+.gbook .bd{ padding:25px 0 0 0; position:relative;}
+.gbook .bd .txt{width:55px; float:left; text-align:right; padding:5px 10px 0 0;}
+.gbook .bd .txt i{ color:#D71318; vertical-align:middle; padding-right:5px;}
+.gbook .bd li{ overflow:hidden; zoom:1; padding-bottom:15px;}
+.gbook .bd li .input_bk{ width:180px; height:30px; border:1px solid #CCCCCC; float:left; line-height:30px; padding:0 5px;}
+.gbook .bd .sex{float:left; padding:5px 0 0 10px;}
+.gbook .bd .sex .ly_radio{ vertical-align:middle;}
+.gbook .bd .sex em{ padding-right:15px;}
+.gbook .bd li .textarea_bk{border:1px solid #CCCCCC; padding:5px; width:336px; height:100px; }
+.gbook .bd .btn{ width:192px; height:36px; background:#D71318; border:none; cursor:pointer; line-height:36px; color:#fff; border-radius:3px; padding:0;}
+.gbook .bd .btn:hover{background:#B01F24;}
+
+.gbook .check_msg{ width:260px; position:absolute; top:166px; left:412px;}
+.gbook .check_msg .check_msg_tit{ background:#D71318; padding-left:5px; height:30px; line-height:30px; color:#fff;}
+.gbook .check_msg .check_msg_bd{ border:1px solid #CCC; border-top:none; padding:5px 0;}
+.gbook .check_msg .check_msg_bd li{ padding:0; height:26px; line-height:26px;}
+.gbook .check_msg .check_msg_bd li a{ display:block; padding-left:5px;}
+.gbook .check_msg .check_msg_bd li a:hover{ background:#E5E5E5;}

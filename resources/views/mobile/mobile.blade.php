@@ -14,12 +14,13 @@
     <meta name="description" content="@yield('description')"/>
     <link rel="canonical" href="{{config('app.url')}}{{Request::getrequesturi()}}" >
     <link href="/mobile/css/style.css" rel="stylesheet" type="text/css"/>
+    <link rel="stylesheet" type="text/css" href="/mobile/css/iconfont.css" />
     @yield('headlibs')
 </head>
 <body>
 <header class="header pl110">
     <span class="right" id="mulu"><i class="iconfont icon-xiangmu"></i></span>
-    <a href="javascript:void(0);" class="logo"><img src="mobile/images/m_200_72.png" /></a>
+    <a href="javascript:void(0);" class="logo"><img src="/mobile/images/m_200_72.png" /></a>
     <div class="ptb9">
         <a href="/search/?type=1" class="serch-link"><i class="iconfont icon-sousuo"></i> <span>搜索加盟项目、菜谱、食材</span></a>
     </div>
@@ -36,6 +37,18 @@
 </ul>
 @yield('main_content')
 
+<footer class="footer footer-b mt10">
+    <div class="footer-con">
+        <a href="/" class="logo"><img src="/mobile/images/m_200_72.png" /></a>
+        <ul class="foot-ul mt20">
+            <li><a href="/">首页</a></li>
+            <li><a href="/jm/">加盟项目</a></li>
+            <li><a href="/jmzs/">加盟知识</a></li>
+            <li><a href="/zt/">加盟专题</a></li>
+        </ul>
+        <p class="mt15 f12 s-ccc"><a target="_blank" class="s-ccc" href="http://www.miitbeian.gov.cn">蜀ICP备19006048号</a> Copyright&copy; 2005-2019</p>
+    </div>
+</footer>
 
 @yield('footlibs')
 

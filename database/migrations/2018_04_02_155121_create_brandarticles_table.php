@@ -48,16 +48,6 @@ class CreateBrandarticlesTable extends Migration
             $table->string('genre')->nullable();//公司性质
             $table->string('licenseno')->nullable();//特许加盟许可证号
             $table->string('registeredcapital')->nullable();//注册资金
-            $table->integer('decorationpay')->default(0);//装修费用
-            $table->integer('quartersrent')->default(0);//前两季度房租
-            $table->integer('equipmentcost')->default(0);//铺货设备费用
-            $table->integer('workingcapital')->default(0);
-            $table->integer('laborquarter')->default(0);
-            $table->integer('miscellaneous')->default(0);
-            $table->integer('dailyvolume')->default(0);
-            $table->integer('unitprice')->default(0);
-            $table->integer('watercoal')->default(0);
-            $table->string('brandphone')->nullable();//联系电话
             $table->string('brandpsp')->nullable();//品牌特色
             $table->index('brandname');
             $table->index('brandnum');
