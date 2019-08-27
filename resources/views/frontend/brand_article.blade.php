@@ -20,43 +20,41 @@
 @section('main_content')
     <div class="main">
         <div class="bn1190"><img src="http://www.58lingshi.com/receptions/images/temp/bn9.jpg" alt=""></div>
-        <div class="path">当前位置：<a href="/">首页</a> &gt; <a href="/lingshidianpp/">零食店品牌</a></div>
+        <div class="path">当前位置：<a href="/">首页</a> &gt; <a href="/{{$thisbrandtypeinfo->real_path}}/">{{$thisbrandtypeinfo->typename}}</a></div>
         <div class="main clearfix">
             <div class="layout2">
                 <div class="brand_slide">
                     <ul class="bigImg" style="position: relative; width: 296px; height: 295px;">
-                        <li style="position: absolute; width: 296px; left: 0px; top: 0px; display: none;"><img src="/images/thread/2017/04/14/88c046aca6ee1fd046f2a0ac9a36d2d9.jpg" alt="【良品铺子】"></li>
-                        <li style="position: absolute; width: 296px; left: 0px; top: 0px; display: list-item;"><img src="/images/thread/2017/04/14/f33a4e08764e3d0d38422d50eb737917.jpg" alt="【良品铺子】"></li>
-                        <li style="position: absolute; width: 296px; left: 0px; top: 0px; display: none;"><img src="/images/thread/2017/04/14/36b40eb8dbc403b116aaa5af608378fe.jpg" alt="【良品铺子】"></li>
+                        @foreach(explode(',',$thisarticleinfos->imagepics) as $pic)
+                            <li style="position: absolute; width: 296px; left: 0px; top: 0px; display: none;"><img src="{{$pic}}" alt="【{{$thisarticleinfos->brandname}}】"></li>
+                        @endforeach
                     </ul>
                     <div class="smallScroll"><a class="sPrev prevStop" href="javascript:void(0)"></a>
                         <div class="smallImg">
                             <ul>
-                                <li class=""><img src="/images/thread/2017/04/14/88c046aca6ee1fd046f2a0ac9a36d2d9.jpg" alt="【良品铺子】"></li>
-                                <li class="on"><img src="/images/thread/2017/04/14/f33a4e08764e3d0d38422d50eb737917.jpg" alt="【良品铺子】"></li>
-                                <li class=""><img src="/images/thread/2017/04/14/36b40eb8dbc403b116aaa5af608378fe.jpg" alt="【良品铺子】"></li>
-
-
+                                @foreach(explode(',',$thisarticleinfos->imagepics) as $pic)
+                                <li class=""><img src="{{$pic}}" alt="【{{$thisarticleinfos->brandname}}】"></li>
+                                @endforeach
                             </ul>
                         </div>
                         <a class="sNext nextStop" href="javascript:void(0)"></a> </div>
                 </div>
 
                 <div class="info">
-                    <h1 class="tit">【良品铺子】</h1>
+                    <h1 class="tit">【{{$thisarticleinfos->brandname}}】</h1>
                     <div class="detail">
                         <ul>
-                            <li>投资金额：<span class="price">30~60万</span></li>
-                            <li>所属行业：<span class="crumbs">零食</span></li>
+                            <li>投资金额：<span class="price">{{$thisarticleinfos->brandpay}}</span></li>
+                            <li>所属行业：<span class="crumbs">{{$thisbrandtypeinfo->typename}}</span></li>
                         </ul>
                     </div>
                     <div class="tit_pice">
                         <ul>
-                            <li>成立时间：<span class="price">2006</span></li>
-                            <li>门店总数：<span class="price">1200</span></li>
-                            <li>加盟区域：<span class="price">湖南、湖北、江西等</span></li>
-                            <li>适合人群：<span class="price">白领、二次创业、自由职业者等</span></li>
-                            <li>经营范围：<span class="price">零食、坚果、饮料</span></li>
+                            <li>成立时间：<span class="price">{{$thisarticleinfos->brandtime}}</span></li>
+                            <li>门店总数：<span class="price">{{$thisarticleinfos->brandnum}}</span></li>
+                            <li>加盟区域：<span class="price">{{$thisarticleinfos->brandarea}}</span></li>
+                            <li>适合人群：<span class="price">{{$thisarticleinfos->brandperson}}</span></li>
+                            <li>经营范围：<span class="price">{{$thisarticleinfos->brandmap}}</span></li>
                             <li>店铺面积：<span class="price">60㎡</span></li>
                         </ul>
                     </div>
@@ -73,9 +71,9 @@
                 <div class="layout2_right fl">
                     <div class="comp_box">
                         <div class="comp_info"> <b>公司信息</b>
-                            <div class="comp_logo"> <img src="/images/thread/2017/04/14/0bd504b4a3542dfd6af6417b00962879.png" alt="良品铺子"></div>
+                            <div class="comp_logo"> <img src="{{$thisarticleinfos->litpic}}" alt="良品铺子"></div>
                             <div class="comp_info_con">
-                                <h3 title="湖北良品铺子食品有限公司">湖北良品铺子食品有限公司</h3>
+                                <h3 title="{{$thisarticleinfos->brandgroup}}">{{$thisarticleinfos->brandgroup}}</h3>
                                 <ul>
                                     <li><span>企业性质</span><em>国有企业</em></li>
                                     <li><span>注册资金</span><em>100 万元</em></li>
