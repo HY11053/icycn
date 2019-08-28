@@ -6,7 +6,7 @@
     <meta http-equiv="Cache-Control" content="no-transform" />
     <meta http-equiv="Cache-Control" content="no-siteapp" />
     <meta name="applicable-device" content="pc" />
-    <meta name="csrf-token" content=" KESR5bff18w9GW9v6YS0PZIFbyTgQqyHnyC8gOvQ">
+    <meta name="csrf-token" content="{{csrf_token()}}">
     <title>@yield('title')</title>
     <meta name="keywords" content="@yield('keywords')"/>
     <meta name="description" content="@yield('description')"/>
@@ -36,7 +36,7 @@
 
         <div class="header_box_wrap">
             <div class="header_box">
-                <div class="logo"><a href="/" target="_blank"><img src="/receptions/images/logo.jpg" alt="零食加盟网"/></a></div>
+                <div class="logo"><a href="/" target="_blank"><img src="/receptions/images/logo.jpg" alt="世纪母婴网"/></a></div>
                 <div class="search">
                     <div class="search_tab">
                         <ul>
@@ -60,14 +60,14 @@
                             <a href="/paihangbang/"><i class="icon1"></i><span class="tit">排行榜</span></a>
                         </li>
                         <li>
-                            <a href="" rel="nofollow"><i class="icon2"></i><span class="tit">项目搜索</span></a>
+                            <a href="/search/" rel="nofollow"><i class="icon2"></i><span class="tit">项目搜索</span></a>
                         </li>
 
                         <li>
-                            <a href="/pinpai/"><i class="icon3"></i><span class="tit">品牌大全</span></a>
+                            <a href="#"><i class="icon3"></i><span class="tit">投资开店</span></a>
                         </li>
                         <li>
-                            <a href="/ask/"><i class="icon4"></i><span class="tit">加盟问答</span></a>
+                            <a href="/storage/sitemap.xml"><i class="icon4"></i><span class="tit">网站地图</span></a>
                         </li>
                     </ul>
                 </div>
@@ -79,15 +79,16 @@
                 <div class="inner">
                     <ul class="nav_list">
                         <li class="cur"><a href="/" >首页</a></li>
-                        <li><a href="/lingshidianpp/" >零食店品牌</a></li>
-                        <li><a href="/chaohuodian/" >炒货店品牌</a></li>
-                        <li><a href="/ganguodian/" >干果店品牌</a></li>
-                        <li><a href="/jinkoulingshi/" >进口零食品牌</a></li>
-                        <li><a href="/shushidian/" >熟食店品牌</a></li>
-                        <li><a href="/paihangbang/" >零食品牌排行榜</a></li>
-                        <li><a href="/lingshizx/" >创业指导</a></li>
-                        <li><a href="/ask/" >问答</a></li>
-                        <li><a href="/pinpai/" >零食品牌大全</a></li>
+                        <li><a href="/muying/" >母婴店加盟</a></li>
+                        <li><a href="/muyingshg/" >母婴生活馆</a></li>
+                        <li><a href="/muyingp/" >母婴用品</a></li>
+                        <li><a href="/yuezihuisuo/" >月子会所</a></li>
+                        <li><a href="/youyonguan/" >婴儿游泳馆</a></li>
+                        <li><a href="/chanhouxiufu/" >产后修复</a></li>
+                        <li><a href="/news/" >品牌新闻</a></li>
+                        <li><a href="/feiyong/" >加盟费用</a></li>
+                        <li><a href="/paihangbang/" >母婴品牌排行榜</a></li>
+                        <li><a href="/touzi/" >投资分析</a></li>
                     </ul>
                 </div>
             </div>
@@ -103,9 +104,9 @@
         <div class="footer_nav"><a href="/about/" rel="nofollow">关于我们</a>　|　企业服务　|　人才招聘　|　<a href="/contact/" rel="nofollow">联系我们</a>　|　合作客户　|　<a href="/law/" rel="nofollow">法律声明</a>　|　友情链接　|　服务导航　|　<a href="/sitemap.xml" rel="nofollow">网站地图</a>　　|　加盟导航 sitemap</div>
 
         <div class="copyright">
-            <p>58零食网友情提示：多打电话、多咨询、实地考察，可降低投资风险！</p>
-            <p>Copyright © 2017 www.58lingshi.com Corporation, All Rights Reserved 上海莫卡网络科技有限公司 版权所有</p>
-            <p><a href="http://www.beian.miit.gov.cn" rel="nofollow"> 沪ICP备16055116号-11</a></p>
+            <p>世纪母婴网友情提示：多打电话、多咨询、实地考察，可降低投资风险！</p>
+            <p>Copyright © 2017 www.58lingshi.com Corporation, All Rights Reserved 上海莫卡网络科技有限公司  版权所有</p>
+            <p><a href="http://beian.miit.gov.cn/" rel="nofollow"> 沪ICP备16055116号-22</a></p>
         </div>
         <div class="footernew footheight" style="width:1000px;" bosszone="footer">
             <div style="width:960px;">
@@ -121,7 +122,7 @@
                 </p>
 
                 <p>
-                    <span class="fl"><a href="http://www.miitbeian.gov.cn" target="_blank" rel="nofollow"><img width="35" height="43" border="0" alt="经营性网站备案信息" src="/receptions/images/temp/ind36.gif"></a></span>
+                    <span class="fl"><a href="http://beian.miit.gov.cn/" target="_blank" rel="nofollow"><img width="35" height="43" border="0" alt="经营性网站备案信息" src="/receptions/images/temp/ind36.gif"></a></span>
                     <span class="fr"><a target="_blank" class="lcblack" href="http://www.miitbeian.gov.cn" rel="nofollow">经营性网站<br>
 		备案信息</a></span>
                 </p>
@@ -146,16 +147,12 @@
         <div class="wx"><img src="/receptions/images/logo_wx.jpg" alt="微信"/></div>
     </div>
     <script type="text/javascript" src="/receptions/js/jquery.min.js"></script>
-    <script type="text/javascript" src="/receptions/js/jquery.SuperSlide.2.1.1.js"></script>
     <script type="text/javascript" src="/receptions/js/index.js"></script>
     <script type="text/javascript" src="/receptions/js/search_ajax.js"></script>
-    @yield('footerlibs')
-    <script src="/receptions/js/comment.js"></script>
     <script type="text/javascript" src="/receptions/js/side_fixed.js"></script>
     <script src="/receptions/js/GlobalProvinces.js" type="text/javascript"></script>
-    <div style="width:300px;margin:0 auto; padding:20px 0;">
-        <a target="_blank" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=31011302003924" style="display:inline-block;text-decoration:none;height:20px;line-height:20px;"><img src="http://www.beian.gov.cn/img/ghs.png" style="float:left;"/><p style="float:left;height:20px;line-height:20px;margin: 0px 0px 0px 5px; color:#939393;">沪公网安备 31011302003924号</p></a>
-    </div>
+    @yield('footerlibs')
+
 </footer>
 </body>
 </html>

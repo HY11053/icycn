@@ -19,119 +19,36 @@ class IndexController extends Controller
     function Index()
     {
         //幻灯底部推荐
-        $cbrands=Cache::remember('index_cbrands', 60*24*365, function(){
-            return Brandarticle::whereIn('id',[112,124,44,5])->orderBy('click','desc')->get(['id','brandname','brandpsp','indexpic']);
+        $muyingnavlists=Cache::remember('index_muyingnavlists', config('app.cachetime')+rand(60,60*24), function(){
+            return Brandarticle::where('typeid',1)->orderBy('id','asc')->take(10)->get(['id','brandname']);
         });
-        //项目抢先看
-        $hotbrandsearch=Cache::remember('index_hotbrandsearch', 10, function(){
-            return Brandarticle::where('mid','1')->latest()->take(5)->orderBy('click','desc')->get(['id','brandname','description','brandpay','litpic']);
+        //母婴生活馆
+        $muyingshgnavlists=Cache::remember('index_muyingshgnavlists', config('app.cachetime')+rand(60,60*24), function(){
+            return Brandarticle::where('typeid',2)->orderBy('id','asc')->take(10)->get(['id','brandname']);
         });
-        $ctbrand=Cache::remember('index_ctbrand', 60*24*365, function(){
-            return Brandarticle::where('id',113)->first(['id','brandname','indexpic']);
-        });
-        //精品推荐左侧
-        $otbrands=Cache::remember('index_otbrands', 60*24*365, function(){
-            return  Brandarticle::where('mid','1')->where('flags','like','%h%')->take(6)->orderBy('id','desc')->get(['id','brandname','litpic']);
-        });
-        //精品推荐右侧
-        $cbrandrs=Cache::remember('index_cbrandrs', 60*24*365, function(){
-            return Brandarticle::where('mid','1')->whereIn('id',[131,204,105,467,315,261,263,466,214,210])->orderBy('click','desc')->get(['id','brandname','brandpay','indexpic']);
-        });
-        //新品上线
-        $lbrand=Cache::remember('index_lbrand', 60*24*365, function(){
-            return Brandarticle::where('id',263)->first(['id','brandname','litpic']);
-        });
-        $latestbrandrs=Cache::remember('index_latestbrandrs', 10, function(){
-            return Brandarticle::where('mid','1')->skip(5)->take(6)->orderBy('id','desc')->get(['id','brandname','litpic','indexpic']);
+        //母婴用品
+        $muyingypnavlists=Cache::remember('index_muyingypnavlists', config('app.cachetime')+rand(60,60*24), function(){
+            return Brandarticle::where('typeid',3)->orderBy('id','asc')->take(10)->get(['id','brandname']);
         });
 
-        $latestbrands=Cache::remember('index_latestbrands', 10, function(){
-            return Brandarticle::where('mid','1')->skip(11)->take(10)->orderBy('id','desc')->get(['id','brandname','litpic','brandpay']);
+        $latestbrands=Cache::remember('index_latestbrands', config('app.cachetime')+rand(60,60*24), function(){
+            return Brandarticle::where('mid',1)->take(5)->latest()->get(['id','brandname','litpic','brandpay','description']);
         });
-        //项目大全
-        $czaojiaobrands=Cache::remember('index_czaojiaobrands', 60*24*365, function(){
-            return Brandarticle::where('typeid',3)->where('flags','like','%'.'s'.'%')->take(3)->latest()->get(['id','brandname']);
+        $cbrands=Cache::remember('index_cbrands', config('app.cachetime')+rand(60,60*24), function(){
+            return Brandarticle::whereIn('id',[23,13,40,24])->latest()->get(['id','brandname','litpic','brandpsp','description']);
         });
-
-        $fzaojiaobrands=Cache::remember('index_fzaojiaobrands', 60*24*365, function(){
-            return Brandarticle::where('typeid',3)->where('flags','like','%'.'f'.'%')->take(3)->latest()->get(['id','brandname','litpic']);
+        $hotbrands=Cache::remember('index_hotbrands', config('app.cachetime')+rand(60,60*24), function(){
+            return Brandarticle::where('mid',1)->where('typeid',2)->skip(10)->take(5)->orderBy('id','asc')->get(['id','brandname']);
         });
-
-        $azaojiaobrands=Cache::remember('index_azaojiaobrands', 10, function(){
-            return Brandarticle::where('typeid',3)->take(6)->latest()->get(['id','brandname']);
+        $lefthotbrands=Cache::remember('index_lefthotbrands', config('app.cachetime')+rand(60,60*24), function(){
+            return Brandarticle::where('mid',1)->where('typeid',1)->skip(10)->take(7)->orderBy('id','asc')->get(['id','litpic','brandname']);
         });
-
-        $youerbrands=Cache::remember('index_youerbrands', 60*24*365, function(){
-            return Brandarticle::where('typeid',5)->where('flags','like','%'.'s'.'%')->take(3)->latest()->get(['id','brandname']);
-        });
-
-        $fyouerbrands=Cache::remember('index_fyouerbrands',60*24*365, function(){
-            return Brandarticle::where('typeid',5)->where('flags','like','%'.'f'.'%')->take(3)->latest()->get(['id','brandname','litpic']);
-        });
-
-        $ayouerbrands=Cache::remember('index_ayouerbrands', 10, function(){
-            return Brandarticle::where('typeid',5)->take(6)->latest()->get(['id','brandname']);
-        });
-
-        $cshaoerbrands=Cache::remember('index_cshaoerbrands', 60*24*365, function(){
-            return Brandarticle::where('typeid',4)->where('flags','like','%'.'s'.'%')->take(3)->latest()->get(['id','brandname']);
-        });
-
-        $fshaoerbrands=Cache::remember('index_fshaoerbrands', 60*24*365, function(){
-            return Brandarticle::where('typeid',4)->where('flags','like','%'.'f'.'%')->take(3)->latest()->get(['id','brandname','litpic']);
-        });
-
-        $ashaoerbrands=Cache::remember('index_ashaoerbrands', 10, function(){
-            return Brandarticle::where('typeid',4)->take(6)->latest()->get(['id','brandname']);
-        });
-
-        $cwudaobrands=Cache::remember('index_cwudaobrands', 60*24*365, function(){
-            return Brandarticle::where('typeid',10)->where('flags','like','%'.'s'.'%')->take(3)->latest()->get(['id','brandname']);
-        });
-
-        $fwudaobrands=Cache::remember('index_fwudaobrands',  60*24*365, function(){
-            return  Brandarticle::where('typeid',10)->where('flags','like','%'.'f'.'%')->take(3)->latest()->get(['id','brandname','litpic']);
-        });
-
-        $awudaobrands=Cache::remember('index_awudaobrands', 10, function(){
-            return  Brandarticle::where('typeid',10)->take(6)->latest()->get(['id','brandname']);
-        });
-
-        //项目排行榜
-        $paihangbangs=Cache::remember('index_paihangbangs', 60*24*365, function(){
-            return  Arctype::where('mid','1')->where('topid','<>',0)->take(12)->orderBy('id','asc')->get(['typename','real_path','litpic']);
-        });
-        //品牌新闻推荐
-        $cnews=Cache::remember('index_cnews', 10, function(){
-            return  Archive::latest()->where('typeid',2)->take(5)->orderBy('id','desc')->get(['id','litpic','title','description']);
-        });
-        $fnew=Cache::remember('index_fnew', 60*24*365, function(){
-            return  Archive::where('flags','like','%a%')->first(['id','litpic','title']);
-        });
-
-        $zhinannews=Cache::remember('index_zhinannews', 10, function(){
-            return  Archive::latest()->where('typeid',25)->take(5)->orderBy('id','desc')->get(['id','litpic','title','description','created_at']);
-        });
-
-        $jingyingnews=Cache::remember('index_jingyingnews', 10, function(){
-            return  Archive::latest()->where('typeid',27)->take(5)->orderBy('id','desc')->get(['id','litpic','title','description','created_at']);
-        });
-
         //友情链接
         $flinks=Cache::remember('index_flinks', 60, function(){
             return   flink::latest()->orderBy('created_at','desc')->take(30)->get();
         });
 
-        $topnavs=Cache::remember('index_topnavs', 60*24*30, function(){
-            return   Arctype::where('mid',1)->where('reid','<>',0)->take(6)->orderBy('sortrank','desc')->get(['real_path','typename']);
-        });
-        $topnav2s=Cache::remember('index_topnav2s', 60*24*30, function(){
-            return   Arctype::where('mid',1)->where('reid','<>',0)->skip(6)->take(6)->orderBy('sortrank','desc')->get(['real_path','typename']);
-        });
-        return view('frontend.index',compact('cbrands','hotbrandsearch','ctbrand','otbrands','cbrandrs','lbrand','latestbrandrs','latestbrands',
-            'czaojiaobrands','fzaojiaobrands','azaojiaobrands','youerbrands','fyouerbrands','ayouerbrands','cshaoerbrands','fshaoerbrands','ashaoerbrands','cwudaobrands',
-            'fwudaobrands','awudaobrands','paihangbangs','cnews','zhinannews','jingyingnews','fnew','flinks','topnavs','topnav2s'
-            ));
+        return view('frontend.index',compact('muyingnavlists','muyingshgnavlists','muyingypnavlists','latestbrands','cbrands','hotbrands','lefthotbrands'));
     }
 
 }

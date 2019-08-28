@@ -5,13 +5,19 @@ $("#js_phone_app,#js_add_wx").hover(function(){
 	},function(){
 	$(this).removeClass("hover");
 });
-	
-//头部幻灯片
-jQuery(".slideBox").slide({mainCell:".bd ul",effect:"left",autoPlay:true,delayTime:1000});
-//jQuery("#js_brand_show").slide({ mainCell:".bd ul",effect:"left",autoPlay:true });
-//jQuery(".news_slide .smallScroll").slide({ mainCell:"ul",delayTime:100,vis:4,effect:"left",autoPage:true,prevCell:".prev",nextCell:".next" });
 
-jQuery(".brand_slide").slide({ titCell:".smallImg li", mainCell:".bigImg", effect:"fold", autoPlay:true,delayTime:200,startFun:function(i,p){if(i==0){ jQuery(".brand_slide .sPrev").click() } else if( i%4==0 ){ jQuery(".brand_slide .sNext").click()}}});jQuery(".brand_slide .smallScroll").slide({ mainCell:"ul",delayTime:100,vis:4,scroll:4,effect:"left",autoPage:true,prevCell:".sPrev",nextCell:".sNext",pnLoop:false });
+var mySwiper = new Swiper ('.swiper-container', {
+	direction: 'horizontal',
+	loop: true,
+	autoplay: {
+		delay: 5000,
+		stopOnLastSlide: false,
+		disableOnInteraction: true,
+	},
+	pagination: {
+		el: '.swiper-pagination',
+	},
+});
 
 ////////////计算器 开始////////////
 function total_num(){
@@ -195,44 +201,6 @@ $("#calculator_popup_close").click(function(){
 	$(".calculator_popup_mask,.calculator_popup").hide();
 	clickFlag=true;
 });
-
-//底部计算器
-$(window).scroll(function(){
-var now_scr = $(this).scrollTop();
-if(now_scr>500&&slideFlag&&clickFlag){
-		$("#bottom_calculator").css({"bottom":"0px"});
-		$(".bottom_slide_down").removeClass("bottom_slide_up");
-		slideFlag=false;
-		return; 
-	}else if(now_scr<500&&!slideFlag&&clickFlag){
-		$("#bottom_calculator").css({"bottom":"-420px"});
-		$(".bottom_slide_down").addClass("bottom_slide_up");
-		slideFlag=true;
-		shake();
-		return; 
-}
-		
-});
-
-$(".bottom_slide_click").click(function(){
-		slide_bottom();
-		clickFlag=false;
-});	
-
-function slide_bottom(){
-	if(slideFlag){
-			$("#bottom_calculator").css({"bottom":"0px"});
-			$(".bottom_slide_down").removeClass("bottom_slide_up");
-			slideFlag=false;
-			
-	}else{
-			$("#bottom_calculator").css({"bottom":"-420px"});
-			$(".bottom_slide_down").addClass("bottom_slide_up");
-			slideFlag=true;
-			shake();
-		}
-	
-	}
 
 //不断上下滑动        
 function shake(){

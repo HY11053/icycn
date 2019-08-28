@@ -2,7 +2,7 @@
 @section('title'){{config('app.webname')}}@stop
 @section('keywords'){{config('app.keywords')}}@stop
 @section('description'){{config('app.description')}}@stop
-@section('headlibs')
+@section('header_libs')
     <meta name="Copyright" content="{{config('app.indexname')}}-{{config('app.url')}}"/>
     <meta name="author" content="{{config('app.indexname')}}" />
     <meta http-equiv="mobile-agent" content="format=wml; url={{str_replace('http://www.','http://m.',config('app.url'))}}" />
@@ -11,50 +11,28 @@
     <link rel="alternate" media="only screen and(max-width: 640px)" href="{{str_replace('http://www.','http://m.',config('app.url'))}}" >
     <link rel="canonical" href="{{config('app.url')}}{{str_replace('','',Request::getrequesturi())}}"/>
     <meta property="og:image" content="{{config('app.url')}}/receptions/images/logo.jpg"/>
-    @section('header_libs')
-        <link href="/receptions/css/jquery.selectlist.css" rel="stylesheet" type="text/css" />
-    @stop
+    <link href="/receptions/css/jquery.selectlist.css" rel="stylesheet" type="text/css" />
+    <link href="/receptions/css/swiper.min.css" rel="stylesheet" type="text/css" />
 @stop
 @section('sub_nav')
     <div class="sub_nav">
         <dl>
-            <dt class="icon1"><a href="/lingshidianpp/" target="_blank">零食加盟品牌大全</a></dt>
-            <dd><a href="/lingshidianpp/5.shtml" target="_blank" title="三只松鼠">三只松鼠</a></dd>
-            <dd><a href="/lingshidianpp/38.shtml" target="_blank" title="良品铺子">良品铺子</a></dd>
-            <dd><a href="/chaohuodian/51.shtml" target="_blank" title="百味林">百味林</a></dd>
-            <dd><a href="/lingshidianpp/53.shtml" target="_blank" title="老婆大人">老婆大人</a></dd>
-            <dd><a href="/lingshidianpp/72.shtml" target="_blank" title="盼盼零零嘴 ">盼盼零零嘴 </a></dd>
-            <dd><a href="/lingshidianpp/80.shtml" target="_blank" title="零食多加盟">零食多加盟</a></dd>
-            <dd><a href="/lingshidianpp/85.shtml" target="_blank" title="贪吃小站">贪吃小站</a></dd>
-            <dd><a href="/lingshidianpp/91.shtml" target="_blank" title="一扫光">一扫光</a></dd>
-            <dd><a href="/lingshidianpp/115.shtml" target="_blank" title="零食工坊">零食工坊</a></dd>
+            <dt class="icon1"><a href="/muying/" target="_blank">母婴店加盟</a></dt>
+            @foreach($muyingnavlists as $muyingnavlist)
+            <dd><a href="/xm/{{$muyingnavlist->id}}.shtml" target="_blank" title="{{$muyingnavlist->brandname}}">{{$muyingnavlist->brandname}}</a></dd>
+            @endforeach
         </dl>
         <dl class="dl_wid1">
-            <dt class="icon2"><a href="/chaohuodian/" target="_blank" >炒货店加盟品牌</a></dt>
-            <dd><a href="/chaohuodian/8.shtml" target="_blank" title="盐津铺子">盐津铺子</a></dd>
-            <dd><a href="/chaohuodian/9.shtml" target="_blank" title="戴永红炒货">戴永红炒货</a></dd>
-            <dd><a href="/chaohuodian/17.shtml" target="_blank" title="飘零大叔">飘零大叔</a></dd>
-            <dd><a href="/chaohuodian/18.shtml" target="_blank" title="戴永红炒货">戴永红炒货</a></dd>
-            <dd><a href="/chaohuodian/28.shtml" target="_blank" title="薛记炒货">薛记炒货</a></dd>
-            <dd><a href="/chaohuodian/29.shtml" target="_blank" title="丁老头">丁老头</a></dd>
-            <dd><a href="/chaohuodian/34.shtml" target="_blank" title="傻子瓜子">傻子瓜子</a></dd>
-            <dd><a href="/chaohuodian/49.shtml" target="_blank" title="圣客炒货">圣客炒货</a></dd>
-            <dd><a href="/chaohuodian/55.shtml" target="_blank" title="口水娃">口水娃</a></dd>
-            <dd><a href="/chaohuodian/126.shtml" target="_blank" title="七里香炒货">七里香炒货</a></dd>
-
+            <dt class="icon2"><a href="/muyingshg/" target="_blank" >母婴生活馆加盟</a></dt>
+            @foreach($muyingshgnavlists as $muyingshgnavlist)
+                <dd><a href="/xm/{{$muyingshgnavlist->id}}.shtml" target="_blank" title="{{$muyingshgnavlist->brandname}}">{{$muyingshgnavlist->brandname}}</a></dd>
+            @endforeach
         </dl>
         <dl class="dl_wid1">
-            <dt class="icon3"><a href="/jinkoulingshi/" target="_blank">进口零食品牌加盟</a></dt>
-            <dd><a href="/jinkoulingshi/212.shtml" target="_blank" title="常青藤">常青藤</a></dd>
-            <dd><a href="/jinkoulingshi/185.shtml" target="_blank" title="舌间味">舌间味</a></dd>
-            <dd><a href="/jinkoulingshi/183.shtml" target="_blank" title="妮当家">妮当家</a></dd>
-            <dd><a href="/jinkoulingshi/178.shtml" target="_blank" title="茗品汇">茗品汇</a></dd>
-            <dd><a href="/jinkoulingshi/145.shtml" target="_blank" title="佳必得">佳必得</a></dd>
-            <dd><a href="/jinkoulingshi/99.shtml" target="_blank" title="万国码头">万国码头</a></dd>
-            <dd><a href="/jinkoulingshi/98.shtml" target="_blank" title="好一点">好一点</a></dd>
-            <dd><a href="/jinkoulingshi/82.shtml" target="_blank" title="非尝味道">非尝味道</a></dd>
-            <dd><a href="/jinkoulingshi/65.shtml" target="_blank" title="不二家">不二家</a></dd>
-            <dd><a href="/jinkoulingshi/44.shtml" target="_blank" title="八佰佳">八佰佳</a></dd>
+            <dt class="icon3"><a href="/muyingp/" target="_blank">母婴用品加盟</a></dt>
+            @foreach($muyingypnavlists as $muyingypnavlist)
+                <dd><a href="/xm/{{$muyingypnavlist->id}}.shtml" target="_blank" title="{{$muyingypnavlist->brandname}}">{{$muyingypnavlist->brandname}}</a></dd>
+            @endforeach
         </dl>
     </div>
 @stop
@@ -148,111 +126,39 @@
                                 <div class="swiper-pagination"></div>
                             </div>
                         </div>
-                        <dl class="fl char-type char-type-h172 mt20">
-                            <dd class="magnify  mr20 ">
-                                <a target="_blank" href="/xm/5.shtml" class="img-block magnify"><img src="http://www.jjedu.com.cn/storage/uploads/2018/11/21/73e6597ec838abe83ad0ae727da11785.png" alt="" style="width:170px;height:170px">
+                        @foreach($cbrands as $cbrand)
+                        <dl class="fl char-type char-type-h172  mt20">
+                             <dd class="magnify  @if(!$loop->last) mr20  @endif ">
+                                <a target="_blank" href="/xm/{{$cbrand->id}}.shtml" class="img-block magnify"><img src="{{$cbrand->litpic}}" alt="" style="width:170px;height:170px">
                                     <div class="txt">
-                                        <p class="f18">昂立国际教育</p>
-                                        <p class="f14">专业正规的教具和设备，...</p>
-                                    </div>
-                                </a>
-                            </dd>
-                            <dd class="magnify  mr20 ">
-                                <a target="_blank" href="/xm/124.shtml" class="img-block magnify"><img src="http://www.jjedu.com.cn/storage/uploads/2018/11/21/6af3938a9376f7b67247a82b1f0b6c56.png" alt="" style="width:170px;height:170px">
-                                    <div class="txt">
-                                        <p class="f18">格伦教育</p>
-                                        <p class="f14">以学业规划、终身教育为...</p>
-                                    </div>
-                                </a>
-                            </dd>
-                            <dd class="magnify  mr20 ">
-                                <a target="_blank" href="/xm/44.shtml" class="img-block magnify"><img src="http://www.jjedu.com.cn/storage/uploads/2018/11/21/8d6d71a40d26a35dc4ed82f255505542.png" alt="" style="width:170px;height:170px">
-                                    <div class="txt">
-                                        <p class="f18">优胜教育</p>
-                                        <p class="f14">励步一直坚持远离浮躁与...</p>
-                                    </div>
-                                </a>
-                            </dd>
-                            <dd class="magnify ">
-                                <a target="_blank" href="/xm/112.shtml" class="img-block magnify"><img src="http://www.jjedu.com.cn/storage/uploads/2018/11/21/1f66c7d6d33d688b8ac286f5b5b40988.png" alt="" style="width:170px;height:170px">
-                                    <div class="txt">
-                                        <p class="f18">聚能教育</p>
-                                        <p class="f14">有针对性地破解了阻碍学...</p>
+                                        <p class="f18">{{$cbrand->brandname}}</p>
+                                        <p class="f14">{{str_limit($cbrand->description,33,'...')}}</p>
                                     </div>
                                 </a>
                             </dd>
                         </dl>
+                        @endforeach
                     </div>
                     <div class="fr xm-qingxian">
-                        <h2>项目抢先看</h2>
+                        <h2>最新入驻品牌</h2>
                         <div class="carousel xm-carousel">
                             <div class="ovh swiper-container">
                                 <ul class="ban-ul swiper-wrapper">
+                                    @foreach($latestbrands as $latestbrand)
                                     <li class="item swiper-slide">
                                         <div style="padding:0 20px">
-                                            <img src="/storage/uploads/2019/08/24/cf0e30fcb9b8f74f8e5ade17652d41f4.jpg" width="190" height="190">
-                                            <p class="f16"> 983画室</p>
+                                            <img src="{{$latestbrand->litpic}}" width="190" height="190">
+                                            <p class="f16"> {{$latestbrand->brandname}}</p>
                                             <p class="f14">
-                                                投资金额：<b class="s-oe">3-10万元</b>
+                                                投资金额：<b class="s-oe">{{$latestbrand->brandpay}}</b>
                                             </p>
-                                            <p class="h72">升学率是每个画室的生命所在，有好的升学率就有好的口碑，就能得到学生和家长的信任。自工作室创办至今，983画室各省联考通过率一直以98%的成绩在同行业中独占鳌头，应届生各大名校通过率也以85</p>
+                                            <p class="h72">{{$latestbrand->description}}</p>
                                             <div class="btn-bar">
-                                                <a target="_blank" href="/xm/12847.shtml" class="btn btn-oe-line fl">详细考察</a><a href="javascript:void(0);" class="btn btn-oe fr btn-wyzx">我要咨询</a>
+                                                <a target="_blank" href="/xm/{{$latestbrand->id}}.shtml" class="btn btn-oe-line fl">详细考察</a><a href="javascript:void(0);" class="btn btn-oe fr btn-wyzx">我要咨询</a>
                                             </div>
                                         </div>
                                     </li>
-                                    <li class="item swiper-slide">
-                                        <div style="padding:0 20px">
-                                            <img src="/storage/uploads/2019/08/24/5adaea64646c7ddbbc0da37732f96903.jpg" width="190" height="190">
-                                            <p class="f16"> 搏乐艺术</p>
-                                            <p class="f14">
-                                                投资金额：<b class="s-oe">3-10万元</b>
-                                            </p>
-                                            <p class="h72">成都搏乐艺术学校是经国家教育部、成都市教育局批准，成都市青羊区教育局主管的正规、专业的艺术培训学校。为了适应学校的快速发展，搏乐教育集团投资注册成为全国最大的艺术教育连锁—成都搏乐</p>
-                                            <div class="btn-bar">
-                                                <a target="_blank" href="/xm/12848.shtml" class="btn btn-oe-line fl">详细考察</a><a href="javascript:void(0);" class="btn btn-oe fr btn-wyzx">我要咨询</a>
-                                            </div>
-                                        </div>
-                                    </li>
-                                    <li class="item swiper-slide">
-                                        <div style="padding:0 20px">
-                                            <img src="/storage/uploads/2019/08/24/c28c10acbbf93e2f7c860fb2e564fc88.jpg" width="190" height="190">
-                                            <p class="f16"> 杨公桥少儿艺术培训</p>
-                                            <p class="f14">
-                                                投资金额：<b class="s-oe">3-10万元</b>
-                                            </p>
-                                            <p class="h72">杨公桥少儿艺术培训以给孩子创造最优质的艺术课堂为使命，尊重每个孩子的个性发展，了解孩子的思想与情感，培养孩子的兴趣和美术特长，并鼓励孩子充分感知、自由想象让孩子在轻松学习技艺的同时</p>
-                                            <div class="btn-bar">
-                                                <a target="_blank" href="/xm/12849.shtml" class="btn btn-oe-line fl">详细考察</a><a href="javascript:void(0);" class="btn btn-oe fr btn-wyzx">我要咨询</a>
-                                            </div>
-                                        </div>
-                                    </li>
-                                    <li class="item swiper-slide">
-                                        <div style="padding:0 20px">
-                                            <img src="http://www.jjedu.com.cn/storage/uploads/image/2019/08/24/d277774dbbc3c9d61a8780cfacba24e1.png" width="190" height="190">
-                                            <p class="f16"> 库课网校</p>
-                                            <p class="f14">
-                                                投资金额：<b class="s-oe">6～15万</b>
-                                            </p>
-                                            <p class="h72">库课网校隶属于河南库课文化传播有限公司，是一家集图书策划出版、发行、教育培训、在线教育平台于一体的大型文化教育企业。库课网校隶属于河南库课文化传播有限公司（原河南锐志文化传播有限公</p>
-                                            <div class="btn-bar">
-                                                <a target="_blank" href="/xm/12880.shtml" class="btn btn-oe-line fl">详细考察</a><a href="javascript:void(0);" class="btn btn-oe fr btn-wyzx">我要咨询</a>
-                                            </div>
-                                        </div>
-                                    </li>
-                                    <li class="item swiper-slide">
-                                        <div style="padding:0 20px">
-                                            <img src="http://www.jjedu.com.cn/storage/uploads/image/2019/08/24/280735e9ff25c66feec6887d806aab83.jpg" width="190" height="190">
-                                            <p class="f16"> 易教网</p>
-                                            <p class="f14">
-                                                投资金额：<b class="s-oe">8～20万</b>
-                                            </p>
-                                            <p class="h72">易教网创办于2002年6月，是一个立足于互联网络，面向广大师生与社会提供家教服务的专业网站，利用传统家教模式与互联网结合的便捷服务方式只用较短的时间立足于北京家教市场，并于2008年成立武</p>
-                                            <div class="btn-bar">
-                                                <a target="_blank" href="/xm/12879.shtml" class="btn btn-oe-line fl">详细考察</a><a href="javascript:void(0);" class="btn btn-oe fr btn-wyzx">我要咨询</a>
-                                            </div>
-                                        </div>
-                                    </li>
+                                    @endforeach
                                 </ul>
                             </div>
                             <div class="dot">
@@ -270,27 +176,23 @@
                     <div class="clearfix">
                         <div class="fine-left f-l">
                             <div class="fine-left-top clearfix">
-                                <h4 class="f-l">精品推荐</h4>
+                                <h4 class="f-l">热门母婴品牌推荐</h4>
                                 <ul class="f-li clearfix f-r" data-id="pc_jptj" data-type="cmsadpos">
-                                    <li><a href="/other/" target="_blank">其他</a></li>
-                                    <li><a href="/wangxiao/" target="_blank">网校</a></li>
-                                    <li><a href="/quannaokf/" target="_blank">全脑开发</a></li>
-                                    <li><a href="/yinyuepeixun/" target="_blank">音乐培训</a></li>
-                                    <li><a href="/taoyi/" target="_blank">手工陶艺</a></li>
-                                    <li><a href="/taijiao/" target="_blank">胎教</a></li>
-                                    <li><a href="/xm/" target="_blank">更多+</a></li>
+                                    @foreach($hotbrands as $hotbrand)
+                                     <li><a href="/xm//{{$hotbrand->id}}.shtml" target="_blank">{{$hotbrand->brandname}}</a></li>
+                                    @endforeach
                                 </ul>
                             </div>
                             <div class="fine-left-bottom clearfix">
                                 <div class="fine-left-bottomL f-l">
                                     <ul class="f-li clearfix" data-id="pc_a02_1" data-type="cmsadpos">
-                                        <li class="li-first" style="position: relative;"><a target="_blank" href="/xm/113.shtml"><img width="260" height="242" alt="红黄蓝教育机构" src="http://www.jjedu.com.cn/storage/uploads/2018/11/21/2d45de9c2328f9630dddbf1850e78ff5.png" style=""></a></li>
-                                        <li><a target="_blank" href="/xm/1512.shtml"><img alt="新东方泡泡少儿英语" src="http://www.jjedu.com.cn/storage/uploads/2018/12/19/9efee19b14a794ebaacfbbc5445c1cc3.png" style=""></a></li>
-                                        <li><a target="_blank" href="/xm/458.shtml"><img alt="海伦多兰少儿英语" src="http://www.jjedu.com.cn/storage/uploads/2018/12/25/33de3c9f1389aa7a777c85b085c6259f.png" style=""></a></li>
-                                        <li><a target="_blank" href="/xm/355.shtml"><img alt="金色童年幼儿园" src="http://www.jjedu.com.cn/storage/uploads/image/2018/10/25/f1cb2b0c0765edb2bfaf59c382447100.jpg" style=""></a></li>
-                                        <li><a target="_blank" href="/xm/335.shtml"><img alt="婴乐早教" src="http://www.jjedu.com.cn/storage/uploads/image/2018/10/23/14b7fb6d2282a98f4d3f52d731ee8906.png" style=""></a></li>
-                                        <li><a target="_blank" href="/xm/265.shtml"><img alt="品格幼儿园" src="http://www.jjedu.com.cn/storage/uploads/image/2018/10/12/57c0572f00e6f433960c5a1ac9026257.png" style=""></a></li>
-                                        <li><a target="_blank" href="/xm/261.shtml"><img alt="清华幼儿双语幼儿园" src="http://www.jjedu.com.cn/storage/uploads/2018/12/25/3b22d6b8de9a3d0103c0548e1d2b9dbd.png" style=""></a></li>
+                                        @foreach($lefthotbrands as $lefthotbrand)
+                                            @if($loop->first)
+                                            <li class="li-first" style="position: relative;"><a target="_blank" href="/xm/{{$lefthotbrand->id}}.shtml"><img width="260" height="242" alt="{{$lefthotbrand->brandname}}" src="{{$lefthotbrand->litpic}}" style=""></a></li>
+                                            @else
+                                            <li><a target="_blank" href="/xm/{{$lefthotbrand->id}}.shtml"><img alt="{{$lefthotbrand->brandname}}" src="{{$lefthotbrand->litpic}}" style=""></a></li>
+                                            @endif
+                                        @endforeach
                                     </ul>
                                 </div>
                                 <div class="fine-left-bottomR f-r">
@@ -1262,6 +1164,7 @@
 @stop
 @section('footerlibs')
     <script type="text/javascript" src="/receptions/js/jquery.selectlist.js"></script>
+    <script type="text/javascript" src="/receptions/js/swiper.min.js"></script>
     <script type="text/javascript">
         $(function(){
             $(".select_bk").selectlist({
