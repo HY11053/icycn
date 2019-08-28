@@ -34,10 +34,13 @@ class RedirectUrlMiddleware
                 if (str_contains($request->url(),'www.'))
                 {
                     $redirecturl=config('app.url').$matches[0].'/';
+                    return redirect($redirecturl,301);
                 }elseif (str_contains($request->url(),'m.')){
                     $redirecturl=str_replace('www.','m.',config('app.url')).$matches[0].'/';
+                    return redirect($redirecturl,301);
+                }else{
+                    return $next($request);
                 }
-                return redirect($redirecturl,301);
             }
         }
         return $next($request);

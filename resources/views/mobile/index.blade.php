@@ -3,25 +3,19 @@
 @section('keywords'){{ config('app.keywords') }}@stop
 @section('description'){{ config('app.description') }}@stop
 @section('headlibs')
+    <link rel="stylesheet" type="text/css" href="/mobile/css/swiper.min.css" />
 @stop
 @section('main_content')
     <div class="ban-box">
-        <div class="ovh">
-            <ul class="ban-list">
-                <li><a href="/jm/520563//"><img src="/mobile/uploads/8ec392a96e8743fcb5b2daef626ddc02.jpg?x-oss-process=image/format,jpg/interlace,1/watermark,image_RGVmYXVsdC9iLnBuZw==,t_35,g_se,x_10,y_10" /></a></li>
-                <li><a href="/zs_85047.html/"><img src="/mobile/uploads/75e3858c20eb4c04a6c4ddd24d3498dc.png?x-oss-process=image/format,jpg/interlace,1/watermark,image_RGVmYXVsdC9iLnBuZw==,t_35,g_se,x_10,y_10" /></a></li>
-                <li><a href="/jm/520714//"><img src="/mobile/uploads/897de9cc379e4874b8d6770036839ebe.jpg?x-oss-process=image/format,jpg/interlace,1/watermark,image_RGVmYXVsdC9iLnBuZw==,t_35,g_se,x_10,y_10" /></a></li>
-                <li><a href="/jm/246//"><img src="/mobile/uploads/f775018fd8b34514874467cab21ccbe9.jpg?x-oss-process=image/format,jpg/interlace,1/watermark,image_RGVmYXVsdC9iLnBuZw==,t_35,g_se,x_10,y_10" /></a></li>
-                <li><a href="jm/522352//"><img src="/mobile/uploads/ba2ea5b1f6b74908b697e70f90eff01f.jpg?x-oss-process=image/format,jpg/interlace,1/watermark,image_RGVmYXVsdC9iLnBuZw==,t_35,g_se,x_10,y_10" /></a></li>
+        <div class="ovh swiper-container">
+            <ul class="ban-list swiper-wrapper">
+                <li class="swiper-slide"><a href="/jm/520563//"><img src="/mobile/uploads/8ec392a96e8743fcb5b2daef626ddc02.jpg?x-oss-process=image/format,jpg/interlace,1/watermark,image_RGVmYXVsdC9iLnBuZw==,t_35,g_se,x_10,y_10" /></a></li>
+                <li class="swiper-slide"><a href="/jm/520714//"><img src="/mobile/uploads/897de9cc379e4874b8d6770036839ebe.jpg?x-oss-process=image/format,jpg/interlace,1/watermark,image_RGVmYXVsdC9iLnBuZw==,t_35,g_se,x_10,y_10" /></a></li>
+                <li class="swiper-slide"><a href="/jm/246//"><img src="/mobile/uploads/f775018fd8b34514874467cab21ccbe9.jpg?x-oss-process=image/format,jpg/interlace,1/watermark,image_RGVmYXVsdC9iLnBuZw==,t_35,g_se,x_10,y_10" /></a></li>
+                <li class="swiper-slide"><a href="jm/522352//"><img src="/mobile/uploads/ba2ea5b1f6b74908b697e70f90eff01f.jpg?x-oss-process=image/format,jpg/interlace,1/watermark,image_RGVmYXVsdC9iLnBuZw==,t_35,g_se,x_10,y_10" /></a></li>
             </ul>
         </div>
-        <div class="ban-dot">
-            <i class="cur"></i>
-            <i class=""></i>
-            <i class=""></i>
-            <i class=""></i>
-            <i class=""></i>
-        </div>
+        <div class="swiper-pagination"></div>
     </div>
     <div class="fenlei-list">
         <a href="/huoguo/"><img src="/mobile/uploads/1_f88a193.png" /><p>火锅</p></a>
@@ -236,7 +230,7 @@
     </div>
     <div class="bg-fff mt10 pb20">
         <div class="f18 tc fw6 ptb20 borb1">
-            餐饮资讯
+            品牌资讯
         </div>
         <ul class="restaurant-list">
             <li><a href="/zs_237058.html">
@@ -247,7 +241,7 @@
                         红茶和枸杞能一起喝吗，养生的你来看看
                     </div>
                     <div class="ovh mt10">
-                        <span class="tag">文章</span>
+                        <span class="tag">资讯</span>
                         <span class="time">2019-08-27 14:02</span>
                     </div></a></li>
             <li><a href="/zs_237056.html">
@@ -258,7 +252,7 @@
                         红酒干红区别，和其他类型的红酒有什么差别
                     </div>
                     <div class="ovh mt10">
-                        <span class="tag">文章</span>
+                        <span class="tag">资讯</span>
                         <span class="time">2019-08-27 13:58</span>
                     </div></a></li>
             <li><a href="/zs_237043.html">
@@ -269,7 +263,7 @@
                         水果到底富含哪些营养物质，水果类型有哪些?
                     </div>
                     <div class="ovh mt10">
-                        <span class="tag">文章</span>
+                        <span class="tag">资讯</span>
                         <span class="time">2019-08-27 13:28</span>
                     </div></a></li>
             <li><a href="/zs_180993.html">
@@ -280,7 +274,7 @@
                         广州满记甜品加盟费多少钱
                     </div>
                     <div class="ovh mt10">
-                        <span class="tag">文章</span>
+                        <span class="tag">资讯</span>
                         <span class="time">2019-06-23 07:36</span>
                     </div></a></li>
             <li><a href="/zs_181909.html">
@@ -291,7 +285,7 @@
                         糖朝甜品美食开放加盟了
                     </div>
                     <div class="ovh mt10">
-                        <span class="tag">文章</span>
+                        <span class="tag">资讯</span>
                         <span class="time">2019-06-17 15:31</span>
                     </div></a></li>
             <li><a href="/zs_181885.html">
@@ -302,7 +296,7 @@
                         糖朝甜品加盟优势是什么？
                     </div>
                     <div class="ovh mt10">
-                        <span class="tag">文章</span>
+                        <span class="tag">资讯</span>
                         <span class="time">2019-06-17 15:24</span>
                     </div></a></li>
             <li><a href="/zs_177961.html">
@@ -313,7 +307,7 @@
                         糖朝甜品店加盟多少钱
                     </div>
                     <div class="ovh mt10">
-                        <span class="tag">文章</span>
+                        <span class="tag">资讯</span>
                         <span class="time">2019-06-12 16:20</span>
                     </div></a></li>
         </ul>
@@ -345,5 +339,23 @@
 
 @stop
 @section('footlibs')
-
+    <script src="/mobile/js/swiper.min.js"></script>
+    <script>
+        var mySwiper = new Swiper ('.swiper-container', {
+            direction: 'horizontal',
+            loop: true,
+            autoplay: {
+                delay: 5000,
+                stopOnLastSlide: false,
+                disableOnInteraction: true,
+            },
+            pagination: {
+                el: '.swiper-pagination',
+            },
+        })
+        $(".tab-box-flex span").click(function () {
+            $(".catering-list").hide().eq($(this).index()).show();
+            $(this).addClass("cur").siblings().removeClass("cur");
+        });
+    </script>
 @stop

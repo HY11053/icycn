@@ -49,7 +49,7 @@
         <p class="mt15 f12 s-ccc"><a target="_blank" class="s-ccc" href="http://www.miitbeian.gov.cn">蜀ICP备19006048号</a> Copyright&copy; 2005-2019</p>
     </div>
 </footer>
-
+<script src="/mobile/js/jquery.min.js"></script>
 @yield('footlibs')
 
 </body>
