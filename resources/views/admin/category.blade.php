@@ -21,7 +21,7 @@
                 <div class="box-header with-border">
                     <h3 class="box-title "><a href="/admin/article/type/{{$key}}"> {{$topnav}}</a> </h3>
                     <div class="spide_span">
-                        <span class="label label-primary pull-right ncls">@if(\App\AdminModel\Arctype::where('id',$key)->value('mid')==0){{\App\AdminModel\Archive::where('typeid',$key)->count()}} @elseif(\App\AdminModel\Arctype::where('id',$key)->value('mid')==1) {{\App\AdminModel\Brandarticle::whereIn('typeid',\App\AdminModel\Arctype::where('reid',$key)->pluck('id'))->count()}} @elseif(\App\AdminModel\Arctype::where('id',$key)->value('mid')==2) {{\App\AdminModel\Production::whereIn('typeid',\App\AdminModel\Arctype::where('reid',$key)->pluck('id'))->count()}} @endif</span>
+                        <span class="label label-primary pull-right ncls">@if(\App\AdminModel\Arctype::where('id',$key)->value('mid')==0){{\App\AdminModel\Archive::where('typeid',$key)->count()}} @elseif(\App\AdminModel\Arctype::where('id',$key)->value('mid')==1) {{\App\AdminModel\Brandarticle::whereIn('typeid',\App\AdminModel\Arctype::where('reid',$key)->pluck('id'))->count()}} @elseif(\App\AdminModel\Arctype::where('id',$key)->value('mid')==2) 0 @endif</span>
                         <span class="label label-danger pull-right" data-toggle="modal" data-target=".modal-sm{{$key}}">删除</span>
                         <div class="modal fade modal-sm{{$key}}" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel{{$key}}">
                             <div class="modal-dialog modal-sm modal-s-m{{$key}}" role="document">

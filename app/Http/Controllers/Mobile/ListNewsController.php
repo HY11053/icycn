@@ -38,61 +38,30 @@ class ListNewsController extends Controller
                 $cid,//传入分类id,
                 $pagelists//传入原始分页器
             );
-            $hotnew=Cache::remember('hotnew'.$thistypeinfo->id, 60*24*365, function() use ($thistypeinfo){
-                return Archive::where('typeid',$thistypeinfo->id)->where('flags','like','%h%')->latest()->first(['id','title','litpic']);
+            $latestbrands=Cache::remember('mtype_latestbrands',   config('app.cachetime')+rand(60,60*24), function(){
+                return Brandarticle::latest()->take(4)->orderBy('id','desc')->get(['id','brandname','brandpay','litpic','brandnum']);
             });
-            $cnewtop=Cache::remember('cnewtop'.$thistypeinfo->id, 60*24*365, function() use ($thistypeinfo){
-                return Archive::where('typeid',$thistypeinfo->id)->where('flags','like','%'.'c'.'%')->latest()->first(['title','id','description']);
-            });
-
-            $cnewtops=Cache::remember('cnewtops'.$thistypeinfo->id, 60*24*365, function() use ($thistypeinfo){
-                return Archive::where('typeid',$thistypeinfo->id)->where('flags','like','%'.'c'.'%')->skip(1)->take(10)->latest()->get(['id','title']);
-            });
-            $paihangbangs= Cache::remember('phb', config('app.cachetime')+60*24*365, function(){
-                return Brandarticle::take('10')->orderBy('click','desc')->get(['id','brandname','litpic','brandnum','brandpay','description']);
-            });
-            $abrandlists= Cache::remember('abrandlist', config('app.cachetime')+60*24*365, function(){
-                return Brandarticle::where('mid','1')->where('flags','like','%'.'a'.'%')->take(4)->orderBy('id','desc')->get();
-            });
-            $latestbrands=Cache::remember('latestbrands',   config('app.cachetime')+rand(60,60*24), function(){
-                return Brandarticle::latest()->take(5)->orderBy('id','desc')->get(['id','brandname','brandpay','litpic','brandnum']);
-            });
-            $latestnews=Cache::remember('platestnews'.$thistypeinfo->id, config('app.cachetime')+rand(60,60*24), function() use($thistypeinfo){
+            $latestnews=Cache::remember('mtype_latestnews'.$thistypeinfo->id, config('app.cachetime')+rand(60,60*24), function() use($thistypeinfo){
                 return Archive::where('typeid','<>',$thistypeinfo->id)->take(7)->latest()->get();
             });
-            return view('mobile.list_article',compact('thistypeinfo','pagelists','hotnew','cnewtop','cnew','cnewtops','paihangbangs','latestbrands','latestnews','abrandlists'));
+            return view('mobile.list_article',compact('thistypeinfo','pagelists','latestbrands','latestnews','abrandlists'));
         }elseif ($thistypeinfo->mid==1)
         {
             $cid=preg_replace('/\/page\/[0-9]+/','',$path);
-            if (!$thistypeinfo->reid)
-            {
-                $typeids=Arctype::where('reid',0)->where('mid',1)->pluck('id');
-            }else{
-                $typeids=Arctype::where('id',$thistypeinfo->id)->where('mid',1)->pluck('id');
-            }
-            $pagelists=Brandarticle::whereIn('typeid',$typeids)->orwhere('typeid',$thistypeinfo->id)->orderBy('id','desc')->distinct()->paginate($perPage = 10, $columns = ['*'], $pageName = 'page', $page);
+
+            $pagelists=Brandarticle::where('typeid',$thistypeinfo->id)->orderBy('id','desc')->distinct()->paginate($perPage = 12, $columns = ['*'], $pageName = 'page', $page);
             $pagelists= Paginator::transfer(
                 $cid,//传入分类id,
                 $pagelists//传入原始分页器
             );
-            $topbrandnavs=Cache::remember('topbrandnavs', config('app.cachetime')+60*24*365, function() {
-                return Arctype::where('mid',1)->where('reid','<>',0)->orderBy('sortrank','asc')->get(['real_path','typename']);
-            });
-            $paihangbangs= Cache::remember('phb'.$thistypeinfo->id, config('app.cachetime')+rand(60,60*24), function() use($thistypeinfo){
-                return  Brandarticle::where('typeid',$thistypeinfo->id)->take('10')->orderBy('click','desc')->get(['id','brandname','litpic','brandnum','brandpay','description']);
-            });
-            $flashlingshibrands=Cache::remember('flashlingshibrands', config('app.cachetime')+rand(60,60*24), function() {
-                return Brandarticle::where('mid','1')->where('flags','like','%'.'h'.'%')->take(7)->orderBy('id','desc')->get();
-            });
             //店铺面积缓存
             $acreagements=Cache::remember('acreagements',  config('app.cachetime')+rand(60,60*24), function(){
                 return Acreagement::pluck('type','id');
             });
-            $cnewslists=Cache::remember('cnewslists'.$thistypeinfo->id,  rand(10,60), function() use($thistypeinfo){
-                return Archive::whereIn('brandid',Brandarticle::where('typeid',$thistypeinfo->id)->latest()->pluck('id'))->take(7)->latest()->get();
+            $cnewslists=Cache::remember('m_cnewslists'.$thistypeinfo->id,  rand(10,60), function() use($thistypeinfo){
+                return Archive::whereIn('brandid',Brandarticle::where('typeid',$thistypeinfo->id)->latest()->pluck('id'))->take(7)->latest()->get(['id','title','litpic']);
             });
-
-            return view('mobile.brands',compact('thistypeinfo','topbrandnavs','pagelists','paihangbangs','flashlingshibrands','cnewslists','hotbrandsearch','acreagements'));
+            return view('mobile.brands',compact('thistypeinfo','pagelists','cnewslists','acreagements'));
         }
 
     }

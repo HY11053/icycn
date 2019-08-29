@@ -492,30 +492,27 @@
                     <div class="left_two">
                         <h4>创业指导</h4>
                         <dl>
-                            <dt><a href="/lingshizx/4536.shtml" title="加盟淘豆零食店多少钱？淘豆加盟怎么样" target="_blank"><img src="http://www.58lingshi.com/uploads/image/2018/10/30/9d29a0bc5d1bfe2ea0d534422ef8ef2c.jpg"></a><span>加盟淘豆零食店多少钱？淘豆加盟怎么样？苏州淘豆【<a href="/lingshizx/4536.shtml" style="color:#D71318;" target="_blank">阅读</a>】</span></dt>
-                            <dd><span>2018-10-30</span><a href="/lingshizx/4531.shtml" target="_blank" title="采芝斋零食店加盟费是多少？采芝斋加盟有哪些要求">采芝斋零食店加盟费是多少？采芝斋加盟有哪些要求</a></dd>
-                            <dd><span>2018-10-30</span><a href="/lingshizx/4530.shtml" target="_blank" title="加盟仇二零食店需要多少钱？仇二加盟怎么样">加盟仇二零食店需要多少钱？仇二加盟怎么样</a></dd>
-                            <dd><span>2018-10-30</span><a href="/lingshizx/4526.shtml" target="_blank" title="西域果农零食店加盟多少钱？加盟西域果农怎么样">西域果农零食店加盟多少钱？加盟西域果农怎么样</a></dd>
-                            <dd><span>2018-10-30</span><a href="/lingshizx/4519.shtml" target="_blank" title="加盟好想来需要多少钱？怎么加盟好想来">加盟好想来需要多少钱？怎么加盟好想来</a></dd>
-                            <dd><span>2018-10-30</span><a href="/lingshizx/4518.shtml" target="_blank" title="加盟果园老农零食店多少钱？怎么加盟果园老农">加盟果园老农零食店多少钱？怎么加盟果园老农</a></dd>
-                            <dd><span>2018-10-30</span><a href="/lingshizx/4516.shtml" target="_blank" title="七乐食尚零食店加盟费是多少？七乐食尚加盟怎么样">七乐食尚零食店加盟费是多少？七乐食尚加盟怎么样</a></dd>
-                            <dd><span>2018-10-30</span><a href="/lingshizx/4512.shtml" target="_blank" title="甜格格零食王国加盟需要多少钱？甜格格怎么加盟">甜格格零食王国加盟需要多少钱？甜格格怎么加盟</a></dd>
+                            @foreach($cynews as $cynew)
+                                @if($loop->first)
+                                    <dt><a href="/news/{{$cynew->id}}.shtml" title="{{$cynew->title}}" target="_blank"><img src="{{$cynew->litpic}}"></a><span>{{$cynew->title}}【<a href="/news/{{$cynew->id}}.shtml" style="color:#D71318;" target="_blank">阅读</a>】</span></dt>
+                                @else
+                                    <dd><span>{{date('Y-m-d',strtotime($cynew->created_at))}}</span><a href="/news/{{$cynew->id}}.shtml" target="_blank" title="{{$cynew->title}}">{{$cynew->title}}</a></dd>
+                                @endif
+                            @endforeach
                         </dl>
                     </div>
                 </div>
                 <div class="cont5_right">
-                    <h2>零食展会信息</h2>
+                    <h2>加盟投资分析</h2>
                     <div class="right_con">
                         <dl>
-                            <dt><a href="zhanhui/296.shtml" title="22大国际展团齐聚“2017世界食品广州展”" target="_blank"><img src="http://www.58lingshi.com/uploads/image/2017/04/28/d802b1c7e50098bac9f73dbc5bc58a25.jpg" alt="22大国际展团齐聚“2017世界食品广州展”" style="height: 85px; overflow: hidden"></a></dt>
-                            <dd><a href="zhanhui/296.shtml" title="22大国际展团齐聚“2017世界食品广州展”" target="_blank">22大国际展团齐聚“2017世界食品广州展”</a></dd>
-                            <dd><a href="zhanhui/295.shtml" title="市长戴启远出席2017淮北食品工业博览会欢迎会举行" target="_blank">市长戴启远出席2017淮北食品工业博览会欢迎会举行</a></dd>
-                            <dd><a href="zhanhui/292.shtml" title="聚国内外千家美食大咖，展食品行业盛宴-中国国际休闲食品及进口食品博览会" target="_blank">聚国内外千家美食大咖，展食品行业盛宴-中国国际休闲食品及进口食品博览会</a></dd>
-                            <dd><a href="zhanhui/290.shtml" title="2017上海食品博览会/休闲食品展览会/进口食品展会" target="_blank">2017上海食品博览会/休闲食品展览会/进口食品展会</a></dd>
-                            <dd><a href="zhanhui/289.shtml" title="北京进口食品博览会/美酒饮品/休闲糖果零食" target="_blank">北京进口食品博览会/美酒饮品/休闲糖果零食</a></dd>
-                            <dd><a href="zhanhui/288.shtml" title="2017北京食品博览会/休闲食品展览会" target="_blank">2017北京食品博览会/休闲食品展览会</a></dd>
-                            <dd><a href="zhanhui/287.shtml" title="中国国际休闲食品及进口食品博览会" target="_blank">中国国际休闲食品及进口食品博览会</a></dd>
-                            <dd><a href="zhanhui/286.shtml" title="2017(上海)进口高端食品饮料展览会 食品行业盛会" target="_blank">2017(上海)进口高端食品饮料展览会 食品行业盛会</a></dd>
+                            @foreach($touzinews as $touzinew)
+                                @if($loop->first)
+                                 <dt><a href="/news/{{$touzinew->id}}.shtml" title="{{$touzinew->title}}" target="_blank"><img src="{{$touzinew->litpic}}" alt="{{$touzinew->title}}" style="height: 85px; overflow: hidden"></a></dt>
+                                @else
+                                    <dd><a href="/news/{{$touzinew->id}}.shtml" title="{{$touzinew->title}}" target="_blank">{{$touzinew->title}}</a></dd>
+                                @endif
+                            @endforeach
                         </dl>
                     </div>
                 </div>
@@ -531,9 +528,9 @@
 
         <div class="friend_links">
             <span>友情链接：</span>
-            <a href="http://www.ganxi360.net" target="_blank">干洗店加盟</a>
-            <a href="http://www.xiuxianshipin.com/" target="_blank">火爆餐饮网</a>
-            <a href="http://www.51xxsp.com/" target="_blank">51加盟网</a>
+            @foreach($flinks as $flink)
+                <a href="{{$flink->weburl}}" target="_blank">{{$flink->webname}}</a>
+            @endforeach
         </div>
     </div>
 @stop

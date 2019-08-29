@@ -32,7 +32,7 @@ class IndexController extends Controller
         });
 
         $latestbrands=Cache::remember('index_latestbrands', config('app.cachetime')+rand(60,60*24), function(){
-            return Brandarticle::where('mid',1)->take(5)->latest()->get(['id','brandname','litpic','brandpay','description']);
+            return Brandarticle::where('mid',1)->where('typeid','<',3)->take(5)->latest()->get(['id','brandname','litpic','brandpay','description']);
         });
         $cbrands=Cache::remember('index_cbrands', config('app.cachetime')+rand(60,60*24), function(){
             return Brandarticle::whereIn('id',[23,13,40,24])->latest()->get(['id','brandname','indexpic','brandpsp','description']);
@@ -82,7 +82,13 @@ class IndexController extends Controller
             return Archive::orderBy('id','desc')->where('typeid',3)->latest()->take(14)->get(['id','title','description','litpic']);
         });
         $jmfnews=Cache::remember('index_jmfnews', 60, function(){
-            return Archive::orderBy('id','desc')->where('typeid',10)->latest()->take(14)->get(['id','title','created_at']);
+            return Archive::orderBy('id','desc')->where('typeid',8)->latest()->take(10)->get(['id','title','created_at']);
+        });
+        $cynews=Cache::remember('index_cynews', 60, function(){
+            return Archive::orderBy('id','desc')->where('typeid',10)->latest()->take(8)->get(['id','title','created_at','litpic']);
+        });
+        $touzinews=Cache::remember('index_touzinews', 60, function(){
+            return Archive::orderBy('id','desc')->where('typeid',9)->latest()->take(9)->get(['id','title','created_at','litpic']);
         });
         //友情链接
         $flinks=Cache::remember('index_flinks', 60, function(){
@@ -90,7 +96,7 @@ class IndexController extends Controller
         });
         return view('frontend.index',compact('muyingnavlists','muyingshgnavlists','muyingypnavlists','latestbrands','cbrands','hotbrands',
             'lefthotbrands','sbrands','brandtypes','latestmuyingbrands','latestrmuyingbrands','latestmuyingshgbrands','latestrmuyingshgbrands','latestrzsbrands','latestzsbrands',
-            'latestzsbrands','hbrands','brandalltypes','asknews','latestnews','jmfnews'));
+            'latestzsbrands','hbrands','brandalltypes','asknews','latestnews','jmfnews','cynews','touzinews','flinks'));
     }
 
 }
