@@ -67,9 +67,10 @@
     <dt>您可以先浏览一下其他页面..</dt>
     <dd>
         <ul>
-            <li><a href="/xm/">教育品牌招商</a></li>
-            <li><a href="/news//">品牌新闻</a></li>
-            <li><a href="/paihangbang/">教育加盟排行榜</a></li>
+            <li><a href="/muying/">母婴店加盟</a></li>
+            <li><a href="/muyingshg//">母婴生活馆</a></li>
+            <li><a href="/zhaoshang/">品牌招商</a></li>
+            <li><a href="/paihangbang/">母婴品牌排行榜</a></li>
         </ul>
     </dd>
 </dl>

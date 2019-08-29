@@ -52,10 +52,9 @@
                                     <span class="cont">
                                       <select name="select1" id="select1" class="select_bk">
                                         <option selected="selected" value="0">行业分类</option>
-                                        <option value="1">零食店加盟</option>
-                                        <option value="3">炒货加盟</option>
-                                        <option value="4">干果加盟</option>
-                                        <option value="5">进口零食加盟</option>
+                                        <option value="1">母婴店</option>
+                                        <option value="3">母婴生活馆</option>
+                                        <option value="4">母婴产品代理</option>
                                       </select>
                                     </span>
                                         </p>
