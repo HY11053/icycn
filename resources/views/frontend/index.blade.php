@@ -197,76 +197,15 @@
                                 </div>
                                 <div class="fine-left-bottomR f-r">
                                     <ul class="f-li clearfix" data-id="pc_a03_1" data-type="cmsadpos">
+                                        @foreach($sbrands as $sbrand)
                                         <li>
-                                            <a target="_blank" href="/xm/467.shtml"><img width="174" height="140" alt="" src="http://www.jjedu.com.cn/storage/uploads/2018/11/21/2590d3c1b3b282c5a7a42ffd243f71d1.png" style=""></a>
-                                            <p>品牌名称：<span>乐宁教育</span></p>
+                                            <a target="_blank" href="/xm/{{$sbrand->id}}.shtml"><img width="174" height="140" alt="" src="{{$sbrand->indexpic}}"></a>
+                                            <p>品牌名称：<span>{{$sbrand->brandname}}</span></p>
                                             <p>
-                                                <span>￥</span><span class="sq">20-30万</span><a target="_blank" href="/xm/467.shtml">了解详情</a>
+                                                <span>￥</span><span class="sq">{{$sbrand->brandpay}}</span><a target="_blank" href="/xm/{{$sbrand->id}}.shtml">了解详情</a>
                                             </p>
                                         </li>
-                                        <li>
-                                            <a target="_blank" href="/xm/105.shtml"><img width="174" height="140" alt="" src="http://www.jjedu.com.cn/storage/uploads/2018/11/21/08390eeacb9d64243f427258123e0c51.png" style=""></a>
-                                            <p>品牌名称：<span>智康一对一</span></p>
-                                            <p>
-                                                <span>￥</span><span class="sq">10-20万元</span><a target="_blank" href="/xm/105.shtml">了解详情</a>
-                                            </p>
-                                        </li>
-                                        <li>
-                                            <a target="_blank" href="/xm/315.shtml"><img width="174" height="140" alt="" src="http://www.jjedu.com.cn/storage/uploads/2018/11/21/a6af07d08d926fcf8f04e382e5e2d6b3.png" style=""></a>
-                                            <p>品牌名称：<span>仁德国际教育</span></p>
-                                            <p>
-                                                <span>￥</span><span class="sq">10-20万</span><a target="_blank" href="http://www.jjedu.com.cn/xm/315.shtml">了解详情</a>
-                                            </p>
-                                        </li>
-                                        <li>
-                                            <a target="_blank" href="/xm/214.shtml"><img width="174" height="140" alt="" src="http://www.jjedu.com.cn/storage/uploads/2018/11/21/9271590b2458478987322b74cecdd9d1.png" style=""></a>
-                                            <p>品牌名称：<span>北大青鸟国际教育</span></p>
-                                            <p>
-                                                <span>￥</span><span class="sq">36.5-48.46万</span><a target="_blank" href="/xm/214.shtml">了解详情</a>
-                                            </p>
-                                        </li>
-                                        <li>
-                                            <a target="_blank" href="/xm/131.shtml"><img width="174" height="140" alt="" src="http://www.jjedu.com.cn/storage/uploads/2018/11/21/4e0339412824c6992ab8224c2295c89f.png" style=""></a>
-                                            <p>品牌名称：<span>北大青鸟IT教育</span></p>
-                                            <p>
-                                                <span>￥</span><span class="sq">40.8-57.4万元</span><a target="_blank" href="/xm/131.shtml">了解详情</a>
-                                            </p>
-                                        </li>
-                                        <li>
-                                            <a target="_blank" href="/xm/466.shtml"><img width="174" height="140" alt="" src="http://www.jjedu.com.cn/storage/uploads/2018/11/21/e2a4e1e3b97bc7d01d5620506d0a31a7.png" style=""></a>
-                                            <p>品牌名称：<span>韦博国际英语</span></p>
-                                            <p>
-                                                <span>￥</span><span class="sq">30-40万</span><a target="_blank" href="/xm/466.shtml">了解详情</a>
-                                            </p>
-                                        </li>
-                                        <li>
-                                            <a target="_blank" href="/xm/210.shtml"><img width="174" height="140" alt="" src="http://www.jjedu.com.cn/storage/uploads/2018/11/21/89460657dbced1d1c8b74ec243255edc.png" style=""></a>
-                                            <p>品牌名称：<span>大桥英语</span></p>
-                                            <p>
-                                                <span>￥</span><span class="sq">22.75-36.87万元</span><a target="_blank" href="/xm/210.shtml">了解详情</a>
-                                            </p>
-                                        </li>
-                                        <li>
-                                            <a target="_blank" href="/xm/263.shtml"><img width="174" height="140" alt="" src="http://www.jjedu.com.cn/storage/uploads/2018/11/21/0607ebeaa6d81df8b65cc5c6fe6b9ea1.png" style=""></a>
-                                            <p>品牌名称：<span>七色光幼儿园</span></p>
-                                            <p>
-                                                <span>￥</span><span class="sq">100-400万元</span><a target="_blank" href="/xm/263.shtml">了解详情</a>
-                                            </p>
-                                        </li>
-                                        <li>
-                                            <a target="_blank" href="/xm/261.shtml"><img width="174" height="140" alt="" src="http://www.jjedu.com.cn/storage/uploads/2018/11/21/9fcfee07edcedc6fd64606a8b9fe2157.png" style=""></a>
-                                            <p>品牌名称：<span>清华幼儿双语幼儿园</span></p>
-                                            <p>
-                                                <span>￥</span><span class="sq">38.98-95.98万元</span><a target="_blank" href="/xm/261.shtml">了解详情</a>
-                                            </p>
-                                        </li>
-                                        <li>
-                                            <a target="_blank" href="/xm/204.shtml"><img width="174" height="140" alt="" src="http://www.jjedu.com.cn/storage/uploads/2018/11/21/2bf1367771de65f50f6d8cab4daa6947.png" style=""></a>
-                                            <p>品牌名称：<span>优宝小主播</span></p>
-                                            <p>
-                                                <span>￥</span><span class="sq">63.3-121.2万</span><a target="_blank" href="/xm/204.shtml">了解详情</a>
-                                            </p>
-                                        </li>
+                                        @endforeach
                                     </ul>
                                 </div>
                             </div>
@@ -284,386 +223,64 @@
                     <div class="clearfix">
                         <div class="fine-left f-l">
                             <div class="fine-left-top clearfix">
-                                <h4 class="f-l">精品推荐</h4>
+                                <h4 class="f-l">母婴分类品牌汇总</h4>
                                 <ul class="f-li clearfix f-r" data-id="pc_jptj" data-type="cmsadpos">
-                                    <li><a href="/other/" target="_blank">其他</a></li>
-                                    <li><a href="/wangxiao/" target="_blank">网校</a></li>
-                                    <li><a href="/quannaokf/" target="_blank">全脑开发</a></li>
-                                    <li><a href="/yinyuepeixun/" target="_blank">音乐培训</a></li>
-                                    <li><a href="/taoyi/" target="_blank">手工陶艺</a></li>
-                                    <li><a href="/taijiao/" target="_blank">胎教</a></li>
-                                    <li><a href="/xm/" target="_blank">更多+</a></li>
+                                    @foreach($brandtypes as $brandtype)
+                                    <li><a href="/{{$brandtype->real_path}}/" target="_blank">{{$brandtype->typename}}</a></li>
+                                    @endforeach
                                 </ul>
                             </div>
                             <section>
                             <div class="index_box3 clearfix">
                                 <div class="index_box3_l">
-                                    <div class="img_show"><a href="/lingshidianpp/" target="_blank"><img src="/receptions/images/index_pic1.jpg" title="零食店品牌" alt="零食店加盟"/></a></div>
-                                    <p class="tit"><a href="/lingshidianpp/" target="_blank">零食店加盟</a></p>
+                                    <div class="img_show"><a href="/muying/" target="_blank"><img src="/receptions/images/index_pic1.jpg" title="零食店品牌" alt="零食店加盟"/></a></div>
+                                    <p class="tit"><a href="/muying/" target="_blank">母婴店加盟</a></p>
                                     <p class="desc">精美零食 抢占商机</p>
-                                    <p class="more"><a href="/lingshidianpp/" target="_blank" title="零食店品牌">查看详情&gt;</a></p>
+                                    <p class="more"><a href="/muying/" target="_blank" title="母婴店加盟">查看详情&gt;</a></p>
                                 </div>
                                 <div class="index_box3_r" id="index_box3s_r">
                                     <div class="hd">
-                                        <span class="tit">零食品牌</span>
+                                        <span class="tit">母婴店品牌</span>
                                         <span class="desc">精选全球好品牌、看得见的商机前景</span>
-                                        <span class="more"><a href="/lingshidianpp/" target="_blank">更多&gt;&gt;</a></span>
+                                        <span class="more"><a href="/muying/" target="_blank">更多&gt;&gt;</a></span>
                                     </div>
                                     <div class="bd">
                                         <div class="bd_l">
-
                                             <dl>
-                                                <dd><a href="/lingshidianpp/4883.shtml" title="盛味佳加盟" target="_blank">盛味佳加盟</a></dd>
-
-
-
-                                                <dd><a href="/lingshidianpp/4879.shtml" title="甘源加盟" target="_blank">甘源加盟</a></dd>
-
-
-
-                                                <dd><a href="/lingshidianpp/4878.shtml" title="友臣加盟" target="_blank">友臣加盟</a></dd>
-
-
-
-                                                <dd><a href="/lingshidianpp/4877.shtml" title="可心零食店加盟" target="_blank">可心零食店加盟</a></dd>
-
-
-
-                                                <dd><a href="/lingshidianpp/4800.shtml" title="亚细亚加盟" target="_blank">亚细亚加盟</a></dd>
-
-
-
-                                                <dd><a href="/lingshidianpp/4787.shtml" title="一鱿未尽加盟" target="_blank">一鱿未尽加盟</a></dd>
-
-
-
-                                                <dd><a href="/lingshidianpp/4786.shtml" title="享之味加盟" target="_blank">享之味加盟</a></dd>
-
-
-
-                                                <dd><a href="/lingshidianpp/4785.shtml" title="一本零食加盟" target="_blank">一本零食加盟</a></dd>
-
-
-
-                                                <dd><a href="/lingshidianpp/4779.shtml" title="爱尚零食屋加盟" target="_blank">爱尚零食屋加盟</a></dd>
-
+                                                @foreach($latestmuyingbrands as $index=>$latestmuyingbrand)
+                                                    @if($index<9)
+                                                    <dd><a href="/xm/{{$latestmuyingbrand->id}}.shtml" title="{{$latestmuyingbrand->brandname}}" target="_blank">{{$latestmuyingbrand->brandname}}</a></dd>
+                                                    @endif
+                                                @endforeach
                                             </dl>
                                             <dl>
-                                                <dd><a href="/lingshidianpp/4777.shtml" title="嘟嘟乐干果加盟" target="_blank">嘟嘟乐干果加盟</a></dd>
-
-
-
-                                                <dd><a href="/lingshidianpp/4776.shtml" title="艾比利加盟" target="_blank">艾比利加盟</a></dd>
-
-
-
-                                                <dd><a href="/lingshidianpp/4775.shtml" title="比锦味小站加盟" target="_blank">比锦味小站加盟</a></dd>
-
-
-
-                                                <dd><a href="/lingshidianpp/4774.shtml" title="禧福堂加盟" target="_blank">禧福堂加盟</a></dd>
-
-
-
-                                                <dd><a href="/lingshidianpp/4773.shtml" title="源屋曲加盟" target="_blank">源屋曲加盟</a></dd>
-
-
-
-                                                <dd><a href="/lingshidianpp/4772.shtml" title="畅选加盟" target="_blank">畅选加盟</a></dd>
-
-
-
-                                                <dd><a href="/lingshidianpp/4771.shtml" title="酷帕滋加盟" target="_blank">酷帕滋加盟</a></dd>
-
-
-
-                                                <dd><a href="/lingshidianpp/4770.shtml" title="宫颐府加盟" target="_blank">宫颐府加盟</a></dd>
-
-
-
-                                                <dd><a href="/lingshidianpp/4764.shtml" title="汇吃巴加盟" target="_blank">汇吃巴加盟</a></dd>
-
+                                                @foreach($latestmuyingbrands as $index=>$latestmuyingbrand)
+                                                    @if($index>8 && $index<18)
+                                                        <dd><a href="/xm/{{$latestmuyingbrand->id}}.shtml" title="{{$latestmuyingbrand->brandname}}" target="_blank">{{$latestmuyingbrand->brandname}}</a></dd>
+                                                    @endif
+                                                @endforeach
                                             </dl>
                                             <dl>
-                                                <dd><a href="/lingshidianpp/4760.shtml" title="栗品香加盟" target="_blank">栗品香加盟</a></dd>
-
-
-
-                                                <dd><a href="/lingshidianpp/4738.shtml" title="九品铺子加盟" target="_blank">九品铺子加盟</a></dd>
-
-
-
-                                                <dd><a href="/lingshidianpp/4737.shtml" title="花生兄弟加盟" target="_blank">花生兄弟加盟</a></dd>
-
-
-
-                                                <dd><a href="/lingshidianpp/4736.shtml" title="棒棒娃加盟" target="_blank">棒棒娃加盟</a></dd>
-
-
-
-                                                <dd><a href="/lingshidianpp/4735.shtml" title="珠穆朗玛加盟" target="_blank">珠穆朗玛加盟</a></dd>
-
-
-
-                                                <dd><a href="/lingshidianpp/4734.shtml" title="立洲加盟" target="_blank">立洲加盟</a></dd>
-
-
-
-                                                <dd><a href="/lingshidianpp/4733.shtml" title="台尚加盟" target="_blank">台尚加盟</a></dd>
-
-
-
-                                                <dd><a href="/lingshidianpp/4732.shtml" title="优米客加盟" target="_blank">优米客加盟</a></dd>
-
-
-
-                                                <dd><a href="/lingshidianpp/4731.shtml" title="俏食客加盟" target="_blank">俏食客加盟</a></dd>
-
+                                                @foreach($latestmuyingbrands as $index=>$latestmuyingbrand)
+                                                    @if($index>17 && $index<27)
+                                                        <dd><a href="/xm/{{$latestmuyingbrand->id}}.shtml" title="{{$latestmuyingbrand->brandname}}" target="_blank">{{$latestmuyingbrand->brandname}}</a></dd>
+                                                    @endif
+                                                @endforeach
                                             </dl>
                                         </div>
                                         <div class="bd_r">
                                             <div class="index_txt_list_wrap">
                                                 <div class="index_txt_list">
-
-                                                    <dl>                                     <dd><a href="/lingshidianpp/4730.shtml" title=" 爱加一加盟" target="_blank"> 爱加一加盟</a></dd>
-
-
-
-                                                        <dd><a href="/lingshidianpp/4729.shtml" title="豫川香加盟" target="_blank">豫川香加盟</a></dd>
-
-                                                    </dl>
-
-                                                    <dl>                                     <dd><a href="/lingshidianpp/4728.shtml" title="宜人家加盟" target="_blank">宜人家加盟</a></dd>
-
-
-
-                                                        <dd><a href="/lingshidianpp/4727.shtml" title="妙妙萌食加盟" target="_blank">妙妙萌食加盟</a></dd>
-
-                                                    </dl>
-
-                                                    <dl>                                     <dd><a href="/lingshidianpp/4726.shtml" title="爽米芭加盟" target="_blank">爽米芭加盟</a></dd>
-
-
-
-                                                        <dd><a href="/lingshidianpp/4725.shtml" title=" 雪山果园加盟" target="_blank"> 雪山果园加盟</a></dd>
-
-                                                    </dl>
-
-                                                    <dl>                                     <dd><a href="/lingshidianpp/4724.shtml" title="雅特加盟" target="_blank">雅特加盟</a></dd>
-
-
-
-                                                        <dd><a href="/lingshidianpp/4723.shtml" title="森林猴加盟" target="_blank">森林猴加盟</a></dd>
-
-                                                    </dl>
-
-                                                    <dl>                                     <dd><a href="/lingshidianpp/4719.shtml" title="味到舌足加盟" target="_blank">味到舌足加盟</a></dd>
-
-
-
-                                                        <dd><a href="/lingshidianpp/4718.shtml" title="范老大加盟" target="_blank">范老大加盟</a></dd>
-
-                                                    </dl>
-
-                                                    <dl>                                     <dd><a href="/lingshidianpp/4717.shtml" title="海西坊加盟" target="_blank">海西坊加盟</a></dd>
-
-
-
-                                                        <dd><a href="/lingshidianpp/4716.shtml" title="蒙粮加盟" target="_blank">蒙粮加盟</a></dd>
-
-                                                    </dl>
-
-                                                    <dl>                                     <dd><a href="/lingshidianpp/4714.shtml" title="金泰旺加盟" target="_blank">金泰旺加盟</a></dd>
-
-
-
-                                                        <dd><a href="/lingshidianpp/4715.shtml" title="丫眯乐加盟" target="_blank">丫眯乐加盟</a></dd>
-
-                                                    </dl>
-
-                                                    <dl>                                     <dd><a href="/lingshidianpp/4713.shtml" title="馋馋享加盟" target="_blank">馋馋享加盟</a></dd>
-
-
-
-                                                        <dd><a href="/lingshidianpp/4712.shtml" title="好心人加盟" target="_blank">好心人加盟</a></dd>
-
-                                                    </dl>
-
-                                                    <dl>                                     <dd><a href="/lingshidianpp/4711.shtml" title="阿幸加盟" target="_blank">阿幸加盟</a></dd>
-
-
-
-                                                        <dd><a href="/lingshidianpp/4710.shtml" title="诺梵加盟" target="_blank">诺梵加盟</a></dd>
-
-                                                    </dl>
-
-                                                    <dl>                                     <dd><a href="/lingshidianpp/4708.shtml" title="优利佳加盟" target="_blank">优利佳加盟</a></dd>
-
-
-
-                                                        <dd><a href="/lingshidianpp/4707.shtml" title="南北特加盟" target="_blank">南北特加盟</a></dd>
-
-                                                    </dl>
-
-                                                    <dl>                                     <dd><a href="/lingshidianpp/4706.shtml" title="蜀道香加盟" target="_blank">蜀道香加盟</a></dd>
-
-
-
-                                                        <dd><a href="/lingshidianpp/4705.shtml" title="新农哥加盟" target="_blank">新农哥加盟</a></dd>
-
-                                                    </dl>
-
-                                                    <dl>                                     <dd><a href="/lingshidianpp/4704.shtml" title="心味果园加盟" target="_blank">心味果园加盟</a></dd>
-
-
-
-                                                        <dd><a href="/lingshidianpp/4703.shtml" title="辣将军加盟" target="_blank">辣将军加盟</a></dd>
-
-                                                    </dl>
-
-                                                    <dl>                                     <dd><a href="/lingshidianpp/4702.shtml" title=" 迪客加盟" target="_blank"> 迪客加盟</a></dd>
-
-
-
-                                                        <dd><a href="/lingshidianpp/4701.shtml" title="香卡吧加盟" target="_blank">香卡吧加盟</a></dd>
-
-                                                    </dl>
-
-                                                    <dl>                                     <dd><a href="/lingshidianpp/4700.shtml" title="南农加盟" target="_blank">南农加盟</a></dd>
-
-
-
-                                                        <dd><a href="/lingshidianpp/4699.shtml" title="谭德记加盟" target="_blank">谭德记加盟</a></dd>
-
-                                                    </dl>
-
-                                                    <dl>                                     <dd><a href="/lingshidianpp/4695.shtml" title="巴喜村加盟" target="_blank">巴喜村加盟</a></dd>
-
-
-
-                                                        <dd><a href="/lingshidianpp/4693.shtml" title="阿茹娜加盟" target="_blank">阿茹娜加盟</a></dd>
-
-                                                    </dl>
-
-                                                    <dl>                                     <dd><a href="/lingshidianpp/4691.shtml" title="奥味加盟" target="_blank">奥味加盟</a></dd>
-
-
-
-                                                        <dd><a href="/lingshidianpp/4680.shtml" title="旭东加盟" target="_blank">旭东加盟</a></dd>
-
-                                                    </dl>
-
-                                                    <dl>                                     <dd><a href="/lingshidianpp/4679.shtml" title="智道加盟" target="_blank">智道加盟</a></dd>
-
-
-
-                                                        <dd><a href="/lingshidianpp/4678.shtml" title="留一口加盟" target="_blank">留一口加盟</a></dd>
-
-                                                    </dl>
-
-                                                    <dl>                                     <dd><a href="/lingshidianpp/4677.shtml" title="盈誉加盟" target="_blank">盈誉加盟</a></dd>
-
-
-
-                                                        <dd><a href="/lingshidianpp/4676.shtml" title="嘉善国威加盟" target="_blank">嘉善国威加盟</a></dd>
-
-                                                    </dl>
-
-                                                    <dl>                                     <dd><a href="/lingshidianpp/4675.shtml" title="疯果脆加盟" target="_blank">疯果脆加盟</a></dd>
-
-
-
-                                                        <dd><a href="/lingshidianpp/4674.shtml" title="七宝一丁" target="_blank">七宝一丁</a></dd>
-
-                                                    </dl>
-
-                                                    <dl>                                     <dd><a href="/lingshidianpp/4673.shtml" title="佬香翁" target="_blank">佬香翁</a></dd>
-
-
-
-                                                        <dd><a href="/lingshidianpp/4672.shtml" title="因味有你" target="_blank">因味有你</a></dd>
-
-                                                    </dl>
-
-                                                    <dl>                                     <dd><a href="/lingshidianpp/4671.shtml" title="美味美" target="_blank">美味美</a></dd>
-
-
-
-                                                        <dd><a href="/lingshidianpp/4655.shtml" title="多米乐" target="_blank">多米乐</a></dd>
-
-                                                    </dl>
-
-                                                    <dl>                                     <dd><a href="/lingshidianpp/4654.shtml" title="贝贝乐" target="_blank">贝贝乐</a></dd>
-
-
-
-                                                        <dd><a href="/lingshidianpp/4653.shtml" title="广香园" target="_blank">广香园</a></dd>
-
-                                                    </dl>
-
-                                                    <dl>                                     <dd><a href="/lingshidianpp/4652.shtml" title="好利源" target="_blank">好利源</a></dd>
-
-
-
-                                                        <dd><a href="/lingshidianpp/4651.shtml" title="吃货居" target="_blank">吃货居</a></dd>
-
-                                                    </dl>
-
-                                                    <dl>                                     <dd><a href="/lingshidianpp/4650.shtml" title="润成" target="_blank">润成</a></dd>
-
-
-
-                                                        <dd><a href="/lingshidianpp/4649.shtml" title="脆升升" target="_blank">脆升升</a></dd>
-
-                                                    </dl>
-
-                                                    <dl>                                     <dd><a href="/lingshidianpp/4648.shtml" title="米米佳" target="_blank">米米佳</a></dd>
-
-
-
-                                                        <dd><a href="/lingshidianpp/4647.shtml" title="疯狂诱惑" target="_blank">疯狂诱惑</a></dd>
-
-                                                    </dl>
-
-                                                    <dl>                                     <dd><a href="/lingshidianpp/4646.shtml" title="庆仔" target="_blank">庆仔</a></dd>
-
-
-
-                                                        <dd><a href="/lingshidianpp/4630.shtml" title="江太公" target="_blank">江太公</a></dd>
-
-                                                    </dl>
-
-                                                    <dl>                                     <dd><a href="/lingshidianpp/4629.shtml" title="知味轩" target="_blank">知味轩</a></dd>
-
-
-
-                                                        <dd><a href="/lingshidianpp/4628.shtml" title="多伊颗" target="_blank">多伊颗</a></dd>
-
-                                                    </dl>
-
-                                                    <dl>                                     <dd><a href="/lingshidianpp/4627.shtml" title="鲜品屋" target="_blank">鲜品屋</a></dd>
-
-
-
-                                                        <dd><a href="/lingshidianpp/4626.shtml" title="兔巴哥" target="_blank">兔巴哥</a></dd>
-
-                                                    </dl>
-
-                                                    <dl>                                     <dd><a href="/lingshidianpp/4625.shtml" title="萨哈林" target="_blank">萨哈林</a></dd>
-
-
-
-                                                        <dd><a href="/lingshidianpp/4624.shtml" title="满师傅" target="_blank">满师傅</a></dd>
-
-                                                    </dl>
-
-                                                    <dl>                                     <dd><a href="/lingshidianpp/4623.shtml" title="莲香楼" target="_blank">莲香楼</a></dd>
-
-
-
-                                                        <dd><a href="/lingshidianpp/4622.shtml" title="好巴食" target="_blank">好巴食</a></dd>
-
-                                                    </dl>
+                                                    @foreach($latestrmuyingbrands as $index=>$latestrmuyingbrand)
+                                                        @if($index%2 ==0)
+                                                            <dl>
+                                                            <dd><a href="/xm/{{$latestrmuyingbrand->id}}.shtml" title="{{$latestrmuyingbrand->brandname}}" target="_blank">{{$latestrmuyingbrand->brandname}}</a></dd>
+                                                       @else
+                                                                <dd><a href="/xm/{{$latestrmuyingbrand->id}}.shtml" title="{{$latestrmuyingbrand->brandname}}" target="_blank">{{$latestrmuyingbrand->brandname}}</a></dd>
+                                                               </dl>
+                                                    @endif
+                                                    @if($loop->last && $index%2 ==0)</dl>@endif
+                                                    @endforeach
                                                 </div>
                                             </div>
                                         </div>
@@ -674,151 +291,48 @@
                             <section>
                                 <div class="index_box3 clearfix">
                                     <div class="index_box3_l h420">
-                                        <div class="img_show"><a href="/chaohuodian/" target="_blank"><img src="/receptions/images/index_pic2.jpg" alt="炒货品牌"/></a></div>
-                                        <p class="tit"><a href="/chaohuodian/" target="_blank">炒货品牌</a></p>
+                                        <div class="img_show"><a href="/muyingshg/" target="_blank"><img src="/receptions/images/index_pic2.jpg" alt="母婴生活馆"/></a></div>
+                                        <p class="tit"><a href="/muyingshg/" target="_blank">母婴生活馆</a></p>
                                         <p class="desc">松子/坚果/开心果/巴旦木</p>
-                                        <p class="more"><a href="/chaohuodian/" target="_blank" title="炒货店品牌">查看详情&gt;</a></p>
+                                        <p class="more"><a href="/muyingshg/" target="_blank" title="母婴生活馆">查看详情&gt;</a></p>
                                     </div>
                                     <div class="index_box3_r">
                                         <div class="hd">
-                                            <span class="tit">炒货品牌</span>
+                                            <span class="tit">母婴生活馆</span>
                                             <span class="desc">颗颗饱满、开口易剥 笑口常开</span>
-                                            <span class="more"><a href="/chaohuodian/" target="_blank" title="炒货店品牌">更多&gt;&gt;</a></span>
+                                            <span class="more"><a href="/muyingshg/" target="_blank" title="母婴生活馆">更多&gt;&gt;</a></span>
                                         </div>
                                         <div class="bd">
                                             <div class="bd_l">
-
-
                                                 <dl>
-                                                    <dd><a href="/chaohuodian/4778.shtml" title="天天炒货加盟" target="_blank">天天炒货加盟</a></dd>
-
-
-
-                                                    <dd><a href="/chaohuodian/4762.shtml" title="岭峥炒栗加盟" target="_blank">岭峥炒栗加盟</a></dd>
-
-
-
-                                                    <dd><a href="/chaohuodian/4761.shtml" title="一哆瓜子加盟" target="_blank">一哆瓜子加盟</a></dd>
-
-
-
-                                                    <dd><a href="/chaohuodian/4565.shtml" title="达坂城老李炒货" target="_blank">达坂城老李炒货</a></dd>
-
-
-
-                                                    <dd><a href="/chaohuodian/4552.shtml" title="曲记炒货" target="_blank">曲记炒货</a></dd>
-
-
-
-                                                    <dd><a href="/chaohuodian/4548.shtml" title="江苏炒货" target="_blank">江苏炒货</a></dd>
-
-
-
-                                                    <dd><a href="/chaohuodian/4248.shtml" title="上海炒货加盟" target="_blank">上海炒货加盟</a></dd>
-
-
-
-                                                    <dd><a href="/chaohuodian/4244.shtml" title="丁老头炒货加盟" target="_blank">丁老头炒货加盟</a></dd>
-
-
-
-                                                    <dd><a href="/chaohuodian/9.shtml" title="戴永红炒货" target="_blank">戴永红炒货</a></dd>
-
+                                                    @foreach($latestmuyingshgbrands as $index=>$latestmuyingshgbrand)
+                                                        @if($index<9)
+                                                            <dd><a href="/xm/{{$latestmuyingshgbrand->id}}.shtml" title="{{$latestmuyingshgbrand->brandname}}" target="_blank">{{$latestmuyingshgbrand->brandname}}</a></dd>
+                                                        @endif
+                                                    @endforeach
                                                 </dl>
                                                 <dl>
-                                                    <dd><a href="/chaohuodian/8.shtml" title="盐津铺子" target="_blank">盐津铺子</a></dd>
-
-
-
-                                                    <dd><a href="/chaohuodian/17.shtml" title="飘零大叔" target="_blank">飘零大叔</a></dd>
-
-
-
-                                                    <dd><a href="/chaohuodian/177.shtml" title="方林富炒货加盟" target="_blank">方林富炒货加盟</a></dd>
-
-
-
-                                                    <dd><a href="/chaohuodian/176.shtml" title="神栗" target="_blank">神栗</a></dd>
-
-
-
-                                                    <dd><a href="/chaohuodian/172.shtml" title="傻乐瓜子" target="_blank">傻乐瓜子</a></dd>
-
-
-
-                                                    <dd><a href="/chaohuodian/171.shtml" title="同盛昌炒货" target="_blank">同盛昌炒货</a></dd>
-
-
-
-                                                    <dd><a href="/chaohuodian/147.shtml" title="鑫忆品香炒货" target="_blank">鑫忆品香炒货</a></dd>
-
-
-
-                                                    <dd><a href="/chaohuodian/141.shtml" title="我佳炒货" target="_blank">我佳炒货</a></dd>
-
-
-
-                                                    <dd><a href="/chaohuodian/140.shtml" title="张二嘎" target="_blank">张二嘎</a></dd>
-
+                                                    @foreach($latestmuyingshgbrands as $index=>$latestmuyingshgbrand)
+                                                        @if($index>8 && $index<18)
+                                                            <dd><a href="/xm/{{$latestmuyingshgbrand->id}}.shtml" title="{{$latestmuyingshgbrand->brandname}}" target="_blank">{{$latestmuyingshgbrand->brandname}}</a></dd>
+                                                        @endif
+                                                    @endforeach
                                                 </dl>
                                                 <dl>
-                                                    <dd><a href="/chaohuodian/137.shtml" title="品忆香炒货" target="_blank">品忆香炒货</a></dd>
-
-
-
-                                                    <dd><a href="/chaohuodian/136.shtml" title="粒中王" target="_blank">粒中王</a></dd>
-
-
-
-                                                    <dd><a href="/chaohuodian/133.shtml" title="佳佳香炒货" target="_blank">佳佳香炒货</a></dd>
-
-
-
-                                                    <dd><a href="/chaohuodian/132.shtml" title="吴大头炒货" target="_blank">吴大头炒货</a></dd>
-
-
-
-                                                    <dd><a href="/chaohuodian/130.shtml" title="白老五炒货" target="_blank">白老五炒货</a></dd>
-
-
-
-                                                    <dd><a href="/chaohuodian/128.shtml" title="苗家炒货" target="_blank">苗家炒货</a></dd>
-
-
-
-                                                    <dd><a href="/chaohuodian/127.shtml" title="杨记炒货" target="_blank">杨记炒货</a></dd>
-
-
-
-                                                    <dd><a href="/chaohuodian/126.shtml" title="七里香炒货" target="_blank">七里香炒货</a></dd>
-
-
-
-                                                    <dd><a href="/chaohuodian/125.shtml" title="久久顺炒货" target="_blank">久久顺炒货</a></dd>
-
+                                                    @foreach($latestmuyingshgbrands as $index=>$latestmuyingshgbrand)
+                                                        @if($index>17 && $index<27)
+                                                            <dd><a href="/xm/{{$latestmuyingshgbrand->id}}.shtml" title="{{$latestmuyingshgbrand->brandname}}" target="_blank">{{$latestmuyingshgbrand->brandname}}</a></dd>
+                                                        @endif
+                                                    @endforeach
                                                 </dl>
+
                                             </div>
                                             <div class="bd_r">
                                                 <div class="index_brand_list">
                                                     <ul>
-                                                        <li><a href="/chaohuodian/123.shtml" target="_blank"><img src="/images/thread/2017/04/18/14c67609178a7c62f7e30febb34aa8b3.jpg" title="果仁张" alt="果仁张"><span>果仁张</span></a></li>
-                                                        <li><a href="/chaohuodian/121.shtml" target="_blank"><img src="/images/thread/2017/04/18/cc62b43252ca7133742e87b119062892.jpg" title="佳源香甘栗炒货" alt="佳源香甘栗炒货"><span>佳源香甘栗炒货</span></a></li>
-                                                        <li><a href="/chaohuodian/119.shtml" target="_blank"><img src="/images/thread/2017/04/18/9b6b8b84d1699791d24ca196773dcdc8.jpg" title="曹记炒货" alt="曹记炒货"><span>曹记炒货</span></a></li>
-                                                        <li><a href="/chaohuodian/118.shtml" target="_blank"><img src="/images/thread/2017/04/18/c489e38df2a07e4f4a8c2e6182e4746b.jpg" title="陶永祥炒货 " alt="陶永祥炒货 "><span>陶永祥炒货 </span></a></li>
-                                                        <li><a href="/chaohuodian/113.shtml" target="_blank"><img src="/images/thread/2017/04/18/1307736c864789044429b1f219e852b6.png" title="厚生记" alt="厚生记"><span>厚生记</span></a></li>
-                                                        <li><a href="/chaohuodian/107.shtml" target="_blank"><img src="/images/thread/2017/04/18/1eb198590f5b7f9e65da840781e6cfb0.jpg" title="孟令华炒货" alt="孟令华炒货"><span>孟令华炒货</span></a></li>
-                                                        <li><a href="/chaohuodian/105.shtml" target="_blank"><img src="http://www.58lingshi.com/uploads/image/2017/04/18/7666aea999876f83e3468119f11f0fb6.jpg" title="民味园炒货加盟" alt="民味园炒货加盟"><span>民味园炒货加盟</span></a></li>
-                                                        <li><a href="/chaohuodian/101.shtml" target="_blank"><img src="/images/thread/2017/04/18/e2c0f1995c67206a7e31245570d183d7.jpg" title="孟记炒货" alt="孟记炒货"><span>孟记炒货</span></a></li>
-                                                        <li><a href="/chaohuodian/100.shtml" target="_blank"><img src="/images/thread/2017/04/18/cd0bcd412648640c158940c8833e8d7a.jpg" title="傻二炒货" alt="傻二炒货"><span>傻二炒货</span></a></li>
-                                                        <li><a href="/chaohuodian/86.shtml" target="_blank"><img src="/images/thread/2017/04/17/2dc7df7adfd96c60c6cdad75c6a06349.jpg" title="王胖子炒货" alt="王胖子炒货"><span>王胖子炒货</span></a></li>
-                                                        <li><a href="/chaohuodian/74.shtml" target="_blank"><img src="/images/thread/2017/04/17/59f91120d52ceb2bb5862ff9cf37ad6c.jpg" title="德雅村炒货" alt="德雅村炒货"><span>德雅村炒货</span></a></li>
-                                                        <li><a href="/chaohuodian/66.shtml" target="_blank"><img src="/images/thread/2017/04/17/6856e844245e98b3ecf517254ddf7b92.jpg" title="一品香炒货" alt="一品香炒货"><span>一品香炒货</span></a></li>
-                                                        <li><a href="/chaohuodian/61.shtml" target="_blank"><img src="/images/thread/2017/04/17/673bb690861ad59bea7a84743e31a518.jpg" title="金傻二炒货" alt="金傻二炒货"><span>金傻二炒货</span></a></li>
-                                                        <li><a href="/chaohuodian/57.shtml" target="_blank"><img src="/images/thread/2017/04/17/63cc2fc9b7f9e40214949dfdfeed2c03.jpg" title="正林炒货" alt="正林炒货"><span>正林炒货</span></a></li>
-                                                        <li><a href="/chaohuodian/56.shtml" target="_blank"><img src="/images/thread/2017/04/17/ed8b04cab4f195ab4438f159e73dfeda.jpg" title="口水码头" alt="口水码头"><span>口水码头</span></a></li>
-                                                        <li><a href="/chaohuodian/55.shtml" target="_blank"><img src="/images/thread/2017/04/17/d0759d0deaeaf84c46515a5ef7eb3507.jpg" title="口水娃" alt="口水娃"><span>口水娃</span></a></li>
-                                                        <li><a href="/chaohuodian/51.shtml" target="_blank"><img src="/images/thread/2017/04/17/257b0d604a639d13975512bfe10f323d.jpg" title="百味林" alt="百味林"><span>百味林</span></a></li>
-                                                        <li><a href="/chaohuodian/49.shtml" target="_blank"><img src="/images/thread/2017/04/17/138a2006b0233a9bf6ddde8961e1f6b4.jpg" title="圣客炒货" alt="圣客炒货"><span>圣客炒货</span></a></li>
+                                                        @foreach($latestrmuyingshgbrands as $latestrmuyingshgbrand)
+                                                        <li><a href="/xm/{{$latestrmuyingshgbrand->id}}.shtml" target="_blank"><img src="{{$latestrmuyingshgbrand->litpic}}" title="{{$latestrmuyingshgbrand->brandname}}" alt="{{$latestrmuyingshgbrand->brandname}}"><span>{{$latestrmuyingshgbrand->brandname}}</span></a></li>
+                                                        @endforeach
                                                     </ul>
                                                 </div>
                                             </div>
@@ -830,150 +344,47 @@
                             <section>
                                 <div class="index_box3 clearfix">
                                     <div class="index_box3_l h420">
-                                        <div class="img_show"><a href="/jinkoulingshi/" target="_blank"><img src="/receptions/images/index_pic3.jpg" alt="进口零食"/></a></div>
-                                        <p class="tit"><a href="/jinkoulingshi/" target="_blank">进口零食</a></p>
+                                        <div class="img_show"><a href="/zhaoshang/" target="_blank"><img src="/receptions/images/index_pic3.jpg" alt="母婴品牌招商"/></a></div>
+                                        <p class="tit"><a href="/zhaoshang/" target="_blank">母婴品牌招商</a></p>
                                         <p class="desc">原装进口 精挑细选</p>
-                                        <p class="more"><a href="/jinkoulingshi/" target="_blank">查看详情&gt;</a></p>
+                                        <p class="more"><a href="/zhaoshang/" target="_blank">查看详情&gt;</a></p>
                                     </div>
                                     <div class="index_box3_r">
                                         <div class="hd">
-                                            <span class="tit">进口零食</span>
+                                            <span class="tit">母婴品牌招商</span>
                                             <span class="desc">汇聚全球零食品牌,上千款进口食品助您月利10万,掀起疯狂抢购狂潮</span>
-                                            <span class="more"><a href="/jinkoulingshi/" target="_blank">更多&gt;&gt;</a></span>
+                                            <span class="more"><a href="/zhaoshang/" target="_blank">更多&gt;&gt;</a></span>
                                         </div>
                                         <div class="bd">
                                             <div class="bd_l">
-
                                                 <dl>
-                                                    <dd><a href="/jinkoulingshi/4696.shtml" title="久久顺炒货" target="_blank">澳生活加</a></dd>
-
-
-
-                                                    <dd><a href="/jinkoulingshi/4604.shtml" title="久久顺炒货" target="_blank">真惠子</a></dd>
-
-
-
-                                                    <dd><a href="/jinkoulingshi/4592.shtml" title="久久顺炒货" target="_blank">万福客</a></dd>
-
-
-
-                                                    <dd><a href="/jinkoulingshi/4575.shtml" title="久久顺炒货" target="_blank">7物语</a></dd>
-
-
-
-                                                    <dd><a href="/jinkoulingshi/4573.shtml" title="久久顺炒货" target="_blank">蒙卡蒂</a></dd>
-
-
-
-                                                    <dd><a href="/jinkoulingshi/4564.shtml" title="久久顺炒货" target="_blank">Q客家</a></dd>
-
-
-
-                                                    <dd><a href="/jinkoulingshi/4463.shtml" title="久久顺炒货" target="_blank">长沙进口</a></dd>
-
-
-
-                                                    <dd><a href="/jinkoulingshi/4420.shtml" title="久久顺炒货" target="_blank">太空谷</a></dd>
-
-
-
-                                                    <dd><a href="/jinkoulingshi/4378.shtml" title="久久顺炒货" target="_blank">一粒志</a></dd>
-
+                                                    @foreach($latestzsbrands as $index=>$latestzsbrand)
+                                                        @if($index<9)
+                                                            <dd><a href="/xm/{{$latestzsbrand->id}}.shtml" title="{{$latestzsbrand->brandname}}" target="_blank">{{$latestzsbrand->brandname}}</a></dd>
+                                                        @endif
+                                                    @endforeach
                                                 </dl>
                                                 <dl>
-                                                    <dd><a href="/jinkoulingshi/4344.shtml" title="久久顺炒货" target="_blank">御食园</a></dd>
-
-
-
-                                                    <dd><a href="/jinkoulingshi/4343.shtml" title="久久顺炒货" target="_blank">泉城烤薯</a></dd>
-
-
-
-                                                    <dd><a href="/jinkoulingshi/4340.shtml" title="久久顺炒货" target="_blank">快乐星汉</a></dd>
-
-
-
-                                                    <dd><a href="/jinkoulingshi/4309.shtml" title="久久顺炒货" target="_blank">韩味源</a></dd>
-
-
-
-                                                    <dd><a href="/jinkoulingshi/4307.shtml" title="久久顺炒货" target="_blank">魔呀零食</a></dd>
-
-
-
-                                                    <dd><a href="/jinkoulingshi/4305.shtml" title="久久顺炒货" target="_blank">艾莉克丝</a></dd>
-
-
-
-                                                    <dd><a href="/jinkoulingshi/4303.shtml" title="久久顺炒货" target="_blank">今磨坊</a></dd>
-
-
-
-                                                    <dd><a href="/jinkoulingshi/2377.shtml" title="久久顺炒货" target="_blank">小资小味</a></dd>
-
-
-
-                                                    <dd><a href="/jinkoulingshi/305.shtml" title="久久顺炒货" target="_blank">自由自在</a></dd>
-
+                                                    @foreach($latestzsbrands as $index=>$latestzsbrand)
+                                                        @if($index>8 && $index<18)
+                                                            <dd><a href="/xm/{{$latestzsbrand->id}}.shtml" title="{{$latestzsbrand->brandname}}" target="_blank">{{$latestzsbrand->brandname}}</a></dd>
+                                                        @endif
+                                                    @endforeach
                                                 </dl>
                                                 <dl>
-                                                    <dd><a href="/jinkoulingshi/301.shtml" title="久久顺炒货" target="_blank">悦丰</a></dd>
-
-
-
-                                                    <dd><a href="/jinkoulingshi/282.shtml" title="久久顺炒货" target="_blank">优壹家</a></dd>
-
-
-
-                                                    <dd><a href="/jinkoulingshi/278.shtml" title="久久顺炒货" target="_blank">优米客</a></dd>
-
-
-
-                                                    <dd><a href="/jinkoulingshi/267.shtml" title="久久顺炒货" target="_blank">优客龙</a></dd>
-
-
-
-                                                    <dd><a href="/jinkoulingshi/265.shtml" title="久久顺炒货" target="_blank">优之良品</a></dd>
-
-
-
-                                                    <dd><a href="/jinkoulingshi/245.shtml" title="久久顺炒货" target="_blank">五洲会</a></dd>
-
-
-
-                                                    <dd><a href="/jinkoulingshi/233.shtml" title="久久顺炒货" target="_blank">兔子家</a></dd>
-
-
-
-                                                    <dd><a href="/jinkoulingshi/231.shtml" title="久久顺炒货" target="_blank">七天优品</a></dd>
-
-
-
-                                                    <dd><a href="/jinkoulingshi/229.shtml" title="久久顺炒货" target="_blank">甜蜜小筑</a></dd>
-
-                                                </dl>                                             </div>
+                                                    @foreach($latestzsbrands as $index=>$latestzsbrand)
+                                                        @if($index>17 && $index<27)
+                                                            <dd><a href="/xm/{{$latestzsbrand->id}}.shtml" title="{{$latestzsbrand->brandname}}" target="_blank">{{$latestzsbrand->brandname}}</a></dd>
+                                                        @endif
+                                                    @endforeach
+                                                </dl>
+                                            </div>
                                             <div class="bd_r">
                                                 <div class="index_brand_list">
                                                     <ul>
-
-                                                        <li><a href="/jinkoulingshi/4696.shtml" target="_blank"><img src="http://www.58lingshi.com/uploads/image/2018/11/09/3263d555b0e4b9c77194e9fbfda7f7d7.jpg" title="澳生活加盟" alt="澳生活加盟"><span>澳生活加盟</span></a></li>
-                                                        <li><a href="/jinkoulingshi/4604.shtml" target="_blank"><img src="http://www.58lingshi.com/uploads/image/2018/11/05/4e9414391c3ade5f424ae883876aaff7.png" title="真惠子" alt="真惠子"><span>真惠子</span></a></li>
-                                                        <li><a href="/jinkoulingshi/4592.shtml" target="_blank"><img src="http://www.58lingshi.com/uploads/image/2018/11/02/c2ab0834307bb95fba50768eb0326b43.jpg" title="万福客" alt="万福客"><span>万福客</span></a></li>
-                                                        <li><a href="/jinkoulingshi/4575.shtml" target="_blank"><img src="http://www.58lingshi.com/uploads/image/2018/11/01/f8a1b8b0f8b45ebc91f499d3359316d8.jpg" title="7物语" alt="7物语"><span>7物语</span></a></li>
-                                                        <li><a href="/jinkoulingshi/4573.shtml" target="_blank"><img src="http://www.58lingshi.com/uploads/image/2018/11/01/abd1ede9e042a47ef5d5a4efe52e6777.jpg" title="蒙卡蒂" alt="蒙卡蒂"><span>蒙卡蒂</span></a></li>
-                                                        <li><a href="/jinkoulingshi/4564.shtml" target="_blank"><img src="http://www.58lingshi.com/uploads/image/2018/10/31/7d93c6712be6e85e753723e60be3bf91.jpg" title="Q客家" alt="Q客家"><span>Q客家</span></a></li>
-                                                        <li><a href="/jinkoulingshi/4463.shtml" target="_blank"><img src="http://www.58lingshi.com/uploads/image/2018/10/26/c6bed3cf0a4f9f81c6d7f04e8fe5ddce.jpg" title="长沙进口食品" alt="长沙进口食品"><span>长沙进口食品</span></a></li>
-                                                        <li><a href="/jinkoulingshi/4420.shtml" target="_blank"><img src="http://www.58lingshi.com/uploads/image/2018/10/25/b96622f779720980a9b431615ae72e69.jpg" title="太空谷" alt="太空谷"><span>太空谷</span></a></li>
-                                                        <li><a href="/jinkoulingshi/4378.shtml" target="_blank"><img src="http://www.58lingshi.com/uploads/image/2018/10/24/3d74ab1511052c5422731797971875f3.png" title="一粒志" alt="一粒志"><span>一粒志</span></a></li>
-                                                        <li><a href="/jinkoulingshi/4344.shtml" target="_blank"><img src="http://www.58lingshi.com/uploads/image/2018/10/23/bc574eb44ea47db1a3bf3d2450b8c816.png" title="御食园" alt="御食园"><span>御食园</span></a></li>
-                                                        <li><a href="/jinkoulingshi/4343.shtml" target="_blank"><img src="http://www.58lingshi.com/uploads/image/2018/10/23/c99dd8fc472bd152ca4ae6fd8e522ad7.jpg" title="泉城烤薯" alt="泉城烤薯"><span>泉城烤薯</span></a></li>
-                                                        <li><a href="/jinkoulingshi/4340.shtml" target="_blank"><img src="http://www.58lingshi.com/uploads/image/2018/10/23/f172f293b995dfbd016e14a2d797711e.jpg" title="快乐星汉堡" alt="快乐星汉堡"><span>快乐星汉堡</span></a></li>
-                                                        <li><a href="/jinkoulingshi/4309.shtml" target="_blank"><img src="http://www.58lingshi.com/uploads/image/2018/10/24/330b95ed229d9680efe605bad9888c79.jpg" title="韩味源" alt="韩味源"><span>韩味源</span></a></li>
-                                                        <li><a href="/jinkoulingshi/4307.shtml" target="_blank"><img src="http://www.58lingshi.com/uploads/image/2018/10/22/3dc292178524368dddcebdf6f87a8822.jpg" title="魔呀零食" alt="魔呀零食"><span>魔呀零食</span></a></li>
-                                                        <li><a href="/jinkoulingshi/4305.shtml" target="_blank"><img src="http://www.58lingshi.com/uploads/image/2018/10/22/172797b15dbf46a544c71fb8beafada9.jpg" title="艾莉克丝" alt="艾莉克丝"><span>艾莉克丝</span></a></li>
-                                                        <li><a href="/jinkoulingshi/4303.shtml" target="_blank"><img src="http://www.58lingshi.com/uploads/image/2018/10/22/b34b6115ac4c0ffbd02378ca9229758a.jpg" title="今磨坊" alt="今磨坊"><span>今磨坊</span></a></li>
-                                                        <li><a href="/jinkoulingshi/2377.shtml" target="_blank"><img src="/images/thread/2017/07/03/9e6d157c19284fe0773942fa0fb53c67.png" title="小资小味" alt="小资小味"><span>小资小味</span></a></li>
-                                                        <li><a href="/jinkoulingshi/305.shtml" target="_blank"><img src="/images/thread/2017/04/28/d4f7a34473aad01230c8dffa0a230ee9.png" title="自由自在" alt="自由自在"><span>自由自在</span></a></li>
+                                                        @foreach($latestrzsbrands as $latestrzsbrand)
+                                                            <li><a href="/xm/{{$latestrzsbrand->id}}.shtml" target="_blank"><img src="{{$latestrzsbrand->litpic}}" title="{{$latestrzsbrand->brandname}}" alt="{{$latestrzsbrand->brandname}}"><span>{{$latestrmuyingshgbrand->brandname}}</span></a></li>
+                                                        @endforeach
                                                     </ul>
                                                 </div>
                                             </div>
@@ -999,119 +410,83 @@
         <section>
             <div class="index_box4 clearfix">
                 <div class="cont4_con fl">
-                    <h2>大家都在看</h2>
+                    <h2>品牌关注排行榜</h2>
                     <div class="con_fir">
                         <div class="fir_left">
-
-                            <div class="li_div"><a href="/ganguodian/367.shtml" title="逗妮开心加盟" target="_blank"><img src="http://www.58lingshi.com/uploads/image/2017/05/03/bc96022a75800a75a81c582ce1961700.jpg"></a><span><a href="/ganguodian/367.shtml" target="_blank">逗妮开心加盟</a><br><font color="#9c9c9c">3086人</font><em><a href="#" target="_blank">咨询</a></em></span></div>
-
-                            <div class="li_div"><a href="/jinkoulingshi/216.shtml" title="魔呀" target="_blank"><img src="/images/thread/2017/04/25/f1da97e5a112b847f3b7f7261c3509e6.jpg"></a><span><a href="/jinkoulingshi/216.shtml" target="_blank">魔呀</a><br><font color="#9c9c9c">8656人</font><em><a href="#" target="_blank">咨询</a></em></span></div>
-
-                            <div class="li_div"><a href="/ganguodian/52.shtml" title="方家铺子加盟" target="_blank"><img src="http://www.58lingshi.com/uploads/image/2017/04/17/1c32b8f1b30169abe807e1315f7946cb.jpg"></a><span><a href="/ganguodian/52.shtml" target="_blank">方家铺子加盟</a><br><font color="#9c9c9c">2786人</font><em><a href="#" target="_blank">咨询</a></em></span></div>
-
-                            <div class="li_div"><a href="/ganguodian/2.shtml" title="百草味" target="_blank"><img src="/images/thread/2017/04/12/27cca2278e5dada6bc4b93a15cd2080e.jpg"></a><span><a href="/ganguodian/2.shtml" target="_blank">百草味</a><br><font color="#9c9c9c">2307人</font><em><a href="#" target="_blank">咨询</a></em></span></div>
-
-                            <div class="li_div"><a href="/jinkoulingshi/212.shtml" title="常青藤" target="_blank"><img src="/images/thread/2017/04/25/bdc50348a7e2502fe53213c09a3feced.jpg"></a><span><a href="/jinkoulingshi/212.shtml" target="_blank">常青藤</a><br><font color="#9c9c9c">8186人</font><em><a href="#" target="_blank">咨询</a></em></span></div>
-                        </div>
+                            @foreach($hbrands as $hbrand)
+                            <div class="li_div"><a href="/xm/{{$hbrand->id}}.shtml" title="{{$hbrand->brandname}}" target="_blank"><img src="{{$hbrand->litpic}}"></a><span><a href="/xm/{{$hbrand->id}}.shtml" target="_blank">{{$hbrand->brandname}}</a><br><font color="#9c9c9c">{{$hbrand->brandattch}}人</font><em><a href="/xm/{{$hbrand->id}}" target="_blank">咨询</a></em></span></div>
+                            @endforeach
+                         </div>
                         <div class="fir_right">
                             <ul>
+                                @foreach($hbrands as $hbrand)
                                 <li>
-                                    <div class="jg">￥8-15万元</div>
-                                    <div class="wz"><a href="/ganguodian/367.shtml" title="逗妮开心加盟" target="_blank">逗妮开心加盟</a><br><span class="fl">行业：<font color="#666">干果店品牌</font></span><span class="fr">3086人咨询</span></div>
+                                    <div class="jg">￥{{$hbrand->brandpay}}</div>
+                                    <div class="wz"><a href="/xm/{{$hbrand->id}}.shtml" title="{{$hbrand->brandname}}" target="_blank">{{$hbrand->brandname}}</a><br><span class="fl">行业：<font color="#666">{{$brandalltypes[$hbrand->typeid]}}</font></span><span class="fr">{{$hbrand->brandapply}}人咨询</span></div>
                                 </li>
-                                <li>
-                                    <div class="jg">￥4-15万</div>
-                                    <div class="wz"><a href="/jinkoulingshi/216.shtml" title="魔呀" target="_blank">魔呀</a><br><span class="fl">行业：<font color="#666">进口零食品牌</font></span><span class="fr">8656人咨询</span></div>
-                                </li>
-                                <li>
-                                    <div class="jg">￥10万</div>
-                                    <div class="wz"><a href="/ganguodian/52.shtml" title="方家铺子加盟" target="_blank">方家铺子加盟</a><br><span class="fl">行业：<font color="#666">干果店品牌</font></span><span class="fr">2786人咨询</span></div>
-                                </li>
-                                <li>
-                                    <div class="jg">￥10万元</div>
-                                    <div class="wz"><a href="/ganguodian/2.shtml" title="百草味" target="_blank">百草味</a><br><span class="fl">行业：<font color="#666">干果店品牌</font></span><span class="fr">2307人咨询</span></div>
-                                </li>
-                                <li>
-                                    <div class="jg">￥5-15万</div>
-                                    <div class="wz"><a href="/jinkoulingshi/212.shtml" title="常青藤" target="_blank">常青藤</a><br><span class="fl">行业：<font color="#666">进口零食品牌</font></span><span class="fr">8186人咨询</span></div>
-                                </li>
+                                @endforeach
                             </ul>
                         </div>
                     </div>
                 </div>
                 <div class="cont4_con fr">
-                    <h2>生意百科</h2>
+                    <h2>加盟小百科</h2>
                     <div class="con_sec">
                         <ul>
-                            <li class=" one  bor">
-                                <span><a href="/ask/1.shtml" title="三只松鼠能加盟吗，怎么代理?" target="_blank">三只松鼠能加盟吗，怎么代理?</a></span>
-                                <p> 　　本人是全职妈妈，现在孩子已经上学了，孩子很喜欢吃三只松鼠的零...</p>
-                            </li>
-                            <li class=" two  bor">
-                                <span><a href="/ask/2.shtml" title="想开家一扫光零食店，说不要加盟费，是真的吗" target="_blank">想开家一扫光零食店，说不要加盟费，是真的吗</a></span>
-                                <p> 　　想开家一扫光零食店，网上说不要加盟费，是真的吗，说是原来湖南...</p>
-                            </li>
-                            <li class=" three  bor">
-                                <span><a href="/ask/3.shtml" title="现在开家零食店赚钱吗？利润有多少" target="_blank">现在开家零食店赚钱吗？利润有多少</a></span>
-                                <p> 　　打算开家零食店，想了解下利润有多少？现在在我们老家扬州开设一...</p>
-                            </li>
+                            @foreach($asknews as $index=>$asknew)
+                                <li class=" @if($index==0) one @elseif($index==1)  two @elseif($index=2) three @else three @endif bor">
+                                    <span><a href="/news/{{$asknew->id}}.shtml" title="{{$asknew->title}}" target="_blank">{{$asknew->title}}</a></span>
+                                    <p> {{str_limit($asknew->description,60)}}...</p>
+                                </li>
+                            @endforeach
                         </ul>
-                        <textarea class="question" onclick="this.value = '';" name="question">#说出您创业疑问，10分钟将得到答案#</textarea>
-                        <input type="button" class="wd_submit" value="提问">
                     </div>
                 </div>
             </div>
         </section>
-
-
         <section>
             <div class="index_box5">
                 <div class="cont5_left">
-                    <h2>创业大讲堂</h2>
+                    <h2>品牌新闻</h2>
                     <div class="left_one">
                         <div class="one_top">
-                            <div class="li_d"> <a href="/lingshizx/3120.shtml" title="休闲食品果来仁加盟有哪些优势？" target="_blank"><img src="http://www.58lingshi.com/uploads/image/2017/11/22/512ad2a07cf13df63d260af9dc48deb3.png" alt="休闲食品果来仁加盟有哪些优势？"></a>
-                                <div class="d_wz">
-                                    <h3><a href="/lingshizx/3120.shtml" target="_blank" title="休闲食品果来仁加盟有哪些优势？">休闲食品果来仁加盟有哪些优势？</a></h3>
-                                    <p>休闲食品果来仁加盟有哪些优势?休闲小吃是当代人们最喜爱吃的产品之一，其受到了众多消费者的喜...</p>
+                            @foreach($latestnews as $index=>$latestnew)
+                                @if($index<2)
+                                <div class="li_d"> <a href="/news/{{$latestnew->id}}.shtml" title="{{$latestnew->title}}" target="_blank"><img src="{{$latestnew->litpic}}" alt="{{$latestnew->title}}"></a>
+                                    <div class="d_wz">
+                                        <h3><a href="/lingshizx/3120.shtml" target="_blank" title="{{$latestnew->title}}">{{$latestnew->title}}</a></h3>
+                                        <p>{{str_limit($latestnew->description,90)}}...</p>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="li_d"> <a href="/lingshizx/3118.shtml" title="开家姚太太休闲食品店好不好 ?姚太太休闲食品加盟有优惠吗?" target="_blank"><img src="http://www.58lingshi.com/uploads/image/2017/11/21/31cb769d29c4a8c7591db934772830be.jpg" alt="开家姚太太休闲食品店好不好 ?姚太太休闲食品加盟有优惠吗?"></a>
-                                <div class="d_wz">
-                                    <h3><a href="/lingshizx/3118.shtml" target="_blank" title="开家姚太太休闲食品店好不好 ?姚太太休闲食品加盟有优惠吗?">开家姚太太休闲食品店好不好 ?姚太太休闲食品加盟有优惠吗?</a></h3>
-                                    <p>开家姚太太休闲食品店好不好?姚太太休闲食品加盟有优惠吗?休闲食品的市场一向都比较受欢迎，各种...</p>
-                                </div>
-                            </div>
+                                @endif
+                            @endforeach
                         </div>
                         <div class="one_cen">
                             <ul>
-                                <li><a href="lingshidianpp/4900.shtml" title="肥妹凉果零食店加盟利润怎么样？13.5万元轻松开家小型店" target="_blank">肥妹凉果零食店加盟利润怎么样？13.5万元轻松开家小型店 </a></li>
-                                <li><a href="lingshidianpp/4899.shtml" title="三零食品零食店加盟利润高吗？三零食品零食店怎么加盟" target="_blank">三零食品零食店加盟利润高吗？三零食品零食店怎么加盟 </a></li>
-                                <li><a href="lingshidianpp/4898.shtml" title="上海炒货店加盟赚钱吗？上海炒货加盟怎么样" target="_blank">上海炒货店加盟赚钱吗？上海炒货加盟怎么样 </a></li>
-                                <li><a href="lingshidianpp/4897.shtml" title="馋嘴猫零食店加盟利润怎么样？一年竟然赚取25.5万元" target="_blank">馋嘴猫零食店加盟利润怎么样？一年竟然赚取25.5万元 </a></li>
-                                <li><a href="lingshidianpp/4896.shtml" title="马路村干果店加盟赚钱吗？一年净赚25.5万元" target="_blank">马路村干果店加盟赚钱吗？一年净赚25.5万元 </a></li>
-                                <li><a href="lingshidianpp/4895.shtml" title="食尚零食铺加盟利润好不好？食尚零食铺怎么加盟" target="_blank">食尚零食铺加盟利润好不好？食尚零食铺怎么加盟 </a></li>
+                                @foreach($latestnews as $index=>$latestnew)
+                                    @if($index>1 && $index<8)
+                                    <li><a href="/news/{{$latestnew->id}}.shtml" title="{{$latestnew->title}}" target="_blank">{{$latestnew->title}}</a></li>
+                                    @endif
+                                @endforeach
                             </ul>
                         </div>
                         <div class="one_bot">
                             <dl>
-                                <dt>人群解读</dt>
-                                <dd><a href="/lingshidianpp/4894.shtml" target="_blank" title="自然派零食店加盟费多少钱？自然派零食店加盟怎么样"><font color="#D71318">自然派零</font>自然派零食店加盟费多少钱？自然派零食店加盟怎么样</a></dd>
-                                <dd><a href="/lingshidianpp/4893.shtml" target="_blank" title="天泉甜甜干果加盟利润如何？一年竟赚23万利润"><font color="#D71318">天泉甜甜</font>天泉甜甜干果加盟利润如何？一年竟赚23万利润</a></dd>
-                                <dd><a href="/lingshidianpp/4892.shtml" target="_blank" title="新疆干果店加盟利润高吗？一年竟然能赚23万元"><font color="#D71318">新疆干果</font>新疆干果店加盟利润高吗？一年竟然能赚23万元</a></dd>
-                                <dd><a href="/lingshidianpp/4891.shtml" target="_blank" title="来伊份零食店加盟利润怎么样？年利润高达38.16万元"><font color="#D71318">来伊份加</font>来伊份零食店加盟利润怎么样？年利润高达38.16万元</a></dd>
-                                <dd><a href="/lingshidianpp/4890.shtml" target="_blank" title="糖巢量贩零食加盟赚钱吗？一年净赚29.52万元"><font color="#D71318">糖巢量贩</font>糖巢量贩零食加盟赚钱吗？一年净赚29.52万元</a></dd>
-                                <dd><a href="/lingshidianpp/4889.shtml" target="_blank" title="田良君炒货加盟利润怎么样？加盟田良君炒货有什么条件"><font color="#D71318">田良君炒</font>田良君炒货加盟利润怎么样？加盟田良君炒货有什么条件</a></dd>
-                            </dl>
+                                <dt>品牌资讯</dt>
+                                @foreach($latestnews as $index=>$latestnew)
+                                    @if($index>7 && $index<14)
+                                    <dd><a href="/news/{{$latestnew->id}}.shtml" target="_blank" title="{{$latestnew->title}}"><font color="#D71318">{{$latestnew->bdname}}</font>{{$latestnew->title}}</a></dd>
+                                    @endif
+                                @endforeach
+                                </dl>
                         </div>
                     </div>
                     <div class="left_two">
-                        <h4>零食采购信息</h4>
+                        <h4>加盟费用</h4>
                         <dl>
-                            <dd><span>2018-01-22</span><i class=" ye ">1.</i><a href="/jinhuopf/3321.shtml" target="_blank" title="加盟能解决零食店进货问题吗？进货渠道更好">加盟能解决零食店进货问题吗？进货渠道更好</a></dd>
-                            <dd><span>2017-06-28</span><i class=" ye ">2.</i><a href="/jinhuopf/2231.shtml" target="_blank" title="做强特色做优品质做大品牌 助推提升成都开放型经济水平">做强特色做优品质做大品牌 助推提升成都开放型经济水平</a></dd>
-                            <dd><span>2017-06-26</span><i class=" ye ">3.</i><a href="/jinhuopf/2128.shtml" target="_blank" title="多快好省，市民食品采购有了新选择——第五届亚太批发市场大会">多快好省，市民食品采购有了新选择——第五届亚太批发市场大会</a></dd>
-                            <dd><span>2017-04-26</span><i class=" ye ">4.</i><a href="/jinhuopf/232.shtml" target="_blank" title="千家企业+万名采购商,共聚2017上海食品包装机械展">千家企业+万名采购商,共聚2017上海食品包装机械展</a></dd>
+                            @foreach($jmfnews as $jmfnew)
+                            <dd><span>{{date('Y-m-d',strtotime($jmfnew->created_at))}}</span><i class=" ye ">{{$loop->iteration}}.</i><a href="/news/{{$jmfnew->id}}.shtml" target="_blank" title="{{$jmfnew->title}}">{{$jmfnew->title}}</a></dd>
+                            @endforeach
                         </dl>
                     </div>
                     <div class="left_two">

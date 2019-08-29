@@ -81,10 +81,7 @@
                         <li class="cur"><a href="/" >首页</a></li>
                         <li><a href="/muying/" >母婴店加盟</a></li>
                         <li><a href="/muyingshg/" >母婴生活馆</a></li>
-                        <li><a href="/muyingp/" >母婴用品</a></li>
-                        <li><a href="/yuezihuisuo/" >月子会所</a></li>
-                        <li><a href="/youyonguan/" >婴儿游泳馆</a></li>
-                        <li><a href="/chanhouxiufu/" >产后修复</a></li>
+                        <li><a href="/zhaoshang/" >品牌招商</a></li>
                         <li><a href="/news/" >品牌新闻</a></li>
                         <li><a href="/feiyong/" >加盟费用</a></li>
                         <li><a href="/paihangbang/" >母婴品牌排行榜</a></li>
