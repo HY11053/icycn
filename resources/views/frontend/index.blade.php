@@ -62,11 +62,9 @@
                                     <span class="cont">
                                       <select name="select2" id="select2" class="select_bk">
                                         <option selected="selected" value="0">投资金额</option>
-                                        <option>1~5万</option>
-                                        <option>5~10万</option>
-                                        <option>10~20万</option>
-                                        <option>20万~50万</option>
-                                        <option>50~100万</option>
+                                          @foreach($touziids as $touziid)
+                                            <option>{{$investments[$touziid]}}</option>
+                                          @endforeach
                                       </select>
                                     </span>
                                         </p>
@@ -74,11 +72,9 @@
                                     <span class="cont">
                                       <select name="select3" id="select3" class="select_bk">
                                         <option selected="selected" value="0">店铺面积</option>
-                                        <option>1~10平米</option>
-                                        <option>10~30平米</option>
-                                        <option>30~50平米</option>
-                                        <option>50~80平米</option>
-                                        <option>100平米以上</option>
+                                          @foreach($acreagements as $acreagement)
+                                            <option>{{$acreagement}}</option>
+                                        @endforeach
                                       </select>
                                     </span>
                                         </p>
@@ -92,20 +88,15 @@
                             </form>
                             <div class="tit">投资金额：</div>
                             <div class="price">
-                                <a title="1-5万元项目" href="/project/0-1~5-0-0.shtml">1-5万元</a>
-                                <a title="5－10万元项目" href="/project/0-5~10-0-0.shtml">5-10万元</a>
-                                <a title="10－20万元项目" href="/project/0-10~20-0-0.shtml">10-20万元</a>
-                                <a title="20－50万元项目" href="/project/0-20~50-0-0.shtml">20-50万元</a>
-                                <a title="50-100万元项目" href="/project/0-50~100-0-0.shtml">50-100万元</a>
-                                <a title="100万元以上项目" href="/project/0-100-0-0.shtml">100万以上</a>
+                                @foreach($touziids as $touziid)
+                                <a title="{{$investments[$touziid]}}项目" href="/filter/p{{$touziid}}/">{{$investments[$touziid]}}</a>
+                                @endforeach
                             </div>
                             <div class="tit">面积：</div>
                             <div class="area">
-                                <a title="10平以下" href="/project/0-0-1~10-0.shtml">10平以下</a>
-                                <a title="10-30平米" href="/project/0-0-10~30-0.shtml">10-30平米</a>
-                                <a title="30-80平米" href="/project/0-0-30~50-0.shtml">30-50平米</a>
-                                <a title="80-150平米" href="/project/0-0-50~80-0.shtml">50-80平米</a>
-                                <a title="150平以上" href="/project/0-0-100-0.shtml">100平以上</a>
+                                @foreach($acreagements as $index=>$acreagement)
+                                <a title="{{$acreagement}}" href="/filter/m{{$index}}/">{{$acreagement}}㎡</a>
+                                @endforeach
                             </div>
                         </div>
                     </div>
@@ -234,13 +225,13 @@
                                 <div class="index_box3_l">
                                     <div class="img_show"><a href="/muying/" target="_blank"><img src="/receptions/images/index_pic1.jpg" title="零食店品牌" alt="零食店加盟"/></a></div>
                                     <p class="tit"><a href="/muying/" target="_blank">母婴店加盟</a></p>
-                                    <p class="desc">精美零食 抢占商机</p>
+                                    <p class="desc">百城千店 有实力更有保障</p>
                                     <p class="more"><a href="/muying/" target="_blank" title="母婴店加盟">查看详情&gt;</a></p>
                                 </div>
                                 <div class="index_box3_r" id="index_box3s_r">
                                     <div class="hd">
                                         <span class="tit">母婴店品牌</span>
-                                        <span class="desc">精选全球好品牌、看得见的商机前景</span>
+                                        <span class="desc">造就母婴精品 一站式关键服务 创业无忧</span>
                                         <span class="more"><a href="/muying/" target="_blank">更多&gt;&gt;</a></span>
                                     </div>
                                     <div class="bd">
@@ -292,13 +283,13 @@
                                     <div class="index_box3_l h420">
                                         <div class="img_show"><a href="/muyingshg/" target="_blank"><img src="/receptions/images/index_pic2.jpg" alt="母婴生活馆"/></a></div>
                                         <p class="tit"><a href="/muyingshg/" target="_blank">母婴生活馆</a></p>
-                                        <p class="desc">松子/坚果/开心果/巴旦木</p>
+                                        <p class="desc">全国连锁招商品牌母婴生活馆</p>
                                         <p class="more"><a href="/muyingshg/" target="_blank" title="母婴生活馆">查看详情&gt;</a></p>
                                     </div>
                                     <div class="index_box3_r">
                                         <div class="hd">
                                             <span class="tit">母婴生活馆</span>
-                                            <span class="desc">颗颗饱满、开口易剥 笑口常开</span>
+                                            <span class="desc">打造婴童信赖平台 让开店更有保障</span>
                                             <span class="more"><a href="/muyingshg/" target="_blank" title="母婴生活馆">更多&gt;&gt;</a></span>
                                         </div>
                                         <div class="bd">
@@ -345,13 +336,13 @@
                                     <div class="index_box3_l h420">
                                         <div class="img_show"><a href="/zhaoshang/" target="_blank"><img src="/receptions/images/index_pic3.jpg" alt="母婴品牌招商"/></a></div>
                                         <p class="tit"><a href="/zhaoshang/" target="_blank">母婴品牌招商</a></p>
-                                        <p class="desc">原装进口 精挑细选</p>
+                                        <p class="desc">全线母婴产品正品自由代理 </p>
                                         <p class="more"><a href="/zhaoshang/" target="_blank">查看详情&gt;</a></p>
                                     </div>
                                     <div class="index_box3_r">
                                         <div class="hd">
                                             <span class="tit">母婴品牌招商</span>
-                                            <span class="desc">汇聚全球零食品牌,上千款进口食品助您月利10万,掀起疯狂抢购狂潮</span>
+                                            <span class="desc">母婴工厂店 集中规模化采购 一站式低价代理</span>
                                             <span class="more"><a href="/zhaoshang/" target="_blank">更多&gt;&gt;</a></span>
                                         </div>
                                         <div class="bd">

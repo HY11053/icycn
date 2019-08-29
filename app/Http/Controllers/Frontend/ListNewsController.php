@@ -7,6 +7,7 @@ use App\AdminModel\Archive;
 use App\AdminModel\Arctype;
 use App\AdminModel\Area;
 use App\AdminModel\Brandarticle;
+use App\AdminModel\InvestmentType;
 use App\AdminModel\Production;
 use Carbon\Carbon;
 use App\Overwrite\Paginator;
@@ -76,17 +77,36 @@ class ListNewsController extends Controller
             $flashlingshibrands=Cache::remember('flashlingshibrands', config('app.cachetime')+rand(60,60*24), function() {
                 return Brandarticle::where('mid','1')->skip(10)->take(9)->orderBy('click','desc')->get(['id','brandname','litpic']);
             });
-            //店铺面积缓存
-            $acreagements=Cache::remember('acreagements',  config('app.cachetime')+rand(60,60*24), function(){
-                return Acreagement::pluck('type','id');
-            });
             $cnewslists=Cache::remember('cnewslists'.$thistypeinfo->id,  rand(10,60), function() use($thistypeinfo){
                 return Archive::whereIn('brandid',Brandarticle::where('typeid',$thistypeinfo->id)->latest()->pluck('id'))->take(13)->latest()->get(['id','title']);
             });
             $hotbrands=Cache::remember('hotbrands', config('app.cachetime')+rand(60,60*24), function() {
                 return Brandarticle::where('mid','1')->skip(19)->take(6)->orderBy('click','desc')->get(['id','brandname','brandpay','brandnum','brandnum','litpic']);
             });
-            return view('frontend.brands',compact('thistypeinfo','topbrandnavs','pagelists','paihangbangs','flashlingshibrands','cnewslists','hotbrandsearch','acreagements','hotbrands'));
+            //店铺面积缓存
+            $acreagements=Cache::remember('acreagements',  config('app.cachetime')+rand(60,60*24), function(){
+                return Acreagement::pluck('type','id');
+            });
+            $investments=Cache::remember('investments',  config('app.cachetime')+rand(60,60*24), function(){
+                return InvestmentType::orderBy('id','asc')->pluck('type','id');
+            });
+            $touziids=Cache::remember('touziids',  config('app.cachetime')+rand(60,60*24), function(){
+                return Brandarticle::select('tzid')->distinct()->pluck('tzid');
+            });
+
+            $arealists=Cache::remember('arealists',  config('app.cachetime')+rand(60,60*24), function(){
+                $brandorigins=Brandarticle::select('brandorigin')->distinct()->take(20)->pluck('brandorigin');
+                 foreach ($brandorigins as $brandorigin)
+                {
+                    $area=Area::where('regionname',$brandorigin)->first(['id','regionname']);
+                    if (!empty($area))
+                    {
+                        $areas[]=$area;
+                    }
+                }
+                return $areas;
+            });
+            return view('frontend.brands',compact('thistypeinfo','topbrandnavs','pagelists','paihangbangs','flashlingshibrands','cnewslists','hotbrandsearch','acreagements','hotbrands','investments','touziids','arealists'));
         }
 
     }

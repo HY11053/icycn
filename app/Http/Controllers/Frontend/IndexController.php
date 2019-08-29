@@ -2,11 +2,13 @@
 
 namespace App\Http\Controllers\Frontend;
 
+use App\AdminModel\Acreagement;
 use App\AdminModel\Archive;
 use App\AdminModel\Arctype;
 use App\AdminModel\Ask;
 use App\AdminModel\Brandarticle;
 use App\AdminModel\flink;
+use App\AdminModel\InvestmentType;
 use App\AdminModel\Production;
 use App\Scopes\PublishedScope;
 use Carbon\Carbon;
@@ -94,9 +96,20 @@ class IndexController extends Controller
         $flinks=Cache::remember('index_flinks', 60, function(){
             return   flink::latest()->orderBy('created_at','desc')->take(30)->get();
         });
+        //店铺面积缓存
+        $acreagements=Cache::remember('acreagements',  config('app.cachetime')+rand(60,60*24), function(){
+            return Acreagement::pluck('type','id');
+        });
+        $investments=Cache::remember('investments',  config('app.cachetime')+rand(60,60*24), function(){
+            return InvestmentType::orderBy('id','asc')->pluck('type','id');
+        });
+        $touziids=Cache::remember('touziids',  config('app.cachetime')+rand(60,60*24), function(){
+            return Brandarticle::select('tzid')->distinct()->pluck('tzid');
+        });
+
         return view('frontend.index',compact('muyingnavlists','muyingshgnavlists','muyingypnavlists','latestbrands','cbrands','hotbrands',
             'lefthotbrands','sbrands','brandtypes','latestmuyingbrands','latestrmuyingbrands','latestmuyingshgbrands','latestrmuyingshgbrands','latestrzsbrands','latestzsbrands',
-            'latestzsbrands','hbrands','brandalltypes','asknews','latestnews','jmfnews','cynews','touzinews','flinks'));
+            'latestzsbrands','hbrands','brandalltypes','asknews','latestnews','jmfnews','cynews','touzinews','flinks','acreagements','investments','touziids'));
     }
 
 }

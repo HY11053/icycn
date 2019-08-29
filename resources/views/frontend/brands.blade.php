@@ -29,42 +29,25 @@
                 <dl>
                     <dt>投资金额</dt>
                     <dd><a class="hover" target="_self" href="#">全部</a></dd>
-                    <dd><a target="_self" href="/project/0-1~5-0-0.shtml">1-5万元</a></dd>
-                    <dd><a target="_self" href="/project/0-5~10-0-0.shtml">5-10万元</a></dd>
-                    <dd><a target="_self" href="/project/0-10~20-0-0.shtml">10-20万元</a></dd>
-                    <dd><a target="_self" href="/project/0-20~30-0-0.shtml">20-30万元</a></dd>
-                    <dd><a target="_self" href="/project/0-30~50-0-0.shtml">30-50万元</a></dd>
-                    <dd><a target="_self" href="/project/0-50~100-0-0.shtml">50-100万元</a></dd>
+                    @foreach($touziids as $touziid)
+                        <dd><a target="_self" href="/filter/p{{$touziid}}/">{{$investments[$touziid]}}</a></dd>
+                    @endforeach
+
                 </dl>
                 <dl>
                     <dt>店铺面积</dt>
                     <dd><a class="hover" target="_self" href="#">全部</a></dd>
-                    <dd><a target="_self" href="/project/0-0-1~10-0.shtml">10平米以下</a></dd>
-                    <dd><a target="_self" href="/project/0-0-10~30-0.shtml">10-30平米</a></dd>
-                    <dd><a target="_self" href="/project/0-0-30~50-0.shtml">30-50平米</a></dd>
-                    <dd><a target="_self" href="/project/0-0-50~80-0.shtml">50-80平米</a></dd>
-                    <dd><a target="_self" href="/project/0-0-100-0.shtml">100平米以上</a></dd>
+                    @foreach($acreagements as $index=>$acreagement)
+                        <dd><a target="_self" href="/filter/m{{$index}}/">{{$acreagement}}平米</a></dd>
+                    @endforeach
+
                 </dl>
                 <dl>
                     <dt>所在地区</dt>
                     <dd><a class="hover" target="_self" href="#">全部</a></dd>
-                    <dd><a target="_self" href="/project/0-0-0-1.shtml">北京</a></dd>
-                    <dd><a target="_self" href="/project/0-0-0-125.shtml">济南</a></dd>
-                    <dd><a target="_self" href="/project/0-0-0-71.shtml">广州</a></dd>
-                    <dd><a target="_self" href="/project/0-0-0-281.shtml">合肥</a></dd>
-                    <dd><a target="_self" href="/project/0-0-0-401.shtml">上海</a></dd>
-                    <dd><a target="_self" href="/project/0-0-0-282.shtml">芜湖</a></dd>
-                    <dd><a target="_self" href="/project/0-0-0-195.shtml">武汉</a></dd>
-                    <dd><a target="_self" href="/project/0-0-0-112.shtml">南京</a></dd>
-                    <dd><a target="_self" href="/project/0-0-0-296.shtml">长沙</a></dd>
-                    <dd><a target="_self" href="/project/0-0-0-126.shtml">青岛</a></dd>
-                    <dd><a target="_self" href="/project/0-0-0-72.shtml">深圳</a></dd>
-                    <dd><a target="_self" href="/project/0-0-0-164.shtml">成都</a></dd>
-                    <dd><a target="_self" href="/project/0-0-0-139.shtml">沈阳</a></dd>
-                    <dd><a target="_self" href="/project/0-0-0-29.shtml">重庆</a></dd>
-                    <dd><a target="_self" href="/project/0-0-0-212.shtml">郑州</a></dd>
-                    <dd><a target="_self" href="/project/0-0-0-101.shtml">杭州</a></dd>
-                    <dd><a target="_self" href="/project/0-0-0-83.shtml">佛山</a></dd>
+                    @foreach($arealists as $arealist)
+                    <dd><a target="_self" href="/filter/a{{$arealist->id}}/">{{$arealist->regionname}}</a></dd>
+                   @endforeach
                 </dl>
             </div>
             <div class="rec_brand_list">
