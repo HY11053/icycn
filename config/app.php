@@ -132,10 +132,10 @@ return [
     | Site home page key words and description and record information
     | and other related settings
     */
-    'webname'=>'世纪母婴网',
+    'webname'=>'世纪母婴网-母婴店加盟、母婴生活馆加盟信息发布平台',
     'indexname'=>'世纪母婴网',
-    'keywords'=>'世纪母婴网',
-    'description'=>'世纪母婴网',
+    'keywords'=>'世纪母婴网,母婴店加盟,母婴生活馆加盟',
+    'description'=>' 世纪母婴网品牌信息服务平台,汇聚全平台母婴数据，甄选优质母婴店品牌商机,致力打造更为可靠的母婴加盟招商平台,致力于帮助创业者了解母婴品牌的选择、母婴用品代理、母婴生活馆各类母婴信息',
     //'api'=>'http://data.zz.baidu.com/urls?site=www.jjedu.com.cn&token=QeSFIvl5RWRgU3BT',
     //'mip_api'=>'http://data.zz.baidu.com/urls?appid=1619742646802866&token=kfKziMxoRn4DDoYd&type=realtime',
     //'mip_history'=>'http://data.zz.baidu.com/urls?appid=1619742646802866&token=kfKziMxoRn4DDoYd&type=batch',

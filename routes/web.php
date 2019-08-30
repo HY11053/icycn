@@ -20,7 +20,7 @@ Route::group(['domain' => 'www.icycn.com'], function () {
     Route::get('paihangbang/{path?}','Frontend\PaihangbangController@Paihangbang')->where('path', '[a-zA-Z_\/0-9]+');
     Route::post('phone/complate/','Frontend\PhoneController@ComplateBrands');
     Route::post('search','Frontend\SeacrhController@SeacrhBrand')->name('search');
-    Route::get('sprodlist','Frontend\SeacrhController@SeacrhBrand');
+    Route::get('search','Frontend\SeacrhController@SeacrhBrand');
     Route::get('{path}/filter/p{id}/','Frontend\ListNewsController@projectBrandLists')->where(['path'=>'[a-zA-Z0-9]+','id'=>'[0-9]+'])->name('projectlists');
     Route::get('{path}/filter/m{id}/','Frontend\ListNewsController@projectBrandLists')->where(['path'=>'[a-zA-Z0-9]+','id'=>'[0-9]+'])->name('projectlists');
     Route::get('{path}/filter/a{id}/','Frontend\ListNewsController@projectBrandLists')->where(['path'=>'[a-zA-Z0-9]+','id'=>'[0-9]+'])->name('projectlists');

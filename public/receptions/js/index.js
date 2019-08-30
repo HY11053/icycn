@@ -98,59 +98,6 @@ $(document).scroll(function(){
 		}	
 	
  });
- 
- 	if($(".fixed_nav").html()){
-    $(document).scroll(function(){
-  		//获取窗口的滚动条的垂直位置
-    	var s = $(document).scrollTop();
-	    //当窗口的滚动条的垂直位置大于页面的最小高度时，让返回顶部元素渐现，否则渐隐
-	    if(s >=$('#js_join_1').offset().top-45 && s<$('#js_join_2').offset().top-45){
-	     	$('.fixed_nav li').removeClass("cur").eq(0).addClass('cur'); 
-	    }else if(s >=$('#js_join_2').offset().top-45 && s<$('#js_join_3').offset().top-45){
-			$('.fixed_nav li').removeClass("cur").eq(1).addClass('cur');
-		}else if(s >=$('#js_join_3').offset().top-45 && s<$('#js_join_4').offset().top-45){
-			$('.fixed_nav li').removeClass("cur").eq(2).addClass('cur');
-		}else if(s >=$('#js_join_4').offset().top-45 && s<$('#js_join_5').offset().top-45){
-			$('.fixed_nav li').removeClass("cur").eq(3).addClass('cur');
-		}else if(s >=$('#js_join_5').offset().top-45 && s<$('#js_join_6').offset().top-45){
-			$('.fixed_nav li').removeClass("cur").eq(4).addClass('cur');
-		}else if(s >=$('#js_join_6').offset().top-45 && s<$('#js_join_7').offset().top-45){
-            $('.fixed_nav li').removeClass("cur").eq(5).addClass('cur');
-        }else if(s >=$('#js_join_7').offset().top-45){
-            $('.fixed_nav li').removeClass("cur").eq(6).addClass('cur');
-        }
-	 });
-	}
-	
-	
-	$('.js_join_1').click(function(){
-		var sTop=$('#js_join_1').offset().top-45;
-		$('html,body').animate({scrollTop:sTop+"px"},500);
-	});
-	$('.js_join_2').click(function(){
-		var sTop=$('#js_join_2').offset().top-45;
-		$('html,body').animate({scrollTop:sTop+"px"},500);
-	});
-	$('.js_join_3').click(function(){
-		var sTop=$('#js_join_3').offset().top-45;
-		$('html,body').animate({scrollTop:sTop+"px"},500);
-	});
-	$('.js_join_4').click(function(){
-		var sTop=$('#js_join_4').offset().top-45;
-		$('html,body').animate({scrollTop:sTop+"px"},500);
-	});
-	$('.js_join_5').click(function(){
-		var sTop=$('#js_join_5').offset().top-45;
-		$('html,body').animate({scrollTop:sTop+"px"},500);
-	});
-    $('.js_join_6').click(function(){
-        var sTop=$('#js_join_6').offset().top-45;
-        $('html,body').animate({scrollTop:sTop+"px"},500);
-    });
-    $('.js_join_7').click(function(){
-        var sTop=$('#js_join_7').offset().top-45;
-        $('html,body').animate({scrollTop:sTop+"px"},500);
-    });
 
 
  //快捷留言

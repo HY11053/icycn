@@ -46,9 +46,8 @@ class IndexController extends Controller
             return Brandarticle::where('mid',1)->where('typeid',1)->skip(10)->take(7)->orderBy('id','asc')->get(['id','litpic','brandname']);
         });
         $sbrands=Cache::remember('index_sbrands', config('app.cachetime')+rand(60,60*24), function(){
-            return Brandarticle::where('mid',1)->where('flags','like','%s%')->skip(10)->take(7)->orderBy('id','asc')->get(['id','indexpic','brandname','brandpay']);
+            return Brandarticle::where('mid',1)->where('flags','like','%s%')->take(10)->orderBy('id','asc')->get(['id','litpic','brandname','brandpay']);
         });
-
         $brandtypes=Cache::remember('index_brandtypes', config('app.cachetime')+rand(60,60*24), function(){
             return   Arctype::where('mid',1)->take(8)->get(['typename','real_path']);
         });

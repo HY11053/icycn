@@ -219,7 +219,8 @@ a.s-oe:hover { text-decoration: underline; }
 .fine-left-bottomR ul li p span{    color: #ff3333;}
 .fine-left-bottomR ul li p .sq{    font-size: 16px;    margin-left: 3px;}
 .fine-left-bottomR ul li p a{    position: absolute;    top: 3px;    right: 4px;    line-height: 20px;    height: 20px;    width: 64px;    background: url("../images/icon11.png") no-repeat;    padding-left:12px;    color: #fff;    background-size: 74px 20px;}
-.fine-left-bottomR ul li:hover p a{    color: #fff!important;    position: absolute;    top: 3px;    right: 4px;    line-height: 20px;    height: 20px;    width: 64px;    padding-left:12px;    color: #fff;    background: url("../images/icon13-hover.png") no-repeat;    background-size: 74px 20px;}
+/*.fine-left-bottomR ul li:hover p a{    color: #fff!important;    position: absolute;    top: 3px;    right: 4px;    line-height: 20px;    height: 20px;    width: 64px;    padding-left:12px;    color: #fff;    background: url("../images/icon13-hover.png") no-repeat;    background-size: 74px 20px;}
+*/
 .fine-left-bottomR ul li:hover a img{    opacity: 0.6;}
 .fine-right {    width: 290px;    padding: 0 15px;    background: #fff;    height: 486px;}
 .fine-right-nav{    height: 50px;    border-bottom: 1px solid #efefef;}

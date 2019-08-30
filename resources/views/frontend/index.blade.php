@@ -29,7 +29,7 @@
             @endforeach
         </dl>
         <dl class="dl_wid1">
-            <dt class="icon3"><a href="/muyingp/" target="_blank">母婴用品加盟</a></dt>
+            <dt class="icon3"><a href="/zhaoshang/" target="_blank">母婴用品加盟</a></dt>
             @foreach($muyingypnavlists as $muyingypnavlist)
                 <dd><a href="/xm/{{$muyingypnavlist->id}}.shtml" target="_blank" title="{{$muyingypnavlist->brandname}}">{{$muyingypnavlist->brandname}}</a></dd>
             @endforeach
@@ -87,13 +87,13 @@
                             <div class="tit">投资金额：</div>
                             <div class="price">
                                 @foreach($touziids as $touziid)
-                                <a title="{{$investments[$touziid]}}项目" href="/filter/p{{$touziid}}/">{{$investments[$touziid]}}</a>
+                                <a title="{{$investments[$touziid]}}项目" href="/muying/filter/p{{$touziid}}/">{{$investments[$touziid]}}</a>
                                 @endforeach
                             </div>
                             <div class="tit">面积：</div>
                             <div class="area">
                                 @foreach($acreagements as $index=>$acreagement)
-                                <a title="{{$acreagement}}" href="/filter/m{{$index}}/">{{$acreagement}}㎡</a>
+                                <a title="{{$acreagement}}" href="/muying/filter/m{{$index}}/">{{$acreagement}}㎡</a>
                                 @endforeach
                             </div>
                         </div>
@@ -105,10 +105,8 @@
                         <div class="carousel carousel-bar1">
                             <div class="ovh swiper-container">
                                 <ul class="ban-ul swiper-wrapper">
-                                    <a target="_blank" href="/xm/112.shtml" class="item img-block swiper-slide"><img src="http://www.jjedu.com.cn/frontend/images/yidiandianad.jpg" alt="聚能教育"></a>
-                                    <a target="_blank" href="/xm/1764.shtml" class="item img-block swiper-slide"><img src="http://www.jjedu.com.cn/frontend/images/feiyu.jpg" alt="鲱鱼宝宝加盟"></a>
-                                    <a target="_blank" href="/xm/204.shtml" class="item img-block swiper-slide"><img src="http://www.jjedu.com.cn/frontend/images/aebed277ee964c94bfeaa080c0e0c64a.jpg" alt="UBTV小主播"></a>
-                                </ul>
+                                    <a target="_blank" href="/xm/112.shtml" class="item img-block swiper-slide"><img src="/receptions/images/yidiandianad.jpg" alt="宝慧玩智慧母婴生活馆"></a>
+                                 </ul>
                             </div>
                             <div class="dot">
                                 <div class="swiper-pagination"></div>
@@ -167,7 +165,7 @@
                                 <h4 class="f-l">热门母婴品牌推荐</h4>
                                 <ul class="f-li clearfix f-r" data-id="pc_jptj" data-type="cmsadpos">
                                     @foreach($hotbrands as $hotbrand)
-                                     <li><a href="/xm//{{$hotbrand->id}}.shtml" target="_blank">{{$hotbrand->brandname}}</a></li>
+                                     <li><a href="/xm/{{$hotbrand->id}}.shtml" target="_blank">{{$hotbrand->brandname}}</a></li>
                                     @endforeach
                                 </ul>
                             </div>
@@ -187,7 +185,7 @@
                                     <ul class="f-li clearfix" data-id="pc_a03_1" data-type="cmsadpos">
                                         @foreach($sbrands as $sbrand)
                                         <li>
-                                            <a target="_blank" href="/xm/{{$sbrand->id}}.shtml"><img width="174" height="140" alt="" src="{{$sbrand->indexpic}}"></a>
+                                            <a target="_blank" href="/xm/{{$sbrand->id}}.shtml"><img width="174" height="140" alt="" src="{{$sbrand->litpic}}"></a>
                                             <p>品牌名称：<span>{{$sbrand->brandname}}</span></p>
                                             <p>
                                                 <span>￥</span><span class="sq">{{$sbrand->brandpay}}</span><a target="_blank" href="/xm/{{$sbrand->id}}.shtml">了解详情</a>
@@ -390,8 +388,8 @@
 
         <div class="bn">
             <ul>
-                <li><a href="/lingshidianpp/91.shtml" target="_blank"><img src="/receptions/images/temp/bn1.jpg" /></a></li>
-                <li><a href="/lingshidianpp/111.shtml" target="_blank"><img src="/receptions/images/temp/bn2.jpg" /></a></li>
+                <li><a href="/xm/91.shtml" target="_blank"><img src="/receptions/images/temp/bn1.jpg" /></a></li>
+                <li><a href="/xm/111.shtml" target="_blank"><img src="/receptions/images/temp/bn2.jpg" /></a></li>
             </ul>
         </div>
 
@@ -402,7 +400,7 @@
                     <div class="con_fir">
                         <div class="fir_left">
                             @foreach($hbrands as $hbrand)
-                            <div class="li_div"><a href="/xm/{{$hbrand->id}}.shtml" title="{{$hbrand->brandname}}" target="_blank"><img src="{{$hbrand->litpic}}"></a><span><a href="/xm/{{$hbrand->id}}.shtml" target="_blank">{{$hbrand->brandname}}</a><br><font color="#9c9c9c">{{$hbrand->brandattch}}人</font><em><a href="/xm/{{$hbrand->id}}" target="_blank">咨询</a></em></span></div>
+                            <div class="li_div"><a href="/xm/{{$hbrand->id}}.shtml" title="{{$hbrand->brandname}}" target="_blank"><img src="{{$hbrand->litpic}}"></a><span><a href="/xm/{{$hbrand->id}}.shtml" target="_blank">{{$hbrand->brandname}}</a><br><font color="#9c9c9c">{{$hbrand->brandattch}}人</font><em><a href="/xm/{{$hbrand->id}}.shtml" target="_blank">咨询</a></em></span></div>
                             @endforeach
                          </div>
                         <div class="fir_right">
@@ -442,7 +440,7 @@
                                 @if($index<2)
                                 <div class="li_d"> <a href="/news/{{$latestnew->id}}.shtml" title="{{$latestnew->title}}" target="_blank"><img src="{{$latestnew->litpic}}" alt="{{$latestnew->title}}"></a>
                                     <div class="d_wz">
-                                        <h3><a href="/lingshizx/3120.shtml" target="_blank" title="{{$latestnew->title}}">{{$latestnew->title}}</a></h3>
+                                        <h3><a href="/xm/120.shtml" target="_blank" title="{{$latestnew->title}}">{{$latestnew->title}}</a></h3>
                                         <p>{{str_limit($latestnew->description,90)}}...</p>
                                     </div>
                                 </div>
@@ -509,8 +507,8 @@
 
         <div class="bn">
             <ul>
-                <li><a href="/lingshidianpp/53.shtml" target="_blank"><img src="/receptions/images/temp/bn3.jpg" /></a></li>
-                <li><a href="//35.shtml" target="_blank"><img src="/receptions/images/temp/bn4.jpg" /></a></li>
+                <li><a href="/xm/53.shtml" target="_blank"><img src="/receptions/images/temp/bn3.jpg" /></a></li>
+                <li><a href="/xm/35.shtml" target="_blank"><img src="/receptions/images/temp/bn4.jpg" /></a></li>
             </ul>
         </div>
 

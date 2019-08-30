@@ -13,7 +13,7 @@
 @stop
 @section('main_content')
     <div class="main">
-        <div class="bn1190"><img src="/receptions/images/temp/bn8.jpg" alt=""></div>
+        {{--<div class="bn1190"><img src="/receptions/images/temp/bn8.jpg" alt=""></div>--}}
         <div class="path">当前位置：<a href="/">首页</a> &gt; <a href="/{{$thistypeinfo->real_path}}/">{{$thistypeinfo->typename}}</a></div>
         <div class="main clearfix">
             <div class="cate_sort">
@@ -162,7 +162,7 @@
                 </div>
                 <script src="/receptions/js/GlobalProvinces.js" type="text/javascript"></script>
                 <div class="s_new_bt">
-                    <h3> <i></i> <a href="/{{$thistypeinfo->real_path}}/paihangbang/">{{str_replace('加盟','',$thistypeinfo->typename)}}排行榜 </a></h3>
+                    <h3> <i></i> <a href="/paihangbang/{{$thistypeinfo->real_path}}/">{{str_replace('加盟','',$thistypeinfo->typename)}}排行榜 </a></h3>
                     <div class="rank_bd">
                         <ul>
                             @foreach($paihangbangs as $paihangbang)
@@ -200,7 +200,6 @@
 
                 <div class="bg-ff p20">
                     <div class="lh24">
-                        <a target="_blank" href="/xm/" class="fr s-c999">更多</a>
                         <h3 class="f22">{{str_replace('加盟','',$thistypeinfo->typename)}}项目</h3>
                     </div>
                     <ul class="join-project mt30">

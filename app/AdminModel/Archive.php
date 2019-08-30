@@ -56,7 +56,7 @@ class Archive extends Model
      */
     public function getLitpicAttribute($litpic)
     {
-        return $litpic?$litpic:'/frontend/images/nopic.png';
+        return $litpic?$litpic:'/receptions/images/nopic.png';
     }
 
     public function scopePublished($query)

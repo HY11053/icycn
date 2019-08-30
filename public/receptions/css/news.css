@@ -127,6 +127,7 @@ a:hover { color: #E73727; }
 .join_tit .tit_bitian { float: right; font-size: 12px; color: #666666; }
 .join_cont .join_intro { padding: 17px 0 21px 0; font-size: 14px;  }
 .join_cont .join_intro p { line-height: 28px; color: #666666; }
+.join_cont .join_intro img {    border-radius: 5px;    max-width: 100%;    height: auto;    display: block;    margin-right: auto;    margin-left: auto; margin-top: 10px; margin-bottom: 10px;}
 /*品牌 小胖子快餐*/
 .bts .pingpai_img { padding: 3px 15px 0 15px; }
 .bts .pingpai_img img { width: 234px; height: 172px; }

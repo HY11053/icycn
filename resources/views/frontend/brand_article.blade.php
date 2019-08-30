@@ -110,13 +110,14 @@
                         <div class="fixed_nav">
                             <div class="cont_tab">
                                 <ul>
-                                    <li class="js_join_1 cur"><a href="javascript:void(0)">品牌介绍</a></li>
-                                    <li class="js_join_2"><a href="javascript:void(0)">加盟优势</a></li>
-                                    <li class="js_join_3"><a href="javascript:void(0)">加盟流程</a></li>
-                                    <li class="js_join_4"><a href="javascript:void(0)">开店要求</a></li>
-                                    <li class="js_join_5"><a href="javascript:void(0)">开店必看</a></li>
-                                    <li class="js_join_6"><a href="javascript:void(0)">投资分析</a></li>
-                                    <li class="js_join_7"><a href="javascript:void(0)">用户点评</a></li>
+                                    <li class="js_join"><a href="javaScript:void(0)" rel="nofollow">品牌介绍</a></li>
+                                    @foreach($navlists as $index=>$navlist)
+                                        @if(!$loop->last)
+                                            <li class="js_join"><a href="javaScript:void(0)" rel="nofollow">{{$navlist}}</a></li>
+                                        @else
+                                            <li  class="noactive"><a href="#msg" rel="nofollow">在线留言</a></li>
+                                        @endif
+                                    @endforeach
                                 </ul>
                             </div>
                         </div>
@@ -126,7 +127,7 @@
                         <div class="join_cont">
                             <div class="join_intro">
                                 <h2>{{$thisarticleinfos->brandname}}品牌介绍</h2>
-                                {!! $thisarticleinfos->body !!}
+                                {!! $content !!}
                             </div>
                             <div class="join_tit"> <h2 class="tit">【{{$thisarticleinfos->brandname}}】<em>品牌展示</em></h2> </div>
                             <div class=" join_img">
@@ -213,7 +214,6 @@
                     </div>
                     <div class="bg-ff p20">
                         <div class="lh24">
-                            <a target="_blank" href="/xm/" class="fr s-c999">更多</a>
                             <h3 class="f22">{{str_replace('加盟','',$thisbrandtypeinfo->typename)}}热门加盟项目</h3>
                         </div>
                         <ul class="join-project mt30">
@@ -235,4 +235,14 @@
 </div>
 @stop
 @section('footerlibs')
+    <script>
+        $(".cont_tab ul li.js_join").each(function(i){
+            $(this).click(
+                function () {
+                    var sTop=$(".join_intro").find("h2:eq("+i+")").offset().top-45;
+                    $('html,body').animate({scrollTop:sTop+"px"},500);
+                }
+            );
+        });
+    </script>
 @stop

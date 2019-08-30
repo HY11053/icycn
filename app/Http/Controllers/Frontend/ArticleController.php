@@ -156,7 +156,9 @@ class ArticleController extends Controller
         $acreagements=Cache::remember('acreagements',  config('app.cachetime')+rand(60,60*24), function(){
                 return Acreagement::pluck('type','id');
             });
-        return view('frontend.brand_article',compact('thisarticleinfos','thisbrandtypeinfo','paihangbangs','latestbrandnews','latesttypenews','latestbrands','abrandlists','acreagements'));
+        $content=str_replace(['<p> <span >'.$thisarticleinfos->brandname.'</span></p>','<p><span >'.$thisarticleinfos->brandname.'</span></p>','<p> <span >'.$thisarticleinfos->brandname.'加盟'.'</span></p>','<p><span >'.$thisarticleinfos->brandname.'加盟'.'</span></p>'],'',$this->ProcessContent($thisarticleinfos->body));
+        $navlists=$this->FilterHflagContent($content);
+        return view('frontend.brand_article',compact('thisarticleinfos','thisbrandtypeinfo','paihangbangs','latestbrandnews','latesttypenews','latestbrands','abrandlists','acreagements','navlists','content'));
     }
     protected function getPrevArticleId($id)
     {
@@ -167,4 +169,98 @@ class ArticleController extends Controller
         return Archive::where('id', '>', $id)->orderBy('id','asc')->value('id');
     }
 
+    private function ProcessContent($contents)
+    {
+        $content=preg_replace(["/style=.+?['|\"]/i","/width=.+?['|\"]/i","/height=.+?['|\"]/i"],'',$contents);
+        $content=str_replace(PHP_EOL,'',$content);
+        $content=str_replace(['<p >','<strong >','<br >','<br />','<h2 >'],['<p>','<strong>','<br>','<br/>','<h2>'],$content);
+        $content=str_replace(
+            [
+                '<p><strong><br/></strong></p>',
+                '<p><strong><br></strong></p>',
+                '<p><br></p>',
+                '<p><br/></p>',
+                '　　'
+            ],'',$content
+        );
+        $content=str_replace(["\r","\t",'<span >　　</span>','&nbsp;','　','bgcolor="#FFFFFF"'],'',$content);
+        $content=str_replace(["<br  /><br  />"],'<br/>',$content);
+        $content=str_replace(["<br><br>"],'<br/>',$content);
+        $content=str_replace(["<br/><br/>"],'<br/>',$content);
+        $content=str_replace(["<br/> <br/>"],'<br/>',$content);
+        $content=str_replace(["<br />　　<br />"],'<br/>',$content);
+        $content=str_replace(["<br/>　　<br/>"],'<br/>',$content);
+        $content=str_replace(["<br /><br />"],'<br/>',$content);
+        $content=str_replace(["<div><br/></div>"],'',$content);
+        $pattens=array(
+            "#<p>[\s| |　]?<strong>[\s| |　]?</strong></p>#",
+            "#<p>[\s| |　]?<strong>[\s| |　]+</strong></p>#",
+            "#<p>[\s| |　]+<strong>[\s| |　]+</strong></p>#",
+            "#<p>[\s| |　]?</p>#",
+            "#<p>[\s| |　]+</p>#"
+        );
+        $content=preg_replace($pattens,'',$content);
+        return $content;
+    }
+
+    private function FilterHflagContent($content)
+    {
+        preg_match_all('#<h2>[\s\S]*?<\/h2>#',$content,$matches);
+        $navlists=[];
+        if (isset($matches[0]) && !empty($matches[0]))
+        {
+            foreach ($matches[0] as $match) {
+                switch ($match)
+                {
+                    case str_contains($match,'条件');
+                        $navlists[]='加盟条件';
+                        break;
+                    case str_contains($match,'优势');
+                        $navlists[]='加盟优势';
+                        break;
+                    case str_contains($match,'支持');
+                        $navlists[]='加盟支持';
+                        break;
+                    case str_contains($match,'流程');
+                        $navlists[]='加盟流程';
+                        break;
+                    case str_contains($match,'产品');
+                        $navlists[]='产品展示';
+                        break;
+                    case str_contains($match,'特色');
+                        $navlists[]='品牌特色';
+                        break;
+                    case str_contains($match,'故事');
+                        $navlists[]='品牌故事';
+                        break;
+                    case str_contains($match,'费');
+                        $navlists[]='加盟费用';
+                        break;
+                    case str_contains($match,'利润');
+                        $navlists[]='利润分析';
+                        break;
+                    case str_contains($match,'理由');
+                        $navlists[]='品牌优势';
+                        break;
+                    case str_contains($match,'怎么样');
+                        $navlists[]='品牌优势';
+                        break;
+                    case str_contains($match,'成本');
+                        $navlists[]='开店成本';
+                        break;
+                    case str_contains($match,'扶持');
+                        $navlists[]='加盟扶持';
+                        break;
+                    case str_contains($match,'历程');
+                        $navlists[]='品牌历程';
+                        break;
+                    case str_contains($match,'问答');
+                        $navlists[]='品牌问答';
+                        break;
+                }
+            }
+        }
+        $navlists[]='在线留言';
+        return $navlists;
+    }
 }
