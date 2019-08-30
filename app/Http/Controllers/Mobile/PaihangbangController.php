@@ -34,13 +34,13 @@ class PaihangbangController extends Controller
             }
             return $paihangbrands;
         });
-
-        $brandnavs=Cache::remember('phbbrandnavs', config('app.cachetime')+rand(60,60*360), function() {
-            return Arctype::where('mid',1)->get(['typename','real_path']);
+        $cnewslists=Cache::remember('m_cnewslists'.$thistypeinfo->id,  rand(10,60), function() use($thistypeinfo){
+            return Archive::whereIn('brandid',Brandarticle::where('typeid',$thistypeinfo->id)->latest()->pluck('id'))->take(7)->latest()->get(['id','title','litpic']);
         });
         $acreagements=Cache::remember('acreagements',  config('app.cachetime')+rand(60,60*24), function(){
             return Acreagement::pluck('type','id');
         });
-        return view('mobile.paihangbang',compact('thistypeinfo','paihangbrands','brandnavs','acreagements'));
+
+        return view('mobile.paihangbang',compact('thistypeinfo','paihangbrands','brandnavs','acreagements','cnewslists'));
     }
 }

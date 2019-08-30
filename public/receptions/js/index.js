@@ -1,22 +1,17 @@
-﻿$(function(){
+﻿$(document).ready(function() {
+    $.ajaxSetup({
+        headers: {
+            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+        }
+    })
+});
+jQuery(".brand_slide").slide({ titCell:".smallImg li", mainCell:".bigImg", effect:"fold", autoPlay:true,delayTime:200,startFun:function(i,p){if(i==0){ jQuery(".brand_slide .sPrev").click() } else if( i%4==0 ){ jQuery(".brand_slide .sNext").click()}}});jQuery(".brand_slide .smallScroll").slide({ mainCell:"ul",delayTime:100,vis:4,scroll:4,effect:"left",autoPage:true,prevCell:".sPrev",nextCell:".sNext",pnLoop:false });
+$(function(){
 //app下拉	
 $("#js_phone_app,#js_add_wx").hover(function(){
 	$(this).addClass("hover");
 	},function(){
 	$(this).removeClass("hover");
-});
-
-var mySwiper = new Swiper ('.swiper-container', {
-	direction: 'horizontal',
-	loop: true,
-	autoplay: {
-		delay: 5000,
-		stopOnLastSlide: false,
-		disableOnInteraction: true,
-	},
-	pagination: {
-		el: '.swiper-pagination',
-	},
 });
 
 ////////////计算器 开始////////////
@@ -78,8 +73,6 @@ $(".total_btn").click(function(){
 	$("#total_num").html(num);
 });
 ////////////计算器 结束////////////
- 
-
 
 //内容页固定导航
 $(document).scroll(function(){
@@ -161,8 +154,8 @@ $(document).scroll(function(){
 
 
  //快捷留言
-   $(".check_msg_bd li").click(function(){
-	 $("#content").val($(this).text());  
+   $(".check_msg_bd ul li a").click(function(){
+	 $("#note").val($(this).text());
   });
   
  //关闭登录弹窗
@@ -215,12 +208,28 @@ function shake(){
 		});
 	}    
 }
-shake();   
- 
-	
+shake();
+    $("#tj_btn").click(function(){
+        var phoneno = $("#phonenum").val();
+        var name=$("#guestname").val();
+        var gender=$("input[name='Sex']:checked").val();
+        var address=$("#addresss").val();
+        var note=$("#note").val();
+        var host=window.location.href;
+        if( phoneno  && /^1[3|4|5|8]\d{9}$/.test(phoneno) ){
+            $.ajax({
+                type:"POST",
+                url:"/phonecomplate/",
+                data:{"phoneno":phoneno,"name":name,"gender":gender,"address":address,"note":note,"host":host},
+                datatype: "html",    //"xml", "html", "script", "json", "jsonp", "text".
+                success:function (response, stutas, xhr) {
+                    alert(response);
+                    //$("#results").html(response);
+                }
+            });
+        } else{
+            alert("您输入的手机号码"+phoneno+"不正确，请重新输入")
+        }
+    })
 });
-
-$(function(){
-    $(".body_tit img,.join_cont img").css('border-radius','5px');
-    $(".wec_tftable").css('width','100%');
-})
+$(function(){ $(".body_tit img,.join_cont img").css('border-radius','5px');})

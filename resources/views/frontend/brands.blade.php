@@ -15,9 +15,7 @@
     <div class="main">
         <div class="bn1190"><img src="/receptions/images/temp/bn8.jpg" alt=""></div>
         <div class="path">当前位置：<a href="/">首页</a> &gt; <a href="/{{$thistypeinfo->real_path}}/">{{$thistypeinfo->typename}}</a></div>
-
         <div class="main clearfix">
-
             <div class="cate_sort">
                 <dl>
                     <dt>项目分类</dt>
@@ -30,15 +28,14 @@
                     <dt>投资金额</dt>
                     <dd><a class="hover" target="_self" href="#">全部</a></dd>
                     @foreach($touziids as $touziid)
-                        <dd><a target="_self" href="/filter/p{{$touziid}}/">{{$investments[$touziid]}}</a></dd>
+                        <dd><a target="_self" href="/{{$thistypeinfo->real_path}}/filter/p{{$touziid}}/">{{$investments[$touziid]}}</a></dd>
                     @endforeach
-
                 </dl>
                 <dl>
                     <dt>店铺面积</dt>
                     <dd><a class="hover" target="_self" href="#">全部</a></dd>
                     @foreach($acreagements as $index=>$acreagement)
-                        <dd><a target="_self" href="/filter/m{{$index}}/">{{$acreagement}}平米</a></dd>
+                        <dd><a target="_self" href="/{{$thistypeinfo->real_path}}/filter/m{{$index}}/">{{$acreagement}}平米</a></dd>
                     @endforeach
 
                 </dl>
@@ -46,7 +43,7 @@
                     <dt>所在地区</dt>
                     <dd><a class="hover" target="_self" href="#">全部</a></dd>
                     @foreach($arealists as $arealist)
-                    <dd><a target="_self" href="/filter/a{{$arealist->id}}/">{{$arealist->regionname}}</a></dd>
+                    <dd><a target="_self" href="/{{$thistypeinfo->real_path}}/filter/a{{$arealist->id}}/">{{$arealist->regionname}}</a></dd>
                    @endforeach
                 </dl>
             </div>

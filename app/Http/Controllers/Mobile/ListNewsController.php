@@ -62,6 +62,9 @@ class ListNewsController extends Controller
                 return Archive::whereIn('brandid',Brandarticle::where('typeid',$thistypeinfo->id)->latest()->pluck('id'))->take(7)->latest()->get(['id','title','litpic']);
             });
             return view('mobile.brands',compact('thistypeinfo','pagelists','cnewslists','acreagements'));
+        }elseif($thistypeinfo->mid==2){
+            $indexartopnavs=Arctype::where('mid',2)->take(10)->get(['typename','real_path']);
+            return view('mobile.index_article',compact('thistypeinfo','indexartopnavs'));
         }
 
     }
@@ -73,7 +76,7 @@ class ListNewsController extends Controller
      * @param $zid
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
-    public function projectBrandLists($path,$tid=0,$cid=0,$zid=0,$page=0)
+    public function projectBrandLists(Request $request,$path,$id)
     {
         //栏目查找
         $thistypeinfo=Arctype::where('real_path',$path)->first();
@@ -81,75 +84,40 @@ class ListNewsController extends Controller
         {
             abort(404);
         }
-        $pagelists=Brandarticle::when($tid, function ($query) use ($tid) {
-            return $query->where('tzid',$tid);
-        })->when($cid, function ($query) use ($cid) {
-            return $query->whereIn('country',Area::where('parentid',$cid)->pluck('regionname'));
-        })->when($zid, function ($query) use ($zid) {
-            return $query->where('acreage',$zid);
-        })->paginate($perPage = 32, $columns = ['*'], $pageName = 'page', $page);
-        if ($pagelists->total() <1)
-        {
-            $pagelists=Brandarticle::take(10)->latest()->inRandomOrder()->paginate($perPage = 32, $columns = ['*'], $pageName = 'page', $page);
-        }
-        $topbrandnavs=Cache::remember('topbrandnavs', 60*24*365, function() {
-            return Arctype::where('mid',1)->where('reid','<>',0)->orderBy('sortrank','asc')->get(['real_path','typename']);
-        });
-        $paihangbangs= Cache::remember('phb'.$thistypeinfo->id, config('app.cachetime')+rand(60,60*24), function() use($thistypeinfo){
-            $paihangbangs= Brandarticle::where('typeid',$thistypeinfo->id)->take('10')->orderBy('click','desc')->get(['id','brandname','litpic','brandnum','brandpay','description']);
-            if (!$paihangbangs->count())
-            {
-                $paihangbangs=Brandarticle::take(10)->orderBy('click','desc')->get(['id','brandname','litpic','brandnum','brandpay','description']);
-            }
-            return $paihangbangs;
-        });
-        $flashlingshibrands=Cache::remember('flashlingshibrands', config('app.cachetime')+rand(60,60*24), function() {
-            return Brandarticle::where('mid','1')->where('flags','like','%'.'h'.'%')->take(7)->orderBy('id','desc')->get();
+        $cnewslists=Cache::remember('m_cnewslists'.$thistypeinfo->id,  rand(10,60), function() use($thistypeinfo){
+            return Archive::whereIn('brandid',Brandarticle::where('typeid',$thistypeinfo->id)->latest()->pluck('id'))->take(7)->latest()->get(['id','title','litpic']);
         });
         //店铺面积缓存
         $acreagements=Cache::remember('acreagements',  config('app.cachetime')+rand(60,60*24), function(){
             return Acreagement::pluck('type','id');
         });
-        $cnewslists=Cache::remember('cnewslists'.$thistypeinfo->id,  rand(10,60), function() use($thistypeinfo){
-            return Archive::whereIn('brandid',Brandarticle::where('typeid',$thistypeinfo->id)->latest()->pluck('id'))->take(7)->latest()->get();
+        $investments=Cache::remember('investments',  config('app.cachetime')+rand(60,60*24), function(){
+            return InvestmentType::orderBy('id','asc')->pluck('type','id');
         });
-        //此处为生成的标题传值
-        switch ($tid)
+        if (isset(explode('/',$request->path())[2]))
         {
-            case 1:
-                $tid='10~15万';
-                break;
-            case 2:
-                $tid='15~20万';
-                break;
-            case 3:
-                $tid='20~30万';
-                break;
-            case 4:
-                $tid='30~50万';
-                break;
-            case 5:
-                $tid='50~100万';
-                break;
-            case 6:
-                $tid='100~150万';
-                break;
-            default:
-                $tid=null;
+            preg_match('#[a-z]#',explode('/',$request->path())[2],$match);
+            switch ($match[0])
+            {
+                case "p":
+                    $pagelists=Brandarticle::where('typeid',$thistypeinfo->id)->where('tzid',$id)->orderBy('id','desc')->distinct()->paginate(15);
+                    $title=$investments[$id];
+                    break;
+                case "m":
+                    $pagelists=Brandarticle::where('typeid',$thistypeinfo->id)->where('acreage',$id)->orderBy('id','desc')->distinct()->paginate(15);
+                    $title=$acreagements[$id].'㎡';
+                    break;
+                case "a":
+                    $pagelists=Brandarticle::where('typeid',$thistypeinfo->id)->where('brandorigin',Area::where('id',$id)->value('regionname'))->orderBy('id','desc')->distinct()->paginate(15);
+                    $title=Area::where('id',$id)->value('regionname');
+                    break;
+                default:
+                    dd(11);
+                    $pagelists=Brandarticle::orderBy('id','desc')->distinct()->paginate(15);
+                    $title='';
+            }
         }
-        if ($cid)
-        {
-            $cid=Area::where('id',$cid)->value('regionname');
-        }else{
-            $cid=null;
-        }
-        if ($zid)
-        {
-            $zid=Acreagement::where('id',$zid)->value('type');
-        }else{
-            $zid=null;
-        }
-        return view('mobile.project_brands',compact('thistypeinfo','flashlingshibrands','topbrandnavs','pagelists','paihangbangs','tid','cid','cnewslists','zid','acreagements'));
+        return view('mobile.project_brands',compact('thistypeinfo','pagelists','cnewslists','acreagements','investments','title'));
     }
 
 

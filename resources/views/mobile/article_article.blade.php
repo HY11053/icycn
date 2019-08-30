@@ -20,7 +20,7 @@
                         <p class="title"><a href="/xm/{{$thisarticlebrandinfos->id}}.shtml">{{$thisarticlebrandinfos->brandname}}</a></p>
                         <div class="con clearfix"><span class="money">{{$thisarticlebrandinfos->brandattch}}</span><span>人意向加盟</span></div>
                     </div>
-                    <div class="btn jm-popup" data-role="#jm-live-mes"><a href="#" onclick="lightbox('#lybox')">获取资料</a></div>
+                    <div class="btn jm-popup" data-role="#item5"><a href="#item5" rel="nofollow">获取资料</a></div>
                 </div>
             @endif
         </div>
@@ -28,6 +28,7 @@
             {!! $thisarticleinfos->body !!}
         </div>
     </div>
+    @include('mobile.liuyan')
     <div id="item8">
         <div class="item8box clearfix">
             <i></i>

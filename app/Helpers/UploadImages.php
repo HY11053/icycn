@@ -37,11 +37,11 @@ class UploadImages
         $image=Image::make(storage_path('app/').$path);
         if ($image->width()>$image->height())
         {
-            $image->resize(250, null,function ($constraint) {
+            $image->resize(350, null,function ($constraint) {
                 $constraint->aspectRatio();
             })->save(storage_path('app/').$path);
         }else{
-            $image->resize(null, 200,function ($constraint) {
+            $image->resize(null, 320,function ($constraint) {
                 $constraint->aspectRatio();
             })->save(storage_path('app/').$path);
         }

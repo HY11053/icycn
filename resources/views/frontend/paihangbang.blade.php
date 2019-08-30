@@ -1,7 +1,7 @@
 @extends('frontend.frontend')
 @section('title'){{str_replace('加盟','',$thistypeinfo->typename)}}加盟排行榜_{{str_replace('加盟','',$thistypeinfo->typename)}}品牌排行榜-{{config('app.indexname')}}@stop
 @section('keywords'){{str_replace('加盟','',$thistypeinfo->typename)}}加盟排行榜,{{str_replace('加盟','',$thistypeinfo->typename)}}品牌排行榜,{{str_replace('加盟','',$thistypeinfo->typename)}}品牌排行@stop
-@section('description')中教招商网为您全方位解读{{str_replace('加盟','',$thistypeinfo->typename)}}加盟品牌排行信息。分享{{str_replace('加盟','',$thistypeinfo->typename)}}门店信息，{{str_replace('加盟','',$thistypeinfo->typename)}}排行榜分类提供性价比最高{{str_replace('加盟','',$thistypeinfo->typename)}}品牌加盟排行榜信息，供你快速的选择适合自己的{{str_replace('加盟','',$thistypeinfo->typename)}}加盟品牌@stop
+@section('description')世纪母婴网为您全方位解读{{str_replace('加盟','',$thistypeinfo->typename)}}加盟品牌排行信息。分享{{str_replace('加盟','',$thistypeinfo->typename)}}门店信息，{{str_replace('加盟','',$thistypeinfo->typename)}}排行榜分类提供性价比最高{{str_replace('加盟','',$thistypeinfo->typename)}}品牌加盟排行榜信息，供你快速的选择适合自己的{{str_replace('加盟','',$thistypeinfo->typename)}}加盟品牌@stop
 @section('header_libs')
     <meta name="Copyright" content="{{config('app.indexname')}}-{{config('app.url')}}"/>
     <meta name="author" content="{{config('app.indexname')}}" />
@@ -16,14 +16,15 @@
     <div id="ny_main">
         <div class="fenlei_jianjie">
             <div class="fenlei_jianjie_ph"></div>
-            <div class="fenlei_jianjie_c">	中教招商网综合排行榜是中教招商网推出的互联网教育品牌加盟品牌排行榜。所有入驻中教招商网的优质品牌都将获得一定的排名。本次排名根据中教招商网用户的偏好等综合因素进行排名，加盟排行榜不作为官方和权威的行业排名，仅供投资者进行参考。中教招商网定期对所有教育品牌品牌进行排名，包括早教品牌排名榜、幼儿园品牌排行榜、舞蹈培训加盟品牌排行榜、国学馆排行榜等……中教招商网温馨提示:所有创业加盟项目及相关信息均来自互联网及用户自主添加，筛选品牌前务必进行实地考察和咨询。
+            <div class="fenlei_jianjie_c">
+                世纪母婴网综合排行榜是世纪母婴网推出母婴加盟品牌排行榜。所有入驻世纪母婴网的优质品牌都将获得一定的排名。本次排名根据世纪母婴网用户的偏好、点击、咨询等综合因素进行排名，加盟排行榜不作为官方和权威的行业排名，仅供投资创业者进行参考。世纪母婴网定期对所入驻母婴行业加盟品牌进行排名，包括母婴店加盟品牌排行榜、母婴生活馆加盟品牌排行榜、母婴用品品牌招商排行榜等...世纪母婴网温馨提示:所有创业加盟项目及相关信息均来自互联网及用户自主添加，筛选品牌前务必进行实地考察和咨询
             </div>
         </div>
         <div class="paihang_center">
             <div class="path"><p>当前位置：<a href="/">首页</a>&gt;<a class="dq" href="/paihangbang/" title="品牌排行榜">品牌排行榜</a></p></div>
             <div class="paihang_left">
                 <div class="ph_l">
-                    <p class="tit">中教招商网排行榜</p>
+                    <p class="tit">世纪母婴网排行榜</p>
                     <ul>
                         @foreach($brandnavs as $brandnav)
                             <li><a target="_self" href="/paihangbang/{{$brandnav->real_path}}/">{{$brandnav->typename}}品牌排行榜</a></li>
@@ -90,11 +91,9 @@
                             <div class="clear"></div>
                         </div>
                     @endforeach
-
                 </div>
             </div>
             <div class="clear"></div>
         </div>
-
     </div>
 @stop

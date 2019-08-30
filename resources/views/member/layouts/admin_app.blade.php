@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="chrome=1,IE=edge">
-    <title>@yield('title') | 中教招商网 </title>
+    <title>@yield('title') | 世纪母婴网 </title>
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <link rel="stylesheet" href="/adminlte/bootstrap/css/bootstrap.min.css">

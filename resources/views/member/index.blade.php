@@ -1,5 +1,5 @@
 @extends('member.layouts.admin_app')
-@section('title')中教招商网会员中心@stop
+@section('title')世纪母婴网会员中心@stop
 @section('head')
 @stop
 @section('content')

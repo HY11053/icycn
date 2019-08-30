@@ -19,14 +19,13 @@
 @stop
 @section('main_content')
     <div class="main">
-        <div class="bn1190"><img src="http://www.58lingshi.com/receptions/images/temp/bn9.jpg" alt=""></div>
         <div class="path">当前位置：<a href="/">首页</a> &gt; <a href="/{{$thisbrandtypeinfo->real_path}}/">{{$thisbrandtypeinfo->typename}}</a></div>
         <div class="main clearfix">
             <div class="layout2">
                 <div class="brand_slide">
                     <ul class="bigImg" style="position: relative; width: 296px; height: 295px;">
-                        @foreach(explode(',',$thisarticleinfos->imagepics) as $pic)
-                            <li style="position: absolute; width: 296px; left: 0px; top: 0px; display: none;"><img src="{{$pic}}" alt="【{{$thisarticleinfos->brandname}}】"></li>
+                        @foreach(array_filter(explode(',',$thisarticleinfos->imagepics)) as $pic)
+                            <li><img src="{{$pic}}" alt="【{{$thisarticleinfos->brandname}}】"></li>
                         @endforeach
                     </ul>
                     <div class="smallScroll"><a class="sPrev prevStop" href="javascript:void(0)"></a>
@@ -65,7 +64,7 @@
                             <li style=" margin-left:35px">品牌好评率 <span class="price">{{rand(90,99)}}%</span></li>
                         </ul>
                     </div>
-                    <div class="tel">联系电话：<span>400-8896-216</span></div>
+                    <div class="tel">联系电话：<span>400-885-8878</span></div>
                     <div class="btn_area"> <a id="chatNowButton" href="#msg" class="zixun_btn">立即咨询</a> <a href="javascript:;" class="suoyao_btn ico-quoted">成本预算</a> </div>
                 </div>
                 <div class="layout2_right fl">
@@ -126,6 +125,7 @@
 
                         <div class="join_cont">
                             <div class="join_intro">
+                                <h2>{{$thisarticleinfos->brandname}}品牌介绍</h2>
                                 {!! $thisarticleinfos->body !!}
                             </div>
                             <div class="join_tit"> <h2 class="tit">【{{$thisarticleinfos->brandname}}】<em>品牌展示</em></h2> </div>
@@ -234,5 +234,5 @@
         </div>
 </div>
 @stop
-@section('footlibs')
+@section('footerlibs')
 @stop

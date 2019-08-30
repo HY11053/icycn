@@ -21,13 +21,13 @@
                             <div class="tzje">{{$thisarticleinfos->brandgroup}}</div>
                             <div class="tzje">分类：<span><a href="/{{$thisbrandtypeinfo->real_path}}/">{{$thisbrandtypeinfo->typename}}</a></span></div>
                         </div>
-                        <div class="zhishu"> <em>加盟费用</em> <a href="#liuyan">查看详情</a> </div>
+                        <div class="zhishu"> <em>加盟费用</em> <a href="#item5" rel="nofollow">查看详情</a> </div>
                         <div class="clear"></div>
                     </li>
                 </ul>
             </div>
                 <div class="bg-fff mt10 ptb10 plr15">
-                    <a href="#wyjm" class="kd-btn fr ml10 btn-marklog" data-marktype="18">免费开店方案</a>
+                    <a href="#item5" rel="nofollow" class="kd-btn fr ml10 btn-marklog" data-marktype="18">免费开店方案</a>
                     <h3 class="f16 lh24 fw6">基本投资: <em style="color: red">{{$thisarticleinfos->brandpay}}</em> </h3>
                     <div class="mt5">
                         <em class="pin-tag">所属公司</em>

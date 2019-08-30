@@ -44,13 +44,12 @@
                     <div class="search_db">
                         <div class="hd">项目查找</div>
                         <div class="bd">
-                            <form onsubmit="return false">
-                                <input type="hidden" name="_token" value="KESR5bff18w9GW9v6YS0PZIFbyTgQqyHnyC8gOvQ">
+                            <form method="post" action="/search/">
+                                {{csrf_field()}}
                                 <div class="select_mod">
-                                    <div class="clearfix">
-                                        <p>
+                                    <div class="clearfix"><p>
                                     <span class="cont">
-                                      <select name="select1" id="select1" class="select_bk">
+                                      <select name="typeid" id="typeid" class="select_bk">
                                         <option selected="selected" value="0">行业分类</option>
                                         <option value="1">母婴店</option>
                                         <option value="3">母婴生活馆</option>
@@ -60,20 +59,20 @@
                                         </p>
                                         <p>
                                     <span class="cont">
-                                      <select name="select2" id="select2" class="select_bk">
+                                      <select name="tzid" id="tzid" class="select_bk">
                                         <option selected="selected" value="0">投资金额</option>
                                           @foreach($touziids as $touziid)
-                                            <option>{{$investments[$touziid]}}</option>
+                                            <option value="{{$touziid}}">{{$investments[$touziid]}}</option>
                                           @endforeach
                                       </select>
                                     </span>
                                         </p>
                                         <p>
                                     <span class="cont">
-                                      <select name="select3" id="select3" class="select_bk">
+                                      <select name="acreage" id="acreage" class="select_bk">
                                         <option selected="selected" value="0">店铺面积</option>
-                                          @foreach($acreagements as $acreagement)
-                                            <option>{{$acreagement}}</option>
+                                          @foreach($acreagements as $indx=>$acreagement)
+                                            <option value="{{$indx}}">{{$acreagement}}㎡</option>
                                         @endforeach
                                       </select>
                                     </span>
@@ -83,7 +82,6 @@
                                         </p>
                                     </div>
                                     <p><input type="submit" width="126" height="35" id="sub_btn" class="btn" value="项目搜索"></p>
-
                                 </div>
                             </form>
                             <div class="tit">投资金额：</div>
@@ -373,7 +371,7 @@
                                                 <div class="index_brand_list">
                                                     <ul>
                                                         @foreach($latestrzsbrands as $latestrzsbrand)
-                                                            <li><a href="/xm/{{$latestrzsbrand->id}}.shtml" target="_blank"><img src="{{$latestrzsbrand->litpic}}" title="{{$latestrzsbrand->brandname}}" alt="{{$latestrzsbrand->brandname}}"><span>{{$latestrmuyingshgbrand->brandname}}</span></a></li>
+                                                            <li><a href="/xm/{{$latestrzsbrand->id}}.shtml" target="_blank"><img src="{{$latestrzsbrand->litpic}}" title="{{$latestrzsbrand->brandname}}" alt="{{$latestrzsbrand->brandname}}"><span>{{$latestrzsbrand->brandname}}</span></a></li>
                                                         @endforeach
                                                     </ul>
                                                 </div>

@@ -1,5 +1,5 @@
 @extends('frontend.frontend')
-@section('title')删帖页面-中教招商网@stop
+@section('title')删帖页面-世纪母婴网@stop
 @section('keywords')删帖页面@stop
 @section('description')删帖页面@stop
 @section('headlibs')

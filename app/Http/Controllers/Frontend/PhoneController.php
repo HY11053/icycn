@@ -12,34 +12,6 @@ use App\Http\Controllers\Controller;
 use Log;
 class PhoneController extends Controller
 {
-    //开店成本计算器 侧边弹出
-    function Complates(Request $request)
-    {
-        $phoneno=$request->input('phoneno');
-        $jmfy=$request->input('jmfy');
-        $dpzj=$request->input('dpzj');
-        $rycb=$request->input('rycb');
-        $mdjj=$request->input('mdjj');
-        $mrcb=$request->input('mrcb');
-        $cb=$dpzj+$rycb;
-        $yye=$mdjj*$mrcb;
-        $rlr=$mdjj*$mrcb*0.6;
-        $referer=str_limit($request->session()->all()['referer'],100,'');
-        if(empty(Phonemanage::where('ip', $request->getClientIp())->where('created_at','>',Carbon::now()->subHour())->where('created_at','<',Carbon::now())->value('ip')))
-        {
-            Phonemanage::create(['phoneno'=>$phoneno,'name'=>'计算器','ip'=>$request->getClientIp(),'note'=>'成本计算器提交','host'=>$request->input('host'),'referer'=>$referer]);
-            //event(new PhoneEvent(Phonemanage::latest() ->first()));
-            Admin::first()->notify(new MailSendNotification(Phonemanage::latest() ->first()));
-        }
-
-        echo "
-        <li class=''><span>加盟费：</span><strong id='materialPay'><em>$jmfy</em>元</strong></li>
-									<li class=''><span>成本费：</span><strong id='artificialPay'><em>$cb</em>元</strong></li>
-									<li class=''><span>营业额：</span><strong id='designPay'><em>$yye</em>元</strong></li>
-									<li class=''><span>日利润：</span><strong id='qualityPay'><em>$rlr</em>元</strong></li>
-        ";
-
-    }
     function ComplateBrands(Request $request)
     {
         //开店成本计算，列表及内容页侧边
@@ -73,7 +45,9 @@ class PhoneController extends Controller
 			</div>";
     }
 
-
+    /**通用页面电话提交
+     * @param Request $request
+     */
     function phoneComplate(Request $request)
     {
         if(empty(Phonemanage::where('ip', $request->getClientIp())->where('created_at','>',Carbon::now()->subHour())->where('created_at','<',Carbon::now())->value('ip')))

@@ -20,20 +20,21 @@
 <body>
 <header class="header pl110">
     <span class="right" id="mulu"><i class="iconfont icon-xiangmu"></i></span>
-    <a href="javascript:void(0);" class="logo"><img src="/mobile/images/m_200_72.png" /></a>
-    <div class="ptb9">
-        <a href="/search/?type=1" class="serch-link"><i class="iconfont icon-sousuo"></i> <span>搜索加盟项目、菜谱、食材</span></a>
-    </div>
+    <a href="/" class="logo"><img src="/mobile/images/m_200_72.png" /></a>
+    <form class="ptb9" method="post" action="/search/">
+        {{--<a href="/search/?type=1" class="serch-link"><i class="iconfont icon-sousuo"></i> <span>搜索加盟项目、菜谱、食材</span></a>--}}
+        {{csrf_field()}}
+         <input type="text" class="serch-link" placeholder="搜索加盟项目、菜谱、食材" name="title">
+    </form>
 </header>
 <div class="bg-black"></div>
 <ul class="mulu-list">
     <li><a href="/"><i class="iconfont icon-shouye"></i>首页</a></li>
-    <li><a href="/jm/menu/"><i class="iconfont icon-xiangmuku"></i>项目库</a></li>
-    <li><a href="/ph/"><i class="iconfont icon-paihangbang"></i>排行榜</a></li>
-    <li><a href="/jmzs/"><i class="iconfont icon-jiamengzhishi"></i>加盟知识</a></li>
-    <li><a href="/jmzx/"><i class="iconfont icon-jiamengzixun"></i>加盟资讯</a></li>
-    <li><a href="/zt/"><i class="iconfont icon-meishizhuanti1"></i>加盟专题</a></li>
-    <li><a href="/chuangye/"><i class="iconfont icon-shipin"></i>经验分享</a></li>
+    <li><a href="/jm/menu/"><i class="iconfont icon-xiangmuku"></i>母婴店加盟</a></li>
+    <li><a href="/ph/"><i class="iconfont icon-paihangbang"></i>母婴生活馆</a></li>
+    <li><a href="/jmzs/"><i class="iconfont icon-jiamengzhishi"></i>母婴品牌</a></li>
+    <li><a href="/paihangbang/"><i class="iconfont icon-jiamengzixun"></i>排行榜</a></li>
+    <li><a href="/touzi/"><i class="iconfont icon-meishizhuanti1"></i>投资分析</a></li>
 </ul>
 @yield('main_content')
 
@@ -42,14 +43,15 @@
         <a href="/" class="logo"><img src="/mobile/images/m_200_72.png" /></a>
         <ul class="foot-ul mt20">
             <li><a href="/">首页</a></li>
-            <li><a href="/jm/">加盟项目</a></li>
-            <li><a href="/jmzs/">加盟知识</a></li>
-            <li><a href="/zt/">加盟专题</a></li>
+            <li><a href="/muying/">母婴店加盟</a></li>
+            <li><a href="/muyingshg/">母婴生活馆</a></li>
+            <li><a href="/zhaoshang/">母婴品牌</a></li>
         </ul>
-        <p class="mt15 f12 s-ccc"><a target="_blank" class="s-ccc" href="http://www.miitbeian.gov.cn">蜀ICP备19006048号</a> Copyright&copy; 2005-2019</p>
+        <p class="mt15 f12 s-ccc"><a target="_blank" class="s-ccc" href="http://www.miitbeian.gov.cn">沪ICP备16055116号-22</a> Copyright&copy; 2019-2020</p>
     </div>
 </footer>
 <script src="/mobile/js/jquery.min.js"></script>
+<script src="/mobile/js/index.js"></script>
 @yield('footlibs')
 
 </body>

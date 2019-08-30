@@ -8,8 +8,7 @@ document.writeln("		<a href=\'javascript:;\' class=\'ico-quoted\'></a>");
 document.writeln("		<a href=\'javascript:;\' class=\'ico-backtop\'><i></i><span>回到顶部</span></a>");
 document.writeln("		<div class=\'attention-code\'>");
 document.writeln("			<div class=\'attention-code-img\'>");
-document.writeln("				<img src=\'/reception/images/new_float_loadapp.jpg\' alt=\'\' class=\'new-float-loadapp\'>");
-document.writeln("				<p class=\'new-float-loadapp\'>关注零食加盟</p>");
+document.writeln("				<p class=\'new-float-loadapp\'>关注母婴加盟</p>");
 document.writeln("				<p class=\'new-float-loadapp\'>获取最新零食品牌加盟信息</p>");
 document.writeln("			</div>");
 document.writeln("		</div>");
@@ -196,7 +195,6 @@ $(function(){
 $(function(){
 
     $("#btn_hqbj").click(function(){
-
         var phoneno = $("#zxys_phonenumber_left").val();
         var jmfy=$("#jmfy_left").val();
         var dpzj=$("#dpzj_left").val();
@@ -204,7 +202,6 @@ $(function(){
         var mdjj=$("#mdjj_left").val();
         var mrcb=$("#mrcb_left").val();
         var host=window.location.href;
-
         if( phoneno  && /^1[3|4|5|8]\d{9}$/.test(phoneno) ){
             $.ajax({
                 //提交数据的类型 POST GET
@@ -215,48 +212,14 @@ $(function(){
                 data:{"phoneno":phoneno,"jmfy":jmfy,"dpzj":dpzj,"rycb":rycb,"mdjj":mdjj,"mrcb":mrcb,"host":host},
                 //返回数据的格式
                 datatype: "html",    //"xml", "html", "script", "json", "jsonp", "text".
-
                 success:function (response, stutas, xhr) {
                     //alert(response);
                     $("#results").html(response);
                 }
             });
-
         } else{
             alert("您输入的手机号码"+phoneno+"不正确，请重新输入")
         }
     })
 });
 
-$(function(){
-
-    $("#tj_btn").click(function(){
-
-        var phoneno = $("#phonenum").val();
-        var name=$("#guestname").val();
-        var gender=$("input[name='Sex']:checked").val();
-        var address=$("#addresss").val();
-        var note=$("#note").val();
-        var host=window.location.href;
-        if( phoneno  && /^1[3|4|5|8]\d{9}$/.test(phoneno) ){
-            $.ajax({
-                //提交数据的类型 POST GET
-                type:"POST",
-                //提交的网址
-                url:"/phone/bottom",
-                //提交的数据
-                data:{"phoneno":phoneno,"name":name,"gender":gender,"address":address,"note":note,"host":host},
-                //返回数据的格式
-                datatype: "html",    //"xml", "html", "script", "json", "jsonp", "text".
-
-                success:function (response, stutas, xhr) {
-                    alert(response);
-                    //$("#results").html(response);
-                }
-            });
-
-        } else{
-            alert("您输入的手机号码"+phoneno+"不正确，请重新输入")
-        }
-    })
-});

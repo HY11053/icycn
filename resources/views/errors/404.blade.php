@@ -58,7 +58,7 @@
 </head>
 <body>
 <h1></h1>
-<h2><em><span class="STYLE1">404 Error&nbsp;&nbsp; </span></em><a href="http://www.jjedu.com.cn/">中教招商网</a>提醒您，您所查找的页面不存在,可能已被删除或您输错了网址!</h2>
+<h2><em><span class="STYLE1">404 Error&nbsp;&nbsp; </span></em><a href="http://www.icycn.com/">世纪母婴网</a>提醒您，您所查找的页面不存在,可能已被删除或您输错了网址!</h2>
 <p class="link">
     <a href="/">&#9666;返回首页</a>
     <a href="javascript:history.go(-1);">&#9666;返回上一页</a>
